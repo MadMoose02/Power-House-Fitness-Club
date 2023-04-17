@@ -17,4 +17,4 @@ def init():
 
 @index_views.route('/healthcheck', methods=['GET'])
 def health_check():
-    return jsonify({'status':'healthy'})
+    return jsonify(message='healthy', status=200)
