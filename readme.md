@@ -1,26 +1,19 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uwidcit/flaskmvc)
-<a href="https://render.com/deploy?repo=https://github.com/uwidcit/flaskmvc">
-  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
-</a>
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)] (https://gitpod.io/#https://github.com/MadMoose02/Power-House-Fitness-Club)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)] (https://render.com/deploy?repo=https://github.com/MadMoose02/Power-House-Fitness-Club)
 
-![Tests](https://github.com/uwidcit/flaskmvc/actions/workflows/dev.yml/badge.svg)
-
-# Flask MVC Template
-A template for flask applications structured in the Model View Controller pattern [Demo](https://dcit-flaskmvc.herokuapp.com/). [Postman Collection](https://documenter.getpostman.com/view/583570/2s83zcTnEJ)
-
+# INFO 2604 Final Project by Crtl Intel-ligence Team
+This project is a web-application that uses the template for Flask applications structured in the Model View Controller (MVC) pattern.
 
 # Dependencies
 * Python3/pip3
-* Packages listed in requirements.txt
+* Packages listed in [Requirements] (App/requirements.txt)
 
-# Installing Dependencies
+## Installing Dependencies
 ```bash
 $ pip install -r requirements.txt
 ```
 
 # Configuration Management
-
-
 Configuration information such as the database url/port, credentials, API keys etc are to be supplied to the application. However, it is bad practice to stage production information in publicly visible repositories.
 Instead, all config is provided by a config file or via [environment variables](https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/).
 
