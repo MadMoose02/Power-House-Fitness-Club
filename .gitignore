@@ -1,2 +1,5 @@
 /.DS_Store
 /__pycache__
+/App/__pycache__
+/App/**/__pycache__
+/instance/temp*.db
