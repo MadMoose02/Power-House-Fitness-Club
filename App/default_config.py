@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = "sqlite:///phfc-sqlalchemy.db"
+SQLALCHEMY_DATABASE_URI = "sqlite:///temp-database.db"
 SECRET_KEY = "kXnte-QD1GB-FAgOD-7r3mr-XlROI-Ltsdk"
 JWT_ACCESS_TOKEN_EXPIRES = 7
 ENV = "DEVELOPMENT"
