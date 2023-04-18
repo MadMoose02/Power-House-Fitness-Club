@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
-  <head>
-  
+<head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-     <!--Import Google Icon Font-->
+    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -11,37 +10,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
 
-  </head>
-  <body>
+</head>
+<body>
     <nav class="purple">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left">
-                <li><a href="/">Home</a></li>
-                <li><a href="/users">Users Jinja</a></li>
-                <li><a href="/static/users">Users JS</a></li>
-            </ul>
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="left">
+                    <li><div id="main-nav-logo">
+                        <a href="/">
+                            <!-- src to point to static link for brand logo -->
+                            <i src="../App/images/logo.png">Home</i>
+                        </a>
+                    </div></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/packages">Packages</a></li>
+                    <li><a href="/facilities">Facilities</a></li>
+                    <li><a href="/classes">Classes</a></li>
+                    <li>
+                        <div id="user-nav-profile">
+                            <img src="../static/images/male.jpg"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-    
+
     {% with messages = get_flashed_messages() %}
-      {% if messages %}
-      <nav class="white black-text" style="padding: 10px">
-        <div class="nav-wrapper">
-            <ul class="flashes">
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-            </ul>
-        </div>
-      </nav>
-      {% endif %}
+        {% if messages %}
+            <nav class="white black-text" style="padding: 10px">
+                <div class="nav-wrapper">
+                    <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </nav>
+        {% endif %}
     {% endwith %}
 
-    <div class="container" id="content">{% block content %}{% endblock %}</div>
+    <div class="container" id="content">
+        {% block content %}
+            {% block page %}{% endblock %}</a>
+        {% endblock %}
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </body>
+</body>
 </html>
