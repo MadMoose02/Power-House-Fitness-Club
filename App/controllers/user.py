@@ -1,8 +1,18 @@
 from App.models import User
 from App.database import db
 
-def create_user(username, password):
-    newuser = User(username=username, password=password)
+def create_user(username, password, fname, lname, dob, address, phone, sex, email):
+    newuser = User(
+        username=username, 
+        password=password, 
+        fname=fname, 
+        lname=lname,
+        dob=dob, 
+        address=address, 
+        phone=phone, 
+        sex=sex, 
+        email=email
+    )
     db.session.add(newuser)
     db.session.commit()
     return newuser
@@ -18,8 +28,7 @@ def get_all_users():
 
 def get_all_users_json():
     users = User.query.all()
-    if not users:
-        return []
+    if not users: return []
     users = [user.get_json() for user in users]
     return users
 
