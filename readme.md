@@ -1,5 +1,5 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)] (https://gitpod.io/#https://github.com/MadMoose02/Power-House-Fitness-Club)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)] (https://render.com/deploy?repo=https://github.com/MadMoose02/Power-House-Fitness-Club)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/MadMoose02/Power-House-Fitness-Club)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/MadMoose02/Power-House-Fitness-Club)
 
 # INFO 2604 Final Project by Crtl Intel-ligence Team
 This project is a web-application that uses the template for Flask applications structured in the Model View Controller (MVC) pattern.
