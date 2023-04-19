@@ -10,6 +10,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
     <script src="../static/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let userNavProfile = document.querySelector('div#user-nav-profile');
+            let userNavProfileModal = document.getElementById('user-nav-profile-modal');
+
+            console.log(userNavProfile.firstChild);
+
+            userNavProfile.onclick = function () {
+                userNavProfileModal.style.display = 'block';
+                console.info("User nav profile modal opened");
+            }
+
+            window.onclick = function (event) {
+                console.info(event);
+                if (event.target == userNavProfile.firstChild) return;
+                if (event.target == userNavProfileModal) return;
+                userNavProfileModal.style.display = 'none';
+                console.info("User nav profile modal closed");
+            }
+        })
+    </script>
 </head>
 <body>
     <nav class="black" style="height: 74px">
@@ -25,15 +46,19 @@
                         <li class="nav-item"><a href="/facilities">Facilities</a></li>
                         <li class="nav-item"><a href="/classes">Classes</a></li>
                         <li class="nav-item">
-                            <div id="user-nav-profile">
-                                <img src="../static/images/male.jpg"></img>
-                            </div>
+                            <div id="user-nav-profile"><img src="../static/images/male.jpg"></div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+
+    <div id="user-nav-profile-modal" class="container modal">
+        <div class="modal-content" style="margin: 0 auto">
+            <h4>David Bossman</h4>
+        </div>
+    </div>
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
