@@ -47,20 +47,19 @@ li.nav-item:hover > a {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 100%;
 }
 
 #user-nav-profile-modal {
     background-color: #ffffffb1;
     width: calc(64px * 5 + 10px);
-    height: 230px;
+    height: fit-content;
     margin: 0 auto;
     top: 75px;
     margin-right: 17px;
     border-radius: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
 }
 
 #user-nav-profile {
