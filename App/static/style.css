@@ -1,25 +1,5 @@
-.site-footer {
-  background-color: #000000;
-  text-align: center;
-  bottom:0px;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  height: 90px;
-}
-
-#social-wrapper {
-  text-align: center;
-}
-  
-/*Social Media Icons*/
-.social-wrapper {
-  text-align: center;
-}
-  
-.social-wrapper ul li {
-  display: inline;
-  margin: 0 5px;
+body{
+  background-color: #181818;
 }
 
 li.nav-item:hover > a {
@@ -108,6 +88,100 @@ li.nav-item:hover > a {
     transition: all 0.2s ease;
 }
 
+/* Cards */
+#card{
+  margin-bottom:50px;
+  padding-bottom: 5px;
+  box-sizing: border;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #000000;
+}
+
+.card{
+  color:#adabab;
+  height: auto;
+}
+
+.card div{
+  display:flex;
+  justify-content: center;
+  
+  min-height: 20vh;
+  background-color: #181818;
+  margin-bottom: 50px;
+}
+
+.card img{
+  max-width: 350px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+#about-imgs1 img{
+  margin-top: 8em;
+}
+
+#about-imgs2 img{
+  margin-top: 2em;
+}
+
+.datacard,
+.mission,
+.trainers{
+  margin: auto;
+  width:90%;
+  padding-right: 50px;
+  padding-left: 30px;
+}
+
+.datacard{
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+
+.datacard p{
+  border-right:20px;
+  text-align: justified;
+}
+
+.card h1{
+  background-color: #000000;
+  color:#c20605;
+  padding-top: 20px;
+  text-align: center;
+}
+
+#about-gymtext h2{
+  color:#cfcbcb;
+  text-align: left;
+}
+
+
+.mission h2{
+  color:#cfcbcb;
+  text-align: center;
+}
+
+.mission p{
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+  text-align: justified;
+}
+
+
+
+.trainers h2{
+  color:#cfcbcb;
+  text-align: center;
+}
+
+
+/* Footer */
+
 .tiktok-icon,
 .facebook-icon,
 .instagram-icon{
@@ -130,57 +204,27 @@ li.nav-item:hover > a {
   margin-top: 10px
 }
 
-#card{
-  margin-bottom:50px;
-  padding-bottom: 5px;
-  box-sizing: border;
-  font-family: 'Times New Roman', Times, serif;
+.site-footer {
   background-color: #000000;
+  text-align: center;
+  bottom:0px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 90px;
 }
 
-.card{
-  color:#adabab;
-}
-
-.datacard{
-  margin: auto;
-  width:90%;
-  padding-bottom: 10px;
-  padding-right: 50px;
-  padding-left: 30px;
-  padding-top: 20px;
-}
-
-.datacard p{
-  border-right:20px;
-}
-
-.card div{
-  display:flex;
-  justify-content: center;
-  
-  min-height: 100vh;
-  background-color: #181818;
-  margin-bottom: 50px;
-}
-
-.card img{
-  max-width: 350px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-top: 20px;
-  margin-left: 15px;
-}
-
-
-h1{
-  background-color: #000000;
-  color:#c20605;
-  padding-top: 20px;
+#social-wrapper {
   text-align: center;
 }
-
-body{
-  background-color: #181818;
+  
+/*Social Media Icons*/
+.social-wrapper {
+  text-align: center;
 }
+  
+.social-wrapper ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
