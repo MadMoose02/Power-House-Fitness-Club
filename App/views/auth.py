@@ -23,7 +23,6 @@ Page/Action Routes
 def identify_page():
     return jsonify({'message': f"username: {current_user.username}, id : {current_user.id}"})
 
-
 @auth_views.route('/login', methods=['POST'])
 def login_action():
     data = request.form
@@ -32,12 +31,13 @@ def login_action():
     if not user: 
         print(f"Invalid username or password")
         flash('Invalid username or password')
-        return redirect(url_for('index_views.home_page'))
-    login_user(user)
-    print(f"Logged in user: [{user.id}: {user.fname} {user.lname}]")
-    return render_template('index.html')
+    else:
+        login_user(user)
+        print(f"Logged in user: [{user.id}: {user.fname} {user.lname}]")
+        
+    return redirect(url_for('index_views.home_page'))
 
-@auth_views.route('/logout', methods=['GET'])
+@auth_views.route('/logout', methods=['POST'])
 def logout_action():
     logout_user()
     return redirect(url_for('index_views.home_page'))
