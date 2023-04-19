@@ -4,6 +4,29 @@
 {{ super() }}
 
 {% block content %}
-    {% block page %}<h1>ABOUT US</h1>{% endblock %}
-    
+    <div id="card" class="card">
+        {% block page %}<h1>ABOUT US</h1>{% endblock %}
+        <div class="datacard">
+            <section>
+                <a href="/"><img src="../static/images/about-gym.png"></a>
+                <a href="/"><img src="../static/images/about-gym1.png"></a>
+            </section>
+            <section>
+                <p>Welcome to Powerhouse Fitness Club, a premier location for those looking to transform their life and accomplish their wellness goals. Our gym is a cutting-edge facility that welcomes fitness enthusiasts of all skill levels, from amateur  to seasoned ones.
+                    <br>
+                    <br>
+                    At Powerhouse Fitness Club, we're committed to creating a stimulating and encouraging atmosphere so that our members may reach their fitness goals. You'll never find yourself waiting too long to utilise the machines or weights that you require thanks to our knowledgeable trainers' availability and our wide selection of equipment.
+                    <br>
+                    <br>
+                    We offer all that you need to accomplish your goals, whether you're seeking to lose weight, tone up, build muscle, enhance your overall health, or just boost your power and stamina. Our sessions, which include yoga, spin, HIIT, strength training, and others, are tailored for a multitude of fitness levels and preferences.
+                    <br>
+                    <br>
+                    Our mission at Powerhouse Fitness Club is to cultivate a community of like-minded people who are passionate about health and fitness. We presume that leading a healthy lifestyle entails not just being physically active but also being mentally and emotionally well. We provide a variety of wellness services to cater to this, such as dietary advice, massage therapy, and meditation sessions.
+                    <br>
+                    <br>
+                    Discover the power of exercise by joining the Powerhouse Fitness Club family. Our goal is to work with you to become the best version of yourself, both inside and out!
+                </p>
+            </section>
+        </div>
+    </div>
 {% endblock %}
