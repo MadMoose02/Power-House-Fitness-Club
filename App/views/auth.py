@@ -2,25 +2,21 @@ from flask import Blueprint, render_template, jsonify, request, send_from_direct
 from flask_jwt_extended import jwt_required, current_user as jwt_current_user
 from flask_login import login_required, login_user, current_user, logout_user
 
-from.index import index_views
+from .index import index_views
 
 from App.controllers import (
     create_user,
     jwt_authenticate,
-    login 
+    login,
+    get_all_users_json
 )
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 
+
 '''
 Page/Action Routes
 '''
-
-@auth_views.route('/users', methods=['GET'])
-def get_user_page():
-    users = get_all_users()
-    return render_template('users.html', users=users)
-
 
 @auth_views.route('/identify', methods=['GET'])
 @login_required
@@ -31,17 +27,21 @@ def identify_page():
 @auth_views.route('/login', methods=['POST'])
 def login_action():
     data = request.form
-    user = login(data['username'], data['password'])
-    if user:
-        login_user(user)
-        return 'user logged in!'
-    return 'bad username or password given', 401
+    user = login(data['username-email'], data['password'])
+    print(f"Received login attempt: [{data['username-email']}: {data['password']}]")
+    if not user: 
+        print(f"Invalid username or password")
+        flash('Invalid username or password')
+        return redirect(url_for('index_views.home_page'))
+    login_user(user)
+    print(f"Logged in user: [{user.id}: {user.fname} {user.lname}]")
+    return render_template('index.html')
 
 @auth_views.route('/logout', methods=['GET'])
 def logout_action():
-    data = request.form
-    user = login(data['username'], data['password'])
-    return 'logged out!'
+    logout_user()
+    return redirect(url_for('index_views.home_page'))
+
 
 '''
 API Routes

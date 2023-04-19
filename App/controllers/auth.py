@@ -29,7 +29,8 @@ def login(username: str, password: str) -> User:
              or None if the credentials are invalid.
     """
     user = User.query.filter_by(username=username).first()
-    if not user and not user.check_password(password): return None
+    if not user: return None
+    if not user.check_password(password): return None
     return user
 
 
