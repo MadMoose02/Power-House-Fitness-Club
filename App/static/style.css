@@ -1,5 +1,5 @@
 body{
-  background-color: #181818;
+  background-color: #0f0f0f;
 }
 
 li.nav-item:hover > a {
@@ -128,8 +128,8 @@ li.nav-item:hover > a {
 }
 
 .datacard,
-.mission,
-.trainers{
+.mission-slogan,
+.location{
   margin: auto;
   width:90%;
   padding-right: 50px;
@@ -160,23 +160,51 @@ li.nav-item:hover > a {
 }
 
 
-.mission h2{
+.mission-slogan h2{
   color:#cfcbcb;
   text-align: center;
 }
 
-.mission p{
+.mission-slogan h3{
+  color:#979797;
+  font-size: 20pt;
+  text-align: center;
+}
+
+.mission-slogan p{
   padding-bottom: 20px;
   margin-left: 20px;
   margin-right: 5px;
   text-align: justified;
 }
 
+.location{
+  height:45em;
+}
 
+.map{
+  padding-bottom: 50%;
+  position: relative;
+}
 
-.trainers h2{
+.map iframe{
+  height: 25em;
+  padding-left: 1em;
+  width: 35em;
+  justify-content: center;
+  left: 0;
+  top: 0;
+}
+
+.location h2{
   color:#cfcbcb;
   text-align: center;
+}
+
+.location h3{
+  color:#cfcbcb;
+  text-align: center;
+  font-size: 15pt;
 }
 
 
