@@ -1,4 +1,4 @@
-import click, pytest, sys
+import click, sys
 from flask import Flask
 from flask.cli import with_appcontext, AppGroup
 from datetime import date
@@ -56,21 +56,21 @@ def list_user_command(format):
 app.cli.add_command(user_cli)
 
 
-'''
-Test Commands
-Usage : flask test <command> [<args>]
-'''
-test = AppGroup('test', help='Testing commands') 
+# '''
+# Test Commands
+# Usage : flask test <command> [<args>]
+# '''
+# test = AppGroup('test', help='Testing commands') 
 
-@test.command("user", help="Run User tests")
-@click.argument("type", default="all")
-def user_tests_command(type):
-    if type == "unit":
-        sys.exit(pytest.main(["-k", "UserUnitTests"]))
-    elif type == "int":
-        sys.exit(pytest.main(["-k", "UserIntegrationTests"]))
-    else:
-        sys.exit(pytest.main(["-k", "App"]))
+# @test.command("user", help="Run User tests")
+# @click.argument("type", default="all")
+# def user_tests_command(type):
+#     if type == "unit":
+#         sys.exit(pytest.main(["-k", "UserUnitTests"]))
+#     elif type == "int":
+#         sys.exit(pytest.main(["-k", "UserIntegrationTests"]))
+#     else:
+#         sys.exit(pytest.main(["-k", "App"]))
     
-# Add all test commands
-app.cli.add_command(test)
+# # Add all test commands
+# app.cli.add_command(test)
