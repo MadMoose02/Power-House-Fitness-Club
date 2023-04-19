@@ -129,6 +129,7 @@ li.nav-item:hover > a {
 .datacard,
 .mission-slogan,
 .location{
+  border: 3px solid #c20605;
   margin: auto;
   width:90%;
   padding-right: 50px;
@@ -166,7 +167,7 @@ li.nav-item:hover > a {
 
 .mission-slogan h3{
   color:#979797;
-  font-size: 20pt;
+  font-size: 30pt;
   text-align: center;
 }
 
@@ -179,6 +180,17 @@ li.nav-item:hover > a {
 
 .location{
   height:45em;
+}
+
+.location h2{
+  color:#cfcbcb;
+  text-align: center;
+}
+
+.location h3{
+  color:#cfcbcb;
+  text-align: center;
+  font-size: 15pt;
 }
 
 .map{
@@ -195,16 +207,7 @@ li.nav-item:hover > a {
   top: 0;
 }
 
-.location h2{
-  color:#cfcbcb;
-  text-align: center;
-}
 
-.location h3{
-  color:#cfcbcb;
-  text-align: center;
-  font-size: 15pt;
-}
 
 
 /* Footer */
