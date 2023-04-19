@@ -1,54 +1,54 @@
 .site-footer {
-    background-color: #000000;
-    text-align: center;
-    margin: 10px 0;
-    padding: 10px 0;
-  }
+  background-color: #000000;
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px 0;
+}
   
-  #social-wrapper {
-    text-align: center;
-  }
+#social-wrapper {
+  text-align: center;
+}
   
-  /*Social Media Icons*/
-  .social-wrapper {
-    text-align: center;
-    
-  }
+/*Social Media Icons*/
+.social-wrapper {
+  text-align: center;
+}
   
-  .social-wrapper ul li {
-    display: inline;
-    margin: 0 5px;
-  }
+.social-wrapper ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
 #main-nav-logo {
-    width: 160px;
+  width: 160px;
 }
 
 #user-nav-profile {
-    display: inline-block;
-    position: relative;
-    height: 60px;
-    padding: 5px;
-    margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  padding: 5px;
+  margin-left: 10px;
 }
   
 
-  .tiktok-icon,
-  .facebook-icon,
-  .instagram-icon{
-    margin-top: .625em;
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-  }
+.tiktok-icon,
+.facebook-icon,
+.instagram-icon{
+  margin-top: .625em;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+}
 
+.footer-nav p {
+  text-align: center;
+  background-color: #c20605;
+}
 
-  .footer-nav p {
-    text-align: center;
-    background-color: #c20605;
-  }
 #user-nav-profile > img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
