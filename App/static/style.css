@@ -23,6 +23,12 @@
   margin: 0 5px;
 }
 
+li.nav-item:hover > a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ff6c6c;
+}
+
 #main-nav-logo {
   width: 200px;
 }
@@ -30,6 +36,18 @@
 #main-nav-logo > * img {
   max-width: 100%;
   max-height: 100%;
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+}
+
+#main-nav-logo > * img:hover {
+    filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 #user-nav-profile {
@@ -47,6 +65,16 @@
   object-fit: cover;
 }
 
+#user-nav-profile > img:hover {
+    filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
 .tiktok-icon,
 .facebook-icon,
 .instagram-icon{
@@ -56,8 +84,15 @@
   border-radius: 25px;
 }
 
+.site-footer > * p {
+  color: white; 
+  margin: 0 auto; 
+}
+
 .footer p {
   text-align: center;
   background-color: #c20605;
   color: white;
+  margin-bottom: 0; 
+  margin-top: 10px
 }
