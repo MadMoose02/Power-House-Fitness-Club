@@ -15,23 +15,33 @@
             let userNavProfile = document.querySelector('div#user-nav-profile');
             let userNavProfileModal = document.getElementById('user-nav-profile-modal');
 
-            console.log(userNavProfile.firstChild);
-
             userNavProfile.onclick = function () {
                 userNavProfileModal.style.display = 'block';
                 userNavProfile.firstChild.style.filter = 'brightness(70%)';
                 console.info("User nav profile modal opened");
+                return;
             }
+        });
 
-            window.onclick = function (event) {
-                console.info(event);
-                if (event.target == userNavProfile.firstChild) return;
-                if (event.target == userNavProfileModal) return;
+        // If the user clicks anywhere outside of the modal (denoted by bounding box), close it
+        window.onclick = function (event) {
+            let userNavProfile = document.querySelector('div#user-nav-profile');
+            if (event.target.id === 'user-nav-profile-img') return;
+            let userNavProfileModal = document.getElementById('user-nav-profile-modal');
+            let navProfileModalBoundingBox = userNavProfileModal.getBoundingClientRect();
+
+            let x = event.clientX, y = event.clientY;
+            console.info(`Conditions to close: \
+            \n${x} < ${navProfileModalBoundingBox.left}: ${x < navProfileModalBoundingBox.left}\
+            \n${y} > ${navProfileModalBoundingBox.bottom}: ${y > navProfileModalBoundingBox.bottom}`);
+            
+            if (x < navProfileModalBoundingBox.left || y > navProfileModalBoundingBox.bottom) {
                 userNavProfileModal.style.display = 'none';
                 userNavProfile.firstChild.style.filter = 'brightness(100%)';
                 console.info("User nav profile modal closed");
+                return;
             }
-        })
+        }
     </script>
 </head>
 <body>
@@ -48,7 +58,7 @@
                         <li class="nav-item"><a href="/facilities">Facilities</a></li>
                         <li class="nav-item"><a href="/classes">Classes</a></li>
                         <li class="nav-item">
-                            <div id="user-nav-profile"><img src="../static/images/male.jpg"></div>
+                            <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/male.jpg"></div>
                         </li>
                     </ul>
                 </div>
@@ -57,9 +67,38 @@
     </nav>
 
     <div id="user-nav-profile-modal" class="container modal">
-        <div class="modal-content" style="margin: 0 auto">
-            <h4>David Bossman</h4>
-        </div>
+        {% if not user %}
+            <div class="modal-content" style="margin: 0 auto">
+                <h4>Login</h4>
+                <form action="/login" method="post">
+                    <div class="input-field">
+                        <input type="text" name="username-email">
+                        <label for="username-email">Username/Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: space-between">
+                        <div class="input-field">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
+                        </div>
+                        <div class="input-field">
+                            <a href="/register" class="btn waves-effect waves-light">Register</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% else %}
+            <div class="modal-content" style="margin: 0 auto">
+                <h3>{user.fname}</h3>
+                <form action="/logout" method="post">
+                    <div class="input-field">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Logout</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
     </div>
 
     {% with messages = get_flashed_messages() %}
