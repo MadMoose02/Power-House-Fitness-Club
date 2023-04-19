@@ -5,7 +5,7 @@ from App.database import db
 
 class User(db.Model, UserMixin):
     id       = Column(Integer, name="user_id", primary_key=True, autoincrement=True)
-    username = Column(String, name="username", nullable=False, unique=True)
+    username = Column(String(20), name="username", nullable=False, unique=True)
     password = Column(String(120), name="password_hash", nullable=False, unique=False)
     fname    = Column(String(50), name="first_name", nullable=False, unique=False)
     lname    = Column(String(50), name="last_name", nullable=False, unique=False)

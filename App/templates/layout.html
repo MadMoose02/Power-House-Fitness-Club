@@ -19,6 +19,7 @@
 
             userNavProfile.onclick = function () {
                 userNavProfileModal.style.display = 'block';
+                userNavProfile.firstChild.style.filter = 'brightness(70%)';
                 console.info("User nav profile modal opened");
             }
 
@@ -27,6 +28,7 @@
                 if (event.target == userNavProfile.firstChild) return;
                 if (event.target == userNavProfileModal) return;
                 userNavProfileModal.style.display = 'none';
+                userNavProfile.firstChild.style.filter = 'brightness(100%)';
                 console.info("User nav profile modal closed");
             }
         })
