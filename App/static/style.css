@@ -1,10 +1,14 @@
 .site-footer {
   background-color: #000000;
   text-align: center;
-  margin: 10px 0;
-  padding: 10px 0;
+  position: fixed;
+  bottom:0px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 120px;
 }
-  
+
 #social-wrapper {
   text-align: center;
 }
@@ -52,7 +56,8 @@
   border-radius: 25px;
 }
 
-.footer-nav p {
+.footer p {
   text-align: center;
   background-color: #c20605;
+  color: white;
 }
