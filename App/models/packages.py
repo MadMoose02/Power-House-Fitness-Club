@@ -2,20 +2,20 @@ from sqlalchemy import Column, Integer, String, Date
 from App.database import db
 
 class Package(db.Model):
-    id = Column(Integer,primary_key=True)
-    package_type = Column(String,nullable=False)
-    price = Column(Integer, nullable=False)
-    description = Column(String, nullable=False)
+    id    = Column(Integer, name="package_id", primary_key=True, autoincrement=True)
+    type  = Column(String(20), name="type", nullable=False)
+    price = Column(String(10), name="price", nullable=False)
+    desc  = Column(String(500), name="description", nullable=False)
 
-    def __init__(self,package_type,price,description):
-        self.package_type = package_type
+    def __init__(self, type, price, desc):
+        self.type = type
         self.price = price
-        self.description = description
+        self.desc = desc
 
-    def get_json(self) -> Dict[str, str]:
+    def get_json(self) -> dict:
         return {
-            "id": str(self.id),
-            "package_type": self.package_type,
-            "price": str(self.price),
-            "description": self.description
+            "id": self.id,
+            "type": self.type,
+            "price": self.price,
+            "description": self.desc
         }
