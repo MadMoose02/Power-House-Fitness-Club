@@ -5,7 +5,6 @@ from .facilities import facilities_views
 from .packages import packages_views
 from .classes import classes_views
 from .about import about_views
-from .login import login_views
 from .register import register_views
 from .profile import profile_views
 
@@ -17,7 +16,6 @@ views = [
     packages_views, 
     classes_views, 
     about_views, 
-    login_views, 
     register_views, 
     profile_views
 ]

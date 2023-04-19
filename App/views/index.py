@@ -6,8 +6,8 @@ from App.controllers import create_user
 index_views = Blueprint('index_views', __name__, template_folder='../templates')
 
 @index_views.route('/', methods=['GET'])
-def index_page():
-    return render_template('index.html')
+def home_page(current_user=None):
+    return render_template('index.html', user=current_user)
 
 
 @index_views.route('/init', methods=['GET'])
