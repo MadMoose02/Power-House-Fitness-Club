@@ -3,17 +3,35 @@ from flask_jwt_extended import create_access_token, jwt_required, JWTManager
 
 from App.models import User
 
-def jwt_authenticate(username, password):
-  user = User.query.filter_by(username=username).first()
-  if user and user.check_password(password):
-    return create_access_token(identity=username)
-  return None
+def jwt_authenticate(username, password) -> str:
+    """
+    Authenticates a user with a JWT.
 
-def login(username, password):
+    :param username: The username of the user.
+    :type username: str
+    :param password: The password of the user.
+    :type password: str
+    :return: Returns an access token if the authentication is successful, otherwise returns None.
+    :rtype: str or None
+    """
     user = User.query.filter_by(username=username).first()
-    if user and user.check_password(password):
-        return user
-    return None
+    if not user or not user.check_password(password): return None
+    return create_access_token(identity=username)
+
+
+def login(username: str, password: str) -> User:
+    """
+    Logs in a user with the given credentials.
+
+    :param username: The username of the user.
+    :param password: The password of the user.
+    :return: An instance of the User class representing the logged in user,
+             or None if the credentials are invalid.
+    """
+    user = User.query.filter_by(username=username).first()
+    if not user and not user.check_password(password): return None
+    return user
+
 
 def setup_flask_login(app):
     login_manager = LoginManager()
