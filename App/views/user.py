@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, jsonify, request, send_from_direct
 from flask_jwt_extended import jwt_required, current_user as jwt_current_user
 from flask_login import current_user, login_required
 
-from.index import index_views
+from .index import index_views
 
 from App.controllers import (
     create_user,
@@ -36,7 +36,3 @@ def create_user_action():
     flash(f"User {data['username']} created!")
     create_user(data['username'], data['password'])
     return redirect(url_for('user_views.get_user_page'))
-
-@user_views.route('/static/users', methods=['GET'])
-def static_user_page():
-  return send_from_directory('static', 'static-user.html')
