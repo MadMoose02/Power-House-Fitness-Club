@@ -7,13 +7,13 @@
 <section>
     <h1>Availble Packages</h1>
 
-    <div class="gal">
+    <div class="gallery">
         {% for package in packages %}
             <div id="{{package.type.lower()}}-package" class="piece">
                 <br>
-                <h1 class="pck">{{package.type}}</h1>
+                <h1 class="pkg-typ">{{package.type}}</h1>
                 <hr>
-                <p class="des">{{package.desc}}</p>
+                <p class="pkg-descrpt">{{package.desc}}</p>
                 <hr>
                 <h4>{{package.price}}</h4>
             </div>
