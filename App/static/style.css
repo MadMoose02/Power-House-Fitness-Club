@@ -20,7 +20,7 @@ nav {
     z-index: 2;
 }
 
-#nav-mobile {
+.hidden {
     display: none;
 }
 
@@ -57,22 +57,52 @@ nav {
     transform: translateY(-10px) rotate(-135deg);
 }
 
+#side-panel-menu {
+    z-index: 1;
+    right: 0;
+    position: fixed;
+    top: 0;
+    margin-top: 74px;
+    padding: 10px;
+    background-color: black;
+    width: 35vw;
+    height: 100vh;
+    max-height: calc(100vh - 74px);
+    max-height: calc(100vh - 74px);
+    border-top: 2px white solid;
+}
+
 #main-nav-menu-bar {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: 670px) {
     #nav-desktop {
         display: none;
     }
     
     #nav-mobile {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    #nav-mobile-menu {
+        flex-wrap: nowrap;
+        color: white;
+    }
+
+    #nav-mobile-menu > ul {
+        padding-left: 10px;
+    }
+
+    nav > li {
+        width: 100%;
+        max-width: 100%;
     }
 
     #main-nav-logo {
@@ -153,17 +183,17 @@ nav {
 }
 
 #user-nav-profile-modal input{
-  font-family: Calibri, Helvetica, sans-serif;
-  background-color: black ;
-  color:rgb(163, 160, 160);
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: black ;
+    color:rgb(163, 160, 160);
 
 }
 
 #user-nav-profile-modal button,
 #user-nav-profile-modal a{
-  font-family: Calibri, Helvetica, sans-serif;
-  background-color: black;
-  color:rgb(163, 160, 160);
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: black;
+    color:rgb(163, 160, 160);
 }
 
 #user-nav-profile-modal {
@@ -346,9 +376,12 @@ nav {
 
 /*Register Page*/
 
-.cancel::after {
+.cancel:after {
     display: inline-block;
     content: \00d7;
+    background: black;
+    font-family: sans-serif;
+    width: 40px;
 }
 
 .img-option {
