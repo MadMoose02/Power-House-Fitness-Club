@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 {% block title %}Register - Powerhouse Fitness Club{% endblock %}
+{% block page %}Register{% endblock %}
 
 {{ super() }}
 
 {% block content %}
     <div>
         <div class="reg-container">
-            {% block page %}<h1><b>JOIN THE FAMILY TODAY!</b></h1>{% endblock %}
+            <h1><b>JOIN THE FAMILY TODAY!</b></h1>
             <section>
                 <form id="reg-form" action="/register">
                     <div class="reg-card">
