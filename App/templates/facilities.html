@@ -7,40 +7,22 @@
 {% block content %}
 <section>
     <h1>Our Facilities</h1>
-    <div id="gal">
-      <div id="fcontent">
-        <ul>
-          <!-- Loop would begin here -->
-          <li id="fcard">
-            <div id="card-img">
-              <img src="class2.jpg" alt="Italian Trulli">
-            </div>
-            <div id="card-text">
-              <h4>Facility 1</h4>
-              <p>description</p>
-            </div>
-          </li>
-          <!-- Loop would end here -->
-          <li id="fcard">
-            <div id="card-image">
-              <img id="jpg" src="class3.jpg" alt="Italian Trulli">
-            </div>
-            <div id="card-text">
-              <h4>Facility 2</h4>
-              <p>description</p>
-            </div>
-          </li>
-          <li id="fcard">
-            <div id="card-image">
-              <img src="class1.jpg" alt="Italian Trulli">
-            </div>
-            <div id="card-text">
-              <h4>Facility 3</h4>
-              <p>description</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="gal">
+        <div id="facilities-content">
+            <ul>
+                {% for facility in facilities %}
+                    <li class="fcard">
+                        <div class="card-img">
+                            <img src="../static/images/about-gym1.png" alt="Italian Trulli">
+                        </div>
+                        <div class="card-text">
+                            <h4>{{facility.name}}</h4>
+                            <p>{{facility.desc}}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-  </section>
+</section>
 {% endblock %}

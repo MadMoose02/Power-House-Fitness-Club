@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Personal Training",
+        "description": "Personal trainers can help you get the most out of your training."
+    },
+    {
+        "name": "Facility 1",
+        "description": "Facility 1 description"
+    },
+    {
+        "name": "Facility 2",
+        "description": "Facility 2 description"
+    },
+    {
+        "name": "Facility 3",
+        "description": "Facility 3 description"
+    },
+    {
+        "name": "Facility 4",
+        "description": "Facility 4 description"
+    },
+    {
+        "name": "Facility 5",
+        "description": "Facility 5 description"
+    },
+    {
+        "name": "Facility 6",
+        "description": "Facility 6 description"
+    }
+]

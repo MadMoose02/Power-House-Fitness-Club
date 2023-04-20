@@ -10,7 +10,8 @@ from App.controllers import (
     get_all_users_json, 
     get_all_users, 
     create_classes, 
-    create_packages
+    create_packages,
+    create_facilities
 )
 
 app = create_app()
@@ -59,6 +60,12 @@ def initialise():
         packages = json.load(f)
         create_packages(packages)
     print("Added all packages")
+    
+    # Add all facilities
+    with open("App/models/facilities.json") as f:
+        facilities = json.load(f)
+        create_facilities(facilities)
+    print("Added all facilities")
     
     print("Database intialised successfully")
 
