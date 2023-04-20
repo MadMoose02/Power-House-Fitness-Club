@@ -557,20 +557,50 @@ input[type=file]{
 }
 
 
-/*Packages, Classes & Facilities*/
+/*Packages & Classes*/
 .gallery {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding:2em;
 }
 
-.gallery ul {
-  list-style: none;
-  display: block;
-  flex-wrap: wrap;
-  justify-content: center;
+/*cards itself*/
+.gallery div {
+  border: 3px solid #5c0101;
+  height: 22em;
+  width: 15em;
+  display:inline-block;
+  margin-bottom: 1em;
+  color:white;
+}
+
+.gallery section{
+  background-color: #8d8282dc;
+}
+
+.gallery h1{
+  font-size: 24pt;
+  text-align: center;
+  padding:14px;
+  background-color: #8d8282dc;
+  color: #5c0101;
+}
+
+#pkg_galry_pg{
+  background-color: #000000;
+}
+
+/*outer card after main cards*/
+#pkg_galry_pg div{
+  background-color: #000000dc;
+}
+
+.piece hr{
+  border-top: 3px solid  #5c0101;
 }
 
 .piece {
@@ -582,7 +612,6 @@ input[type=file]{
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
-  background-color: white;
 }
 
 .piece:hover,
@@ -607,6 +636,7 @@ input[type=file]{
   min-height: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
+  background-color: #8d8282dc;
 }
 
 .pkg-typ{
@@ -616,10 +646,18 @@ input[type=file]{
 }
 
 .pkg-descrpt {
-  padding: 20px;
-  background-color: white;
+  text-align: center;
+  height: 9em;
+  font-size: 12pt;
+  display: fit-content;
+  padding: 2px;
+  color:#000000;
+  background-color: #8d8282dc;
 }
 
+
+
+/*facilities*/
 #fcard {
   width: 80%;
   margin: auto;
