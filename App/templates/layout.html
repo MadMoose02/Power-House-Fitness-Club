@@ -12,22 +12,44 @@
     <style>
         select {
             display: inline-block;
-            line-height: 0.5em;
-            font-size: 16px;
+            line-height: 0.2em;
+            font-size: 14px;
             border: 1px solid white;
             border-radius: 5px;
+        }
+
+        .input-field {
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+
+        button, input {
+            background-color: #c20605;
         }
     </style>
     <script src="../static/main.js"></script>
     <script>
+        const slideModalDown = [
+            { transform: 'translateY(-100%)' },
+            { transform: 'translateY(0)' }
+        ];
+
+        const slideModalUp = [
+            { transform: 'translateY(0)' },
+            { transform: 'translateY(-100%)' }
+        ];
+
+        const animationDelay = 550;
+        const slideTiming = { duration: animationDelay, easing: 'ease-in-out'};
+
         document.addEventListener('DOMContentLoaded', function () {
             let userNavProfile = document.querySelector('div#user-nav-profile');
             let userNavProfileModal = document.getElementById('user-nav-profile-modal');
 
             userNavProfile.onclick = function () {
                 userNavProfileModal.style.display = 'block';
+                userNavProfileModal.animate(slideModalDown, slideTiming);
                 userNavProfile.firstChild.style.filter = 'brightness(70%)';
-                console.info("User nav profile modal opened");
                 return;
             }
         });
@@ -45,16 +67,18 @@
             \n${y} > ${navProfileModalBoundingBox.bottom}: ${y > navProfileModalBoundingBox.bottom}`);
             
             if (x < navProfileModalBoundingBox.left || y > navProfileModalBoundingBox.bottom) {
-                userNavProfileModal.style.display = 'none';
+                userNavProfileModal.animate(slideModalUp, slideTiming);
+                setTimeout(function () {
+                    userNavProfileModal.style.display = 'none';
+                }, animationDelay);
                 userNavProfile.firstChild.style.filter = 'brightness(100%)';
-                console.info("User nav profile modal closed");
                 return;
             }
         }
     </script>
 </head>
 <body>
-    <nav class="black" style="height: 74px">
+    <nav id="main-nav" class="black" style="height: 74px">
         <div class="nav-wrapper">
             <div class="nav-wrapper" style="display: flex; flex-direction: row; justify-content: space-between">
                 <div id="main-nav-logo">
@@ -74,22 +98,23 @@
             </div>
         </div>
     </nav>
+    <br><br><br><br>
 
     <div id="user-nav-profile-modal" class="container modal">
         {% if not user %}
             <div class="modal-content" style="margin: 0 auto">
-                <h4>Login</h4>
+                <h4 style="line-height: 0.5em; font-size: 25px; margin-bottom: 25px;">Login</h4>
                 <form action="/login" method="post">
                     <div class="input-field">
                         <input type="text" name="username-email">
-                        <label for="username-email">Username/Email</label>
+                        <label for="username-email" style="font-size: 12px">Username/Email</label>
                     </div>
                     <div class="input-field">
                         <input type="password" name="password">
-                        <label for="password">Password</label>
+                        <label for="password" style="font-size: 12px;">Password</label>
                     </div>
                     <div style="display: flex; flex-direction: row; justify-content: space-between">
-                        <div class="input-field">
+                        <div class="input-field" style="font-size: 14px;">
                             <button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
                         </div>
                         <div class="input-field">
@@ -113,7 +138,7 @@
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <nav class="white black-text" style="padding: 10px">
+            <nav class="red white-text" style="padding: 10px; max-width: 100%">
                 <div class="nav-wrapper">
                     <ul class="flashes">
                         {% for message in messages %}<li>{{ message }}</li>{% endfor %}
