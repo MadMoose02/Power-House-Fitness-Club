@@ -1,23 +1,30 @@
 from App.models import Class
 from App.database import db
 
-def create_class(name, description):
+def create_class(name, description) -> Class:
     """
-    Create a new Class object with the given name and description, add it to
-    the database session, and commit the changes. Returns the newly created
-    Class object.
+    Create a new Class object with the given name and description, and adds it to the database.
+    
     Args:
-        name (str): The name of the new Class.
-        description (str): A description of the new Class.
+        name (str): The name of the class.
+        description (str): A description of the class.
+        
     Returns:
         Class: The newly created Class object.
     """
-    newclass = Class(
+    
+    new_class = Class(
         name=name,
         description=description
     )
-    db.session.add(newclass)
+    db.session.add(new_class)
     db.session.commit()
-    return newclass
+    return new_class
 
 
+def get_classes():
+    """
+    Returns:
+    List of Class objects.
+    """
+    return Class.query.all()
