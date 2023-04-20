@@ -5,19 +5,21 @@
 
 {% block content %}
 <section>
-    <h1>Availble Packages</h1>
-
-    <div class="gallery">
-        {% for package in packages %}
-            <div id="{{package.type.lower()}}-package" class="piece">
-                <br>
-                <h1 class="pkg-typ">{{package.type}}</h1>
-                <hr>
-                <p class="pkg-descrpt">{{package.desc}}</p>
-                <hr>
-                <h4>{{package.price}}</h4>
-            </div>
-        {% endfor %}
+    <div id="pkg_galry_pg" class="card">
+        <h1>Available Packages</h1>
+        <div class="gallery">
+            {% for package in packages %}
+                <div id="{{package.type.lower()}}-package" class="piece">
+                    <section>
+                        <h1 class="pkg-typ"><b>{{package.type}}</b></h1>
+                        <hr>
+                        <p class="pkg-descrpt"><b>{{package.desc}}</b></p>
+                        <hr>
+                        <h1><b>{{package.price}}</b></h1>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock %}
