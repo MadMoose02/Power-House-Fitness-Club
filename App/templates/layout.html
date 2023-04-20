@@ -92,6 +92,7 @@
         {% else %}
             <div class="modal-content" style="margin: 0 auto">
                 <h4>{{user.fname}} {{user.lname}}</h4>
+                <p style="margin: 0 auto;">{{user.email}}</p>
                 <form action="/logout" method="post">
                     <div class="input-field">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Logout</button>

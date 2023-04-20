@@ -60,6 +60,8 @@ li.nav-item:hover > a {
     border-radius: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    /* slide downwards transition */
 }
 
 #user-nav-profile {
