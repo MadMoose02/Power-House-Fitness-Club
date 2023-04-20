@@ -11,6 +11,14 @@ const slideModalUp = [
 const animationDelay = 550;
 const slideTiming = { duration: animationDelay, easing: 'ease-in-out'};
 
+function openUserProfileModal() {
+    let userNavProfile = document.querySelector('div#user-nav-profile');
+    let userNavProfileModal = document.getElementById('user-nav-profile-modal');
+    userNavProfileModal.style.display = 'block';
+    userNavProfileModal.animate(slideModalDown, slideTiming);
+    userNavProfile.firstChild.style.filter = 'brightness(70%)';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     let userNavProfile = document.querySelector('div#user-nav-profile');
     let userNavProfileModal = document.getElementById('user-nav-profile-modal');
@@ -33,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.onclick = function (event) {
     let userNavProfile = document.querySelector('div#user-nav-profile');
     if (event.target.id === 'user-nav-profile-img') return;
+    if (event.target.id === 'register-sign-in-btn') return;
     let userNavProfileModal = document.getElementById('user-nav-profile-modal');
     let navProfileModalBoundingBox = userNavProfileModal.getBoundingClientRect();
 
