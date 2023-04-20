@@ -243,11 +243,15 @@ li.nav-item:hover > a {
   text-align: center;
 }
 
+.reg-container hr {
+  border: 1px solid #5c0101;
+  margin-bottom: 25px;
+}
+
 .reg-container ::placeholder { 
   color: rgb(31, 30, 30);
   opacity: 1; 
 }
-
 
 .reg-card {
   padding-top:10px;
@@ -258,12 +262,12 @@ li.nav-item:hover > a {
   color:black;
 }
 
-
 #emgcy-contact h2,
 #memberinfo h2{
   font-size: 25pt;
   font-family: Calibri, Helvetica, sans-serif;
   color:#5c0101;
+  margin-top:0;
 }
 
 .reg-card label{
@@ -272,34 +276,26 @@ li.nav-item:hover > a {
   color: #000000;
 }
 
+#memberinfo input,
+#memberinfo select,
+#emgcy-contact input,
+#sex option,
+#package option,
+.reg-card textarea{
+  font-size: 18px;
+  background-color: #adababdc;
+  border: 1px solid #000000;
+}
 
-
-/* Full-width input fields */
-input[type=text], 
-input[type=password] {
-  width: 70%;
+input[type=file]{
   padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background-color: #9b1f1f;
+  font-size: 16px;
+  color:#000000;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #f00b0b;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-.reg-container hr {
-  border: 1px solid #5c0101;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
 .registerbtn {
   background-color: #5c0101;
-  color: white;
+  color: #adababdc;
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
@@ -312,26 +308,16 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 1;
 }
 
+#regpg-signin a,
 #emgcy-contact a {
   color: #5c0101;
 }
 
-#regpg-signin a {
-  color: #c20605;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
 .signin {
   padding-top: 25px;
   text-align: center;
-  color:#f1f1f1
+  color:black;
 }
-
-
-
-
-
-
 
 
 /* Footer */
