@@ -32,54 +32,6 @@
         }
     </style>
     <script src="../static/main.js"></script>
-    <script>
-        const slideModalDown = [
-            { transform: 'translateY(-100%)' },
-            { transform: 'translateY(0)' }
-        ];
-
-        const slideModalUp = [
-            { transform: 'translateY(0)' },
-            { transform: 'translateY(-100%)' }
-        ];
-
-        const animationDelay = 550;
-        const slideTiming = { duration: animationDelay, easing: 'ease-in-out'};
-
-        document.addEventListener('DOMContentLoaded', function () {
-            let userNavProfile = document.querySelector('div#user-nav-profile');
-            let userNavProfileModal = document.getElementById('user-nav-profile-modal');
-
-            userNavProfile.onclick = function () {
-                userNavProfileModal.style.display = 'block';
-                userNavProfileModal.animate(slideModalDown, slideTiming);
-                userNavProfile.firstChild.style.filter = 'brightness(70%)';
-                return;
-            }
-        });
-
-        // If the user clicks anywhere outside of the modal (denoted by bounding box), close it
-        window.onclick = function (event) {
-            let userNavProfile = document.querySelector('div#user-nav-profile');
-            if (event.target.id === 'user-nav-profile-img') return;
-            let userNavProfileModal = document.getElementById('user-nav-profile-modal');
-            let navProfileModalBoundingBox = userNavProfileModal.getBoundingClientRect();
-
-            let x = event.clientX, y = event.clientY;
-            console.info(`Conditions to close: \
-            \n${x} < ${navProfileModalBoundingBox.left}: ${x < navProfileModalBoundingBox.left}\
-            \n${y} > ${navProfileModalBoundingBox.bottom}: ${y > navProfileModalBoundingBox.bottom}`);
-            
-            if (x < navProfileModalBoundingBox.left || y > navProfileModalBoundingBox.bottom) {
-                userNavProfileModal.animate(slideModalUp, slideTiming);
-                setTimeout(function () {
-                    userNavProfileModal.style.display = 'none';
-                }, animationDelay);
-                userNavProfile.firstChild.style.filter = 'brightness(100%)';
-                return;
-            }
-        }
-    </script>
 </head>
 <body>
     <nav id="main-nav" class="black" style="height: 74px">
@@ -152,15 +104,21 @@
         {% endif %}
     {% endwith %}
 
-    <div class="container" id="content">
+    <div class="container" id="content"">
         {% block content %}
           {% block page %}{% endblock %}</a>
         {% endblock %}
     </div>
 
+    <div style="margin-left: 93%; padding-bottom: 10px;">
+        <span id="scroll-to-top-arrow">&uparrow;</span>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
   </body>
+  
+
   <footer class="site-footer">
     <div class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px">
         <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center">
