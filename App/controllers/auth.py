@@ -5,16 +5,6 @@ from App.controllers import ( get_user )
 from App.models import User
 
 def jwt_authenticate(username, password) -> str:
-    """
-    Authenticates a user with a JWT.
-
-    :param username: The username or email of the user.
-    :type username: str
-    :param password: The password of the user.
-    :type password: str
-    :return: Returns an access token if the authentication is successful, otherwise returns None.
-    :rtype: str or None
-    """
     user = None
     if '@' in username: user = User.query.filter_by(email=username).first()
     else: user = User.query.filter_by(username=username).first()
@@ -28,14 +18,6 @@ def retrieve_current_user():
     return get_user(current_user.id)
 
 def login(username: str, password: str) -> User:
-    """
-    Logs in a user with the given credentials.
-
-    :param username: The username or email of the user.
-    :param password: The password of the user.
-    :return: An instance of the User class representing the logged in user,
-             or None if the credentials are invalid.
-    """
     user = None
     if '@' in username: user = User.query.filter_by(email=username).first()
     else: user = User.query.filter_by(username=username).first()
