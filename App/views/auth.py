@@ -32,7 +32,6 @@ def login_action():
         print(f"Invalid username or password")
         flash('Invalid username or password')
     else:
-        jwt_authenticate(user)
         login_user(user)
         print(f"Logged in user: [{user.id}: {user.fname} {user.lname}]")
         
