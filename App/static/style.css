@@ -20,6 +20,30 @@ nav {
     z-index: 2;
 }
 
+#nav-mobile {
+    display: none;
+}
+
+#main-nav-menu-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media screen and (max-width: 655px) {
+    #nav-desktop {
+        display: none;
+    }
+    
+    #nav-mobile {
+        display: inline-block;
+    }
+
+    #main-nav-logo {
+        width: 100%;
+    }
+}
+
 #scroll-to-top-arrow {
     color: white; 
     font-size: 25px;
@@ -288,6 +312,25 @@ nav {
 
 
 /*Register Page*/
+
+.img-option {
+    max-width: 55px;
+    max-height: 55px;
+    border-radius: 50%;
+    filter: brightness(100%);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.img-option:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.img-option:active {
+    filter: brightness(60%);
+}
+
 .reg-container {
   font-family: Arial, Helvetica, sans-serif;
   background-color: black;
