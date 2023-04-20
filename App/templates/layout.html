@@ -52,19 +52,25 @@
                         <li class="nav-item"><a href="/facilities">Facilities</a></li>
                         <li class="nav-item"><a href="/classes">Classes</a></li>
                     </ul>
-                    <div id="nav-mobile">
-                        <input type="checkbox" id="nav-menu-checkbox" style="display: none">
-                        <label for="nav-menu-checkbox" id="nav-menu-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                    </div>
                     <ul style="margin-top: 5px">
                         <li class="nav-item">
-                            <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/male.jpg"></div>
+                            <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/default-user.png"></div>
                         </li>
                     </ul>
+                    <div id="nav-mobile" class="hidden" style="margin-right: 20px">
+                        <input class="hidden" type="checkbox" id="nav-menu-checkbox" onclick="toggleNavMobileMenu();">
+                        <label for="nav-menu-checkbox" id="nav-menu-icon">
+                            <span></span><span></span><span></span>
+                        </label>
+                        <div id="side-panel-menu" class="hidden">
+                            <ul id="nav-mobile-menu">
+                                <li class="nav-item"><a href="/about">About Us</a></li>
+                                <li class="nav-item"><a href="/packages">Packages</a></li>
+                                <li class="nav-item"><a href="/facilities">Facilities</a></li>
+                                <li class="nav-item"><a href="/classes">Classes</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,12 +115,13 @@
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <nav class="red white-text" style="padding: 10px; max-width: 100%">
-                <div class="nav-wrapper">
-                    <ul class="flashes">
-                        {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+            <nav class="red white-text" style="display: flex; flex-direction: row; padding: 10px; max-width: 100%">
+                <div class="nav-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; max-height: 30px">
+                    <ul class="flashes" style="max-height: 100%">
+                        {% for message in messages %}<li style="max-height: 100%">{{ message }}</li>{% endfor %}
                     </ul>
                 </div>
+                <span class="cancel" style="position: fixed; right: 0; margin-right: 15px">X</span>
             </nav>
         {% endif %}
     {% endwith %}
