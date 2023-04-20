@@ -1,11 +1,17 @@
-import click, sys
+import click, sys, json
 from flask import Flask
 from flask.cli import with_appcontext, AppGroup
 from datetime import date
 
 from App.database import db, get_migrate
 from App.main import create_app
-from App.controllers import ( create_user, get_all_users_json, get_all_users )
+from App.controllers import ( 
+    create_user, 
+    get_all_users_json, 
+    get_all_users, 
+    create_classes, 
+    create_packages
+)
 
 app = create_app()
 migrate = get_migrate(app)
@@ -15,18 +21,45 @@ def initialise():
     db.drop_all()
     db.create_all()
     print("Database constructed")
+    
+    # Add default users
     create_user(
-        username="rob", 
-        password="robpass", 
-        fname="Rob", 
-        lname="Bob", 
-        dob=date(2000, 1, 12),
-        address="address", 
-        phone="phone", 
-        sex="male", 
-        email="email"
+        'bob', 
+        'bobpass', 
+        'Bob', 
+        'the Builder', 
+        date(1900, 1, 15), 
+        '#10A Nickelodeon Road', 
+        '123545452', 
+        'male',
+        'bob.thebuilder@mail.com'
     )
-    print("Added test user 'rob'")
+    print("Added test user 'bob'")
+    create_user(
+        'david', 
+        'davidpass', 
+        'David', 
+        'Bossman', 
+        date(1998, 9, 30), 
+        '#9 Avenue Street', 
+        '123545452', 
+        'male', 
+        'david.bossman@mail.com'
+    )
+    print("Added test user 'david'")
+    
+    # Add all classes
+    with open("App/models/classes.json") as f:
+        classes = json.load(f)
+        create_classes(classes)
+    print("Added all classes")
+    
+    # Add all packages
+    with open("App/models/packages.json") as f:
+        packages = json.load(f)
+        create_packages(packages)
+    print("Added all packages")
+    
     print("Database intialised successfully")
 
 
@@ -54,23 +87,3 @@ def list_user_command(format):
 
 # Add all user commands
 app.cli.add_command(user_cli)
-
-
-# '''
-# Test Commands
-# Usage : flask test <command> [<args>]
-# '''
-# test = AppGroup('test', help='Testing commands') 
-
-# @test.command("user", help="Run User tests")
-# @click.argument("type", default="all")
-# def user_tests_command(type):
-#     if type == "unit":
-#         sys.exit(pytest.main(["-k", "UserUnitTests"]))
-#     elif type == "int":
-#         sys.exit(pytest.main(["-k", "UserIntegrationTests"]))
-#     else:
-#         sys.exit(pytest.main(["-k", "App"]))
-    
-# # Add all test commands
-# app.cli.add_command(test)
