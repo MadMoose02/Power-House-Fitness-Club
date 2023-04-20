@@ -1,6 +1,11 @@
 body{
   background-color: #0f0f0f;
 }
+h1{
+  color:#c20605;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
 
 li.nav-item:hover > a {
     text-decoration: underline;
@@ -206,6 +211,122 @@ li.nav-item:hover > a {
   left: 0;
   top: 0;
 }
+
+
+/*Register Page*/
+.reg-container {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  border: 3px solid #5c0101;
+  color:black;
+  padding-top:40px;
+  padding-bottom:50px;
+  padding-right: 5em;
+  padding-left:5em;
+  margin-bottom: 5em;
+}
+
+.reg-container * {
+  box-sizing: border-box;
+}
+
+.reg-container h1{
+  color: #5c0101;
+  font-size: 35pt;
+  font-family: Calibri, Helvetica, sans-serif
+}
+
+.reg-container p{
+  text-align: center;
+}
+
+.reg-container ::placeholder { 
+  color: rgb(31, 30, 30);
+  opacity: 1; 
+}
+
+
+.reg-card {
+  padding-top:10px;
+  padding-bottom:50px;
+  padding-right: 5em;
+  padding-left:5em;
+  background-color: #8d8282dc;
+  color:black;
+}
+
+
+#emgcy-contact h2,
+#memberinfo h2{
+  font-size: 25pt;
+  font-family: Calibri, Helvetica, sans-serif;
+  color:#5c0101;
+}
+
+.reg-card label{
+  font-size: 14pt;
+  text-align: left;
+  color: #000000;
+}
+
+
+
+/* Full-width input fields */
+input[type=text], 
+input[type=password] {
+  width: 70%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-color: #9b1f1f;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #f00b0b;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+.reg-container hr {
+  border: 1px solid #5c0101;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #5c0101;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+#emgcy-contact a {
+  color: #5c0101;
+}
+
+#regpg-signin a {
+  color: #c20605;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  padding-top: 25px;
+  text-align: center;
+  color:#f1f1f1
+}
+
+
+
+
 
 
 
