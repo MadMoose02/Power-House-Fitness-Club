@@ -56,10 +56,17 @@ nav {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #000000b1;
+    color:#adababdc;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 100%;
+}
+
+#user-nav-profile-modal button,
+#user-nav-profile-modal a{
+  background-color: #000000b1;
+  color:#adababdc;
 }
 
 #user-nav-profile-modal {
