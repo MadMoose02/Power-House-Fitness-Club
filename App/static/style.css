@@ -56,17 +56,26 @@ nav {
 }
 
 .modal-content {
-    background-color: #000000b1;
-    color:#adababdc;
+    background-color:rgb(68, 67, 67);
+    color:rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 100%;
 }
 
+#user-nav-profile-modal input{
+  font-family: 'Times New Roman', Times, serif;
+  background-color: black ;
+  color:rgb(163, 160, 160);
+
+}
+
 #user-nav-profile-modal button,
 #user-nav-profile-modal a{
-  background-color: #000000b1;
-  color:#adababdc;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: black;
+  color:rgb(163, 160, 160);
 }
 
 #user-nav-profile-modal {
@@ -124,6 +133,7 @@ nav {
 }
 
 .card {
+  border: 3px solid #5c0101;
   color:#adabab;
   height: auto;
 }
@@ -154,7 +164,7 @@ nav {
 }
 
 .datacard, .mission-slogan, .location {
-  border: 3px solid #c20605;
+  border: 3px solid #5c0101;
   margin: auto;
   width:90%;
   padding-right: 50px;
@@ -177,6 +187,7 @@ nav {
   color:#c20605;
   padding-top: 20px;
   text-align: center;
+  margin-top: 0;
 }
 
 #about-gymtext h2{
@@ -271,6 +282,7 @@ nav {
 }
 
 .reg-card {
+  border: 3px solid #5c0101;
   padding-top:10px;
   padding-bottom:50px;
   padding-right: 5em;
