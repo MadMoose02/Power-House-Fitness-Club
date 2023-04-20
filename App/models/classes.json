@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Beginner",
+        "instructor": "Jessie Elliott",
+        "description": "An introductory course covering the basics."
+    },
+    {
+        "name": "Comprehensive",
+        "instructor": "Cornelia Pope",
+        "description": "A comprehensive course covering various topics."
+    },
+    {
+        "name": "Advanced",
+        "instructor": "Ophelia Romero",
+        "description": "An advanced course covering specialized topics."
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "type": "Student",
+        "price": "$200.00",
+        "description": "A discounted package for students."
+    },
+    {
+        "type": "Standard",
+        "price": "$300.00",
+        "description": "The standard package that include basic facilities and acess to most classes."
+    },
+    {
+        "type": "Premium",
+        "price": "$450.00",
+        "description": "Inclusive of standard package as well as access to massage rooms, sauna, advanced classes and more."
+    },
+    {
+        "type": "Group",
+        "price": "Pricing depends on group size", 
+        "description": "Standard package for a group"
+    }
+]
