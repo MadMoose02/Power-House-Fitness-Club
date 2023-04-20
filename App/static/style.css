@@ -486,4 +486,204 @@ input[type=file]{
 }
 
 /*  testing*/
+/*     testing */
+#gal ul {
+  list-style: none;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#fcard {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+
+#card-image {
+  width: 40%;
+}
+
+#card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#card-text {
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#card-text p {
+  margin: 0 0 5px;
+}
+
+#card-text h4 {
+  margin: 0;
+}
+#fcard:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+ #fcard img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+/*     end test */
+/*     first set test */
+.gal {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.piece {
+  width: 25%;
+  margin: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.piece:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.des {
+  padding: 20px;
+  background-color: white;
+}
+
+.pck {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#jpg {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+    .gal ul {
+  list-style: none;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fcard {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+
+.card-img {
+  width: 40%;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-text {
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text p {
+  margin: 0 0 5px;
+}
+
+.card-text h4 {
+  margin: 0;
+}
+     .fcard:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+    .fcard img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+/*     added card styles */
+
+
+/*     first set test */
+#gal {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#piece {
+  width: 25%;
+  margin: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#piece:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+#des {
+  padding: 20px;
+  background-color: white;
+}
+
+#pck {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#jpg {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
 
