@@ -3,20 +3,24 @@ from App.database import db
 
 def create_user(username, password, fname, lname, dob, address, phone, sex, email) -> User:
     """
-    Create a new user and add it to the database.
+    Creates a new user object with given params and adds it to the database.
 
-    :param username: A string representing the username of the new user.
-    :param password: A string representing the password of the new user.
-    :param fname: A string representing the first name of the new user.
-    :param lname: A string representing the last name of the new user.
-    :param dob: A string representing the date of birth of the new user.
-    :param address: A string representing the address of the new user.
-    :param phone: A string representing the phone number of the new user.
-    :param sex: A string representing the sex of the new user.
-    :param email: A string representing the email address of the new user.
-    :return: A User object representing the newly created user.
+    Args:
+        username (str): The username of the user.
+        password (str): The password of the user.
+        fname (str): The first name of the user.
+        lname (str): The last name of the user.
+        dob (str): The date of birth of the user in the format of 'YYYY-MM-DD'.
+        address (str): The address of the user.
+        phone (str): The phone number of the user.
+        sex (str): The sex of the user.
+        email (str): The email of the user.
+
+    Returns:
+        User: The newly created User object.
     """
-    newuser = User(
+    
+    new_user = User(
         username=username, 
         password=password, 
         fname=fname, 
@@ -27,9 +31,9 @@ def create_user(username, password, fname, lname, dob, address, phone, sex, emai
         sex=sex, 
         email=email
     )
-    db.session.add(newuser)
+    db.session.add(new_user)
     db.session.commit()
-    return newuser
+    return new_user
 
 
 def get_user_by_username(username) -> User:
