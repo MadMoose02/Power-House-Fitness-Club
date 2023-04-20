@@ -24,6 +24,39 @@ nav {
     display: none;
 }
 
+#nav-menu-icon span {
+    display: block;
+    margin: 4px;
+    height: 3px;
+    width:30px;
+    background-color: #c20605;
+    border-radius: 2px;
+    cursor: pointer; 
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+
+#nav-menu-checkbox:checked ~ #nav-menu-icon span:nth-child(1) {
+    -webkit-transform: translateY(4px) rotate(135deg);
+    -moz-transform: translateY(4px) rotate(135deg);
+    -o-transform: translateY(4px) rotate(135deg);
+    transform: translateY(4px) rotate(135deg);
+}
+
+#nav-menu-checkbox:checked ~ #nav-menu-icon span:nth-child(2) { 
+    opacity: 0;
+}
+
+#nav-menu-checkbox:checked ~ #nav-menu-icon span:nth-child(3) {
+    -webkit-transform: translateY(-10px) rotate(-135deg);
+    -moz-transform: translateY(-10px) rotate(-135deg);
+    -o-transform: translateY(-10px) rotate(-135deg);
+    transform: translateY(-10px) rotate(-135deg);
+}
+
 #main-nav-menu-bar {
     display: flex;
     flex-direction: row;
@@ -36,7 +69,10 @@ nav {
     }
     
     #nav-mobile {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #main-nav-logo {
@@ -309,6 +345,11 @@ nav {
 
 
 /*Register Page*/
+
+.cancel::after {
+    display: inline-block;
+    content: \00d7;
+}
 
 .img-option {
     max-width: 55px;
