@@ -1,21 +1,21 @@
 {% extends "layout.html" %}
-{% block title %}Our Facilities - Powerhouse Fitness Club{% endblock %}
-{% block page %}Our Facilities{% endblock %}
+{% block title %}Facilities - Powerhouse Fitness Club{% endblock %}
+{% block page %}Facilities{% endblock %}
 
 {{ super() }}
 
 {% block content %}
 <section>
     <h1>Our Facilities</h1>
-    <div class="gal">
+    <div class="gallery">
         <div id="facilities-content">
             <ul>
                 {% for facility in facilities %}
-                    <li class="fcard">
-                        <div class="card-img">
+                    <li id="fcard">
+                        <div id="card-img">
                             <img src="../static/images/about-gym1.png" alt="Italian Trulli">
                         </div>
-                        <div class="card-text">
+                        <div id="fcard-text">
                             <h4>{{facility.name}}</h4>
                             <p>{{facility.desc}}</p>
                         </div>
