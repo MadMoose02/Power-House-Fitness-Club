@@ -537,7 +537,7 @@ input[type=file]{
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
- #fcard img {
+#fcard img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
@@ -553,7 +553,7 @@ input[type=file]{
 }
 
 .piece {
-  width: 25%;
+  max-width: 350px;
   margin: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -561,6 +561,7 @@ input[type=file]{
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
+  background-color: white;
 }
 
 .piece:hover {
@@ -586,7 +587,7 @@ input[type=file]{
     border-radius: 20px 20px 0 0;
 }
 
-    .gal ul {
+.gal ul {
   list-style: none;
   display: block;
   flex-wrap: wrap;

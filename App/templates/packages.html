@@ -1,37 +1,23 @@
 {% extends "layout.html" %}
 {% block title %}Packages - Powerhouse Fitness Club{% endblock %}
-{% block page %}Packages Availble{% endblock %}
 
 {{ super() }}
 
 {% block content %}
 <section>
     <h1>Availble Packages</h1>
-  <!--     Loop would begin here for    -->
-    <div id="gal">
-      <div id="piece">
-        <h1 id=pck>Pkage Name</h1>
-        <p id="des">descript.</p>
-        <h4>$1000.00</h4>
-      </div>
-  <!--loop would end here just have the other foru visual rep-->
-      <div id="piece">
-        <h1 id=pck>Pkage Name</h1>
-        <p id="des">descript.</p>
-        <h4>$1000.00</h4>
-      </div>
-  
-      <div id="piece">
-        <h1 id=pck>Pkage Name</h1>
-        <p id="des">descript. </p>
-        <h4>$1000.00</h4>
-      </div>
-      
-      <div id="piece">
-        <h1 id=pck>Pkage Name</h1>
-        <p id="des">descript. </p>
-        <h4>$1000.00</h4> 
-      </div>
+
+    <div class="gal">
+        {% for package in packages %}
+            <div id="{{package.type.lower()}}-package" class="piece">
+                <br>
+                <h1 class="pck">{{package.type}}</h1>
+                <hr>
+                <p class="des">{{package.desc}}</p>
+                <hr>
+                <h4>{{package.price}}</h4>
+            </div>
+        {% endfor %}
     </div>
-  </section>
+</section>
 {% endblock %}
