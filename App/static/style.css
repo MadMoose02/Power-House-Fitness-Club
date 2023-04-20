@@ -261,7 +261,7 @@ nav {
 .card div{
   display:flex;
   justify-content: center;
-  
+  min-width: 20vw;
   min-height: 20vh;
   background-color:  #8d8282dc;
   margin-bottom: 50px;
@@ -565,7 +565,7 @@ input[type=file]{
 /*Packages & Classes*/
 .gallery {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-left: 3em;
@@ -576,18 +576,21 @@ input[type=file]{
 /*cards itself*/
 .gallery div {
   border: 3px solid #5c0101;
-  height: 22em;
-  width: 15em;
+  min-width: 240px;
+  max-width: 260px;
   display:inline-block;
   margin-bottom: 1em;
   color:white;
 }
 
-.gallery section{
+.gallery section {
   background-color: #8d8282dc;
+  width: fit-content;
+  max-width: 200px;
+
 }
 
-.gallery h1{
+.gallery h1 {
   font-size: 24pt;
   text-align: center;
   padding:14px;
@@ -595,13 +598,8 @@ input[type=file]{
   color: #5c0101;
 }
 
-#pkg_galry_pg{
+#pkg_galry_pg {
   background-color: #000000;
-}
-
-/*outer card after main cards*/
-#pkg_galry_pg div{
-  background-color: #000000dc;
 }
 
 .piece hr{
@@ -609,14 +607,18 @@ input[type=file]{
 }
 
 .piece {
-  max-width: 350px;
+  min-width: 220px;
   margin: 20px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 20px;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+  background-color: white;
 }
 
 .piece:hover,
