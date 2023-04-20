@@ -181,14 +181,6 @@ nav {
 }
 
 /* Cards */
-#card {
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  box-sizing: border;
-  font-family: Calibri, Helvetica, sans-serif;
-  background-color: #000000;
-}
-
 .card {
   border: 3px solid #5c0101;
   color:#000000;
@@ -204,44 +196,6 @@ nav {
   margin-bottom: 50px;
 }
 
-.card img{
-  max-width: 350px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-
-#about-imgs1 img{
-  margin-top: 8em;
-}
-
-#about-imgs2 img{
-  margin-top: 5em;
-}
-
-.datacard, 
-.mission-slogan, 
-.location {
-  border: 3px solid #5c0101;
-  margin: auto;
-  width:90%;
-  padding-right: 50px;
-  padding-left: 30px;
-}
-
-.datacard{
-  padding-bottom: 10px;
-  padding-top: 20px;
-}
-
-
-.datacard p{
-  border-right:20px;
-  text-align: justified;
-  padding-bottom:3em;
-}
-
 .card h1{
   background-color: #000000;
   color:#c20605;
@@ -251,58 +205,101 @@ nav {
   font-size: 40pt;
 }
 
+.card img{
+  max-width: 350px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.datacard{
+  border: 3px solid #5c0101;
+  margin-top:0;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  width:90%;
+  padding-right: 50px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+#card {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  box-sizing: border;
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: #000000;
+}
+
+#about-imgs1 img{
+  margin-top: 7em;
+}
+
+#about-imgs2 img{
+  margin-top: 5em;
+}
+
+#about-gymtext p{
+  border-right:20px;
+  text-align: justify;
+  padding-bottom:3em;
+}
+
 #about-gymtext h2{
   color:#5c0101;
   text-align: left;
   font-size: 30pt;
 }
 
-
-.mission-slogan h2{
+#mission h2,
+#slogan h2{
   color:#5c0101;
   text-align: center;
   font-size: 30pt;
 }
 
-.mission-slogan h3{
+#mission h3,
+#slogan h3{
   color:#000000;
   font-size: 30pt;
   text-align: center;
 }
 
-.mission-slogan p{
+#mission p{
   padding-bottom: 20px;
   margin-left: 20px;
   margin-right: 5px;
-  text-align: justified;
+  text-align: justify;
 }
 
-.location{
+#location{
   height:45em;
 }
 
-.location h2{
+#location h2{
   color:#5c0101;
   text-align: center;
   font-size: 30pt;
 }
 
-.location h3{
+#location h3{
   color:#000000;
   text-align: center;
   font-size: 15pt;
+}
+
+#map{
+  padding-bottom: 50%;
+  position: relative;
 }
 
 #map div{
   border: 3px solid #000000;
 }
 
-.map{
-  padding-bottom: 50%;
-  position: relative;
-}
-
-.map iframe{
+#map iframe{
   height: 25em;
   width: 35em;
   justify-content: center;
