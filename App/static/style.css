@@ -485,28 +485,12 @@ input[type=file]{
   margin: 0 5px;
 }
 
-/*  testing*/
-/*     testing */
 #gal ul {
   list-style: none;
   display: block;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-#fcard {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  padding: 20px;
-}
-
 
 #card-image {
   width: 40%;
@@ -526,24 +510,12 @@ input[type=file]{
   justify-content: center;
 }
 
-#card-text p {
-  margin: 0 0 5px;
-}
-
-#card-text h4 {
-  margin: 0;
-}
-#fcard:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
 #fcard img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
 }
-/*     end test */
-/*     first set test */
+
 .gal {
   display: flex;
   flex-wrap: nowrap;
@@ -624,6 +596,7 @@ input[type=file]{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: white;
 }
 
 .card-text p {
@@ -633,19 +606,19 @@ input[type=file]{
 .card-text h4 {
   margin: 0;
 }
-     .fcard:hover{
+
+.fcard:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
-    .fcard img {
+
+.fcard img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
 }
-/*     added card styles */
 
 
-/*     first set test */
 #gal {
   display: flex;
   flex-wrap: nowrap;
@@ -680,11 +653,3 @@ input[type=file]{
   margin-top: 0;
   margin-bottom: 10px;
 }
-
-#jpg {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-}
-
