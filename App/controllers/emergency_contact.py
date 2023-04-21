@@ -16,8 +16,16 @@ def create_emergency_contact(fname, lname, relation, contact) -> EmergencyContac
 def create_emergency_contacts(emergency_contacts) -> None:
     for contact in emergency_contacts:
         create_emergency_contact(
-            contact['fname'], 
+            contact['fname'],
             contact['lname'], 
             contact['relation'], 
             contact['contact']
         )
+
+
+def get_emergency_contact(id) -> EmergencyContact:
+    return EmergencyContact.query.get(id)
+
+
+def get_all_emergency_contacts() -> list[EmergencyContact]:
+    return EmergencyContact.query.all()
