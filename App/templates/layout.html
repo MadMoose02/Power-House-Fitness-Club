@@ -127,7 +127,7 @@
                         {% for message in messages %}<li style="max-height: 100%">{{ message }}</li>{% endfor %}
                     </ul>
                 </div>
-                <button id="alert-cancel-btn" class="cancel-button"><p>&times;</p></span>
+                <button id="alert-cancel-btn" class="cancel-button" onclick="closeAlertMessages();"><p>&times;</p></span>
             </nav>
         {% endif %}
     {% endwith %}

@@ -85,3 +85,9 @@ function toggleNavMobileMenu() {
         sidePanelMenu.animate(slideSidePanelIntoView, slideTiming);
     }
 }
+
+function closeAlertMessages() {
+    let alertNav = document.querySelector('#alert-messages-nav');
+    alertNav.style.display = 'none';
+
+}
