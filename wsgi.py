@@ -1,4 +1,5 @@
 import click, sys, json
+from base64 import b64encode
 from flask import Flask
 from flask.cli import with_appcontext, AppGroup
 from datetime import date
@@ -44,16 +45,16 @@ def initialise():
     
     # Add emergency contact for test users
     create_emergency_contact(
-        fname="Roy",
-        lname="Brady",
-        relation="Brother",
-        contact="19532180062"
-    )
-    create_emergency_contact(
         fname="Wendy",
         lname="the Builder",
         relation="Spouse",
         contact="5192352346"
+    )
+    create_emergency_contact(
+        fname="Roy",
+        lname="Layton",
+        relation="Brother",
+        contact="19532180062"
     )
     
     # Add default users
@@ -67,9 +68,9 @@ def initialise():
         phone='123545452', 
         sex='male',
         email='bob.thebuilder@mail.com',
-        image='../static/images/male.jpg',
+        image=b64encode(open("App/static/images/male.jpg", "rb").read()),
         package_id=1,
-        emergency_contact_id=2
+        emergency_contact_id=1
     )
     print("Added test user 'bob'")
     create_user(
@@ -82,9 +83,9 @@ def initialise():
         phone='123545452', 
         sex='female', 
         email='annette.layton@mail.com',
-        image='../static/images/female.jpg',
+        image=b64encode(open("App/static/images/female.jpg", "rb").read()),
         package_id=3,
-        emergency_contact_id=3
+        emergency_contact_id=2
     )
     print("Added test user 'ann'")
     print("Database intialised successfully")

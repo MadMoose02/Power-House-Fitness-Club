@@ -1,6 +1,6 @@
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import UserMixin
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String, Date, LargeBinary
 from sqlalchemy.orm import relationship
 from App.database import db
 
@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
     phone = Column(String(15), name="phone", nullable=False, unique=False)
     sex = Column(String(10), name="gender", nullable=False, unique=False)
     email = Column(String(50), name="email", nullable=False, unique=False)
-    image = Column(String(200), name="image", nullable=False, unique=False)
+    image = Column(LargeBinary, name="image", nullable=False, unique=False)
     package_id = Column(Integer, db.ForeignKey('packages.id'), nullable=False)
     emergency_contact_id = Column(Integer, db.ForeignKey('emergency_contacts.id'), nullable=False)
 
@@ -48,7 +48,6 @@ class User(db.Model, UserMixin):
             'phone': self.phone,
             'sex': self.sex,
             'email': self.email,
-            'image' : self.image,
             'package_id': self.package_id,
             'emergency_contact_id': self.emergency_contact_id
         }
