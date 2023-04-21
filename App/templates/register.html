@@ -9,7 +9,7 @@
         <div class="reg-container">
             <h1><b>JOIN THE FAMILY TODAY!</b></h1>
             <section>
-                <form id="reg-form" action="/register">
+                <form id="reg-form" action="/register" method="post">
                     <div class="reg-card">
                         <h1><b>MEMBER REGISTRATION FORM</b></h1>
                         <p><b>Please fill out this form to create an account.</b></p>
@@ -27,17 +27,17 @@
                             <br>
                             <input type="date" name="dob">
                             <br><br>
-                            <label for="sex-options"><b>Sex</b></label>
-                            <select name="sex-options" id="sex">
+                            <label for="sex"><b>Sex</b></label>
+                            <select name="sex" id="sex">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="other">Other</option>
                             </select>
                             <br><br>
-                            <label for="package-options"><b>Package</b></label><br>
-                            <select name="package-options" id="package">
+                            <label for="package-id"><b>Package</b></label><br>
+                            <select name="package-id" id="package">
                                 {% for package in packages %}
-                                    <option value="{{package.type.lower()}}">{{package.type}}</option>
+                                    <option id="{{package.type.lower()}}-package" value="{{package.id}}">{{package.type}}</option>
                                 {% endfor %}
                             </select>
                             <br><br>
@@ -51,14 +51,14 @@
                             <input type="text" placeholder="Enter Email" name="email" id="email" required>
                             <br><br>
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                            <input type="password" placeholder="Enter Password" name="password" id="password" required>
                             <br><br>
                             <label for="psw-repeat"><b>Repeat Password</b></label>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                            <input type="password" placeholder="Repeat Password" name="password-repeat" id="password-repeat" required>
                             <br><br>
-                            <label for="img-upload"><b>Custom Profile Image</b></label><br>
+                            <label for="image"><b>Custom Profile Image</b></label><br>
                             <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                                <input type="file" name="fileToUpload" id="img-upload" style="width:100%;">
+                                <input type="file" name="image" id="img-upload" style="width:100%;">
                             </div>
                             <br><br>
                             <hr>

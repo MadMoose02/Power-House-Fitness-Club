@@ -687,6 +687,7 @@ input[type=file]{
 #pkg-descrpt {
     text-align: center;
     height: fit-content;
+    min-height: 160px;
     font-size: 12pt;
     display: fit-content;
     padding: 1em;
