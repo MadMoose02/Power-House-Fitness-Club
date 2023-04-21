@@ -1,32 +1,40 @@
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import UserMixin
 from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy.orm import relationship
 from App.database import db
 
 class User(db.Model, UserMixin):
-    id       = Column(Integer, name="user_id", primary_key=True, autoincrement=True)
+    __tablename__ = 'users'
+    package = relationship('Package', backref='user')
+    emrg_contact = relationship('EmergencyContact', backref='user')
+    id = Column(Integer, name="id", primary_key=True, autoincrement=True)
     username = Column(String(20), name="username", nullable=False, unique=True)
     password = Column(String(120), name="password_hash", nullable=False, unique=False)
-    fname    = Column(String(50), name="first_name", nullable=False, unique=False)
-    lname    = Column(String(50), name="last_name", nullable=False, unique=False)
-    dob      = Column(Date, name="dob", nullable=False, unique=False)
-    address  = Column(String(150), name="address", nullable=False, unique=False)
-    phone    = Column(String(15), name="phone", nullable=False, unique=False)
-    sex      = Column(String(10), name="gender", nullable=False, unique=False)
-    email    = Column(String(50), name="email", nullable=False, unique=False)
-    package  = None
-    image    = None
-    emrg_contacts = None
+    fname = Column(String(50), name="first_name", nullable=False, unique=False)
+    lname = Column(String(50), name="last_name", nullable=False, unique=False)
+    dob = Column(Date, name="dob", nullable=False, unique=False)
+    address = Column(String(150), name="address", nullable=False, unique=False)
+    phone = Column(String(15), name="phone", nullable=False, unique=False)
+    sex = Column(String(10), name="gender", nullable=False, unique=False)
+    email = Column(String(50), name="email", nullable=False, unique=False)
+    image = Column(String(200), name="image", nullable=False, unique=False)
+    package_id = Column(Integer, db.ForeignKey('packages.id'), nullable=False)
+    emergency_contact_id = Column(Integer, db.ForeignKey('emergency_contacts.id'), nullable=False)
 
-    def __init__(self, username, password, fname, lname, dob, address, phone, sex, email):
+    def __init__(self, username, password, fname, lname, dob, address, phone, 
+                 sex, email, image, package_id, emergency_contact_id):
         self.username = username
-        self.fname    = fname
-        self.lname    = lname
-        self.dob      = dob
-        self.address  = address
-        self.phone    = phone
-        self.sex      = sex
-        self.email    = email
+        self.fname = fname
+        self.lname = lname
+        self.dob = dob
+        self.address = address
+        self.phone = phone
+        self.sex = sex
+        self.email = email
+        self.image = image
+        self.package_id = package_id
+        self.emergency_contact_id = emergency_contact_id
         self.set_password(password)
 
     def get_json(self) -> dict:
@@ -35,12 +43,14 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'fname': self.fname,
             'lname': self.lname,
-            'sex': self.sex,
             'dob': self.dob,
-            'phone': self.phone,
-            'email': self.email,
             'address': self.address,
-            'package': self.package
+            'phone': self.phone,
+            'sex': self.sex,
+            'email': self.email,
+            'image' : self.image,
+            'package_id': self.package_id,
+            'emergency_contact_id': self.emergency_contact_id
         }
 
     def set_password(self, password: str) -> None:
