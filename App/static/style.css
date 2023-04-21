@@ -316,12 +316,12 @@ button:active { filter: brightness(60%); }
     background-color: #000000;
 }
 
-#about-imgs1 img{
-    margin-top: 7em;
+#about-imgs img{
+     margin-bottom: 24px;
 }
 
-#about-imgs2 img{
-     margin-top: 5em;
+#about-gym {
+    padding-top: 3em;
 }
 
 #facil-text p,
@@ -334,8 +334,10 @@ button:active { filter: brightness(60%); }
 #about-gymtext p{
     margin-left: 2em;
     margin-bottom: 3em;
-    padding: 3em;
+    padding: 2em;
 }
+
+
 
 #about-gymtext h2 {
     text-align: center;
@@ -343,7 +345,7 @@ button:active { filter: brightness(60%); }
     font-size: 30pt;
     margin-left: 30px;
     background-color: #494848c9;
-
+    padding: 10px;
     margin-top: 0;
     margin-bottom: 10px;
     border: 3px solid #000000;
@@ -353,6 +355,21 @@ button:active { filter: brightness(60%); }
     color:#5c0101;
     text-align: left;
     font-size: 30pt;
+}
+
+#location,
+#mission {
+    padding: 3em;
+    padding-bottom: 2em;
+}
+
+#location h2,
+#mission h2 {
+    background-color: #494848c9;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 3px solid #000000;
 }
 
 #mission h2,
@@ -369,10 +386,9 @@ button:active { filter: brightness(60%); }
     text-align: center;
 }
 
+#location h3,
 #mission p{
-    padding-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 5px;
+    padding: 1em;
     text-align: justify;
 }
 
@@ -408,7 +424,6 @@ button:active { filter: brightness(60%); }
     left: 0;
     top: 0;
 }
-
 
 /*Register Page*/
 
@@ -748,6 +763,8 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
+#location h3,
+#mission p,
 #about-gymtext p,
 #facil-text p,
 #class-descrpt p,
