@@ -319,8 +319,25 @@ nav {
     padding-bottom:3em;
 }
 
-#facil-text h2,
-#about-gymtext h2{
+#about-gymtext p{
+    margin-left: 2em;
+    margin-bottom: 3em;
+    padding: 3em;
+}
+
+#about-gymtext h2 {
+    text-align: center;
+    color:#5c0101;
+    font-size: 30pt;
+    margin-left: 30px;
+    background-color: #494848c9;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 3px solid #000000;
+}
+
+#facil-text h2{
     color:#5c0101;
     text-align: left;
     font-size: 30pt;
@@ -705,6 +722,7 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
+#about-gymtext p,
 #facil-text p,
 #class-descrpt p,
 #pkg-descrpt {
