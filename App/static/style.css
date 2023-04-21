@@ -693,7 +693,7 @@ input[type=file]{
     color:#000000;
 }
 
-
+#facil-text h2,
 #class-descrpt h2{
     color: #5c0101;
     padding:14px;
@@ -704,6 +704,7 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
+#facil-text p,
 #class-descrpt p,
 #pkg-descrpt {
   border: 3px solid #000000;
@@ -736,8 +737,8 @@ input[type=file]{
 #facil-img img{
     display: block;
     margin-left:3em;
-    margin-right: auto;
-    width: 87%;
+    width: 100%;
+    height: 75%;
     object-fit: cover;
     background-color: #8d8282dc;
     margin-top: 3em;
@@ -745,14 +746,28 @@ input[type=file]{
 }
 
 #facil-text{
-    width: 60em;
-    margin-left: 3em;
+    width: 100%;
+    margin-left: 5em;
     margin-right: 2em;
     margin-top: 0.5em;
     padding:0;
 }
 
+#facil-text h2{
+    margin-top: 1.5em;
+    text-align: center;
 
+}
+
+#facil-text p{
+    margin-top: 1em;
+    text-align: center;
+    color: #000000;
+    padding:14px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    min-height: 8em;
+}
 
 /*Incase this might be needed
 .fcard {
