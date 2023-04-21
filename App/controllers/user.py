@@ -1,25 +1,8 @@
 from App.models import User
 from App.database import db
 
-def create_user(username, password, fname, lname, dob, address, phone, sex, email) -> User:
-    """
-    Creates a new user object with given params and adds it to the database.
-
-    Args:
-        username (str): The username of the user.
-        password (str): The password of the user.
-        fname (str): The first name of the user.
-        lname (str): The last name of the user.
-        dob (str): The date of birth of the user in the format of 'YYYY-MM-DD'.
-        address (str): The address of the user.
-        phone (str): The phone number of the user.
-        sex (str): The sex of the user.
-        email (str): The email of the user.
-
-    Returns:
-        User: The newly created User object.
-    """
-    
+def create_user(username, password, fname, lname, dob, address, phone, 
+                 sex, email, image, package_id, emergency_contact_id) -> User:
     new_user = User(
         username=username, 
         password=password, 
@@ -54,11 +37,10 @@ def get_all_users_json() -> list[dict]:
     users = [user.get_json() for user in users]
     return users
 
-def update_user(id, username) -> bool:
-    user = get_user(id)
+def update_user_data(user_id, data: User) -> bool:
+    user = get_user(user_id)
     if not user: return False
-    user.username = username
+    user = data
     db.session.add(user)
     db.session.commit()
     return True
-    
