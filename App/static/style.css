@@ -28,6 +28,14 @@ button:active { filter: brightness(60%); }
     display: none;
 }
 
+#alert-messages-nav {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    line-height: 0;
+}
+
 #nav-menu-icon span {
     display: block;
     margin: 4px;
@@ -419,12 +427,19 @@ button:active { filter: brightness(60%); }
 
 /*Register Page*/
 
-.cancel:after {
-    display: inline-block;
-    content: \00d7;
-    background: black;
-    font-family: sans-serif;
-    width: 40px;
+.cancel-button {
+    margin-right: 15px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 2em;
+    height: 40px;
+    width: 43px;
+}
+
+.cancel-button p {
+    padding: 0;
+    margin: 0;
 }
 
 .img-option {
@@ -466,8 +481,16 @@ button:active { filter: brightness(60%); }
     font-family: Calibri, Helvetica, sans-serif;
 }
 
-#reg-form h1{
+#reg-form h1 {
+    display: flex;
+    justify-content: center;
     color: #5c0101;
+}
+
+#reg-form h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reg-container h2 {
