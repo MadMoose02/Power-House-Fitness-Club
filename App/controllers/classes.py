@@ -2,18 +2,6 @@ from App.models import Class
 from App.database import db
 
 def create_class(name, instructor, description) -> Class:
-    """
-    Create a new Class object with the given name and description, and adds it to the database.
-    
-    Args:
-        name (str): The name of the class.
-        instructor (str): The instructor of the class.
-        description (str): A description of the class.
-        
-    Returns:
-        Class: The newly created Class object.
-    """
-    
     new_class = Class(
         name=name,
         instructor=instructor,
@@ -30,8 +18,4 @@ def create_classes(classes: dict) -> None:
 
 
 def get_classes() -> list[Class]:
-    """
-    Returns:
-        List of Class objects.
-    """
     return Class.query.all()

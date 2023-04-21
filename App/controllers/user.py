@@ -29,7 +29,10 @@ def create_user(username, password, fname, lname, dob, address, phone, sex, emai
         address=address, 
         phone=phone, 
         sex=sex, 
-        email=email
+        email=email,
+        image=image,
+        package_id=package_id,
+        emergency_contact_id=emergency_contact_id
     )
     db.session.add(new_user)
     db.session.commit()
