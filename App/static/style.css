@@ -512,6 +512,27 @@ input[type=file]{
   color:black;
 }
 
+#regpg-signin p{
+  margin-bottom: 0;
+  padding: 2px; 
+  padding-bottom: 7px;
+}
+
+#profile-btns button,
+#register-sign-in-btn {
+  background-color: #5c0101;
+  color: #adababdc;
+  margin-bottom: 1em;
+  border: 0; 
+  font: bold 10pt Arial, Helvetica, sans-serif;
+}
+
+#profile-btns button{
+  font-size: 16px;
+  float: right;
+  margin-left: 7px;
+}
+
 
 /* Footer */
 
