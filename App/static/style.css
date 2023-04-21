@@ -623,10 +623,13 @@ input[type=file]{
 }
 
 #packages-content,
-#facilities-content,
 #classes-content {
     background-color: #000000;
     min-height: 70vh;
+}
+
+#facilities-content {
+    background-color: #000000;
 }
 
 #packages-content div,
@@ -674,7 +677,6 @@ input[type=file]{
     margin-left: 1em;
     margin-right: auto;
     width: 87%;
-    margin-right: 12em;
     object-fit: cover;
     background-color: #8d8282dc;
     margin-top: 25px;
@@ -731,6 +733,27 @@ input[type=file]{
 
 
 /*facilities*/
+#facil-img img{
+    display: block;
+    margin-left:3em;
+    margin-right: auto;
+    width: 87%;
+    object-fit: cover;
+    background-color: #8d8282dc;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+#facil-text{
+    width: 60em;
+    margin-left: 3em;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    padding:0;
+}
+
+
+
 /*Incase this might be needed
 .fcard {
     width: 70vw;
@@ -794,12 +817,3 @@ input[type=file]{
     margin: 0 0 5px;
 }
 */
-
-
-#facil-img img{
-  margin-top: 3em;
-  margin-bottom: 2em;
-}
-
-
-
