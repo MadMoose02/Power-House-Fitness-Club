@@ -20,6 +20,10 @@ nav {
     z-index: 2;
 }
 
+button { filter: brightness(100%); }
+button:hover { filter: brightness(80%); }
+button:active { filter: brightness(60%); }
+
 .hidden {
     display: none;
 }
@@ -424,7 +428,7 @@ nav {
     box-sizing: border-box;
 }
 
-.reg-container h1{
+.reg-container h1 {
     color: #9b0404;
     font-size: 30pt;
     font-family: Calibri, Helvetica, sans-serif;
@@ -434,14 +438,14 @@ nav {
     color: #5c0101;
 }
 
-.reg-container h2{
-    font-size: 20pt;
+.reg-container h2 {
+    font-size: 18pt;
     font-family: Calibri, Helvetica, sans-serif;
     color:#5c0101;
     margin-top:0;
 }
 
-.reg-container p{
+.reg-container p {
     text-align: center;
 }
 
@@ -509,30 +513,29 @@ input[type=file]{
 
 
 #regpg-signin {
-    padding-top: 25px;
+    padding: 5px;
     text-align: center;
     color:black;
 }
 
-#regpg-signin p{
-  margin-bottom: 0;
-  padding: 2px; 
-  padding-bottom: 7px;
+#regpg-signin p {
+    margin-bottom: 0;
+    padding: 2px; 
 }
 
 #profile-btns button,
 #register-sign-in-btn {
-  background-color: #5c0101;
-  color: #adababdc;
-  margin-bottom: 1em;
-  border: 0; 
-  font: bold 10pt Arial, Helvetica, sans-serif;
+    background-color: #5c0101;
+    color: #adababdc;
+    margin-bottom: 1em;
+    border: 0; 
+    padding: 10px;
 }
 
 #profile-btns button{
-  font-size: 16px;
-  float: right;
-  margin-left: 7px;
+    font-size: 16px;
+    float: right;
+    margin-left: 7px;
 }
 
 
