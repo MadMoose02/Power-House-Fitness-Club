@@ -563,42 +563,46 @@ input[type=file]{
 
 
 /*Packages & Classes*/
-.gallery {
-  border: 3px solid #5c0101;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: 3em;
-  margin-right: 3em;
-  padding:2em;
+.vertical-gallery {
+    border: 3px solid #5c0101;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding:2em;
 }
 
 /*cards itself*/
-.gallery div {
-  border: 3px solid #5c0101;
-  min-width: 240px;
-  max-width: 260px;
-  display:inline-block;
-  margin-bottom: 1em;
-  color:white;
+.vertical-gallery div {
+    border: 3px solid #5c0101;
+    min-width: 240px;
+    max-width: 260px;
+    display:inline-block;
+    margin-bottom: 1em;
+    color:white;
 }
 
-.gallery h1 {
-  font-size: 24pt;
-  text-align: center;
-  padding:14px;
-  background-color: #494848c9;
-  color: #5c0101;
-  border: 3px solid #000000 ;
+.vertical-gallery h1 {
+    font-size: 25pt;
+    text-align: center;
+    padding:14px;
+    background-color: #494848c9;
+    color: #5c0101;
+    border: 3px solid #000000 ;
 }
 
-#pkg_galry_pg {
-  background-color: #000000;
+#packages-content,
+#facilities-content,
+#classes-content {
+    background-color: #000000;
 }
 
-#pkg_galry_pg div{
-  background-color: #8d8282b7;
+#packages-content div,
+#facilities-content div,
+#classes-content div{
+    background-color: #8d8282b7;
 }
 
 .piece hr{
@@ -665,53 +669,66 @@ input[type=file]{
 
 
 /*facilities*/
-#fcard {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  padding: 20px;
+.fcard {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 20px;
 }
 
-#fcard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+.fcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-#fcard img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+.card-img > img {
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
-#card-img {
-  width: 40%;
+.fcard-text {
+    width: 60%;
+    padding: 10px;
+    align-items: center;
+    color: white;
 }
 
-#card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+.fcard-text p {
+    margin: 0 0 5px;
 }
 
-#fcard-text {
-  width: 60%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
+.horizontal-gallery {
+    border: 3px solid #5c0101;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding:1em;
 }
 
-#fcard-text p {
-  margin: 0 0 5px;
+/*cards itself*/
+.horizontal-gallery > div {
+    border: 3px solid #5c0101;
+    margin-bottom: 1.5em;
+    color: white;
 }
 
-#fcard-text h4 {
-  margin: 0;
+.horizontal-gallery h1 {
+    font-size: 25pt;
+    text-align: center;
+    padding:14px;
+    background-color: #494848c9;
+    color: #5c0101;
+    border: 3px solid #000000 ;
 }
