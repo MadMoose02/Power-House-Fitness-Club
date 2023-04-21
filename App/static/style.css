@@ -20,6 +20,10 @@ nav {
     z-index: 2;
 }
 
+button { filter: brightness(100%); }
+button:hover { filter: brightness(80%); }
+button:active { filter: brightness(60%); }
+
 .hidden {
     display: none;
 }
@@ -319,8 +323,25 @@ nav {
     padding-bottom:3em;
 }
 
-#facil-text h2,
-#about-gymtext h2{
+#about-gymtext p{
+    margin-left: 2em;
+    margin-bottom: 3em;
+    padding: 3em;
+}
+
+#about-gymtext h2 {
+    text-align: center;
+    color:#5c0101;
+    font-size: 30pt;
+    margin-left: 30px;
+    background-color: #494848c9;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 3px solid #000000;
+}
+
+#facil-text h2{
     color:#5c0101;
     text-align: left;
     font-size: 30pt;
@@ -424,7 +445,7 @@ nav {
     box-sizing: border-box;
 }
 
-.reg-container h1{
+.reg-container h1 {
     color: #9b0404;
     font-size: 30pt;
     font-family: Calibri, Helvetica, sans-serif;
@@ -434,14 +455,14 @@ nav {
     color: #5c0101;
 }
 
-.reg-container h2{
-    font-size: 20pt;
+.reg-container h2 {
+    font-size: 18pt;
     font-family: Calibri, Helvetica, sans-serif;
     color:#5c0101;
     margin-top:0;
 }
 
-.reg-container p{
+.reg-container p {
     text-align: center;
 }
 
@@ -509,30 +530,29 @@ input[type=file]{
 
 
 #regpg-signin {
-    padding-top: 25px;
+    padding: 5px;
     text-align: center;
     color:black;
 }
 
-#regpg-signin p{
-  margin-bottom: 0;
-  padding: 2px; 
-  padding-bottom: 7px;
+#regpg-signin p {
+    margin-bottom: 0;
+    padding: 2px; 
 }
 
 #profile-btns button,
 #register-sign-in-btn {
-  background-color: #5c0101;
-  color: #adababdc;
-  margin-bottom: 1em;
-  border: 0; 
-  font: bold 10pt Arial, Helvetica, sans-serif;
+    background-color: #5c0101;
+    color: #adababdc;
+    margin-bottom: 1em;
+    border: 0; 
+    padding: 10px;
 }
 
 #profile-btns button{
-  font-size: 16px;
-  float: right;
-  margin-left: 7px;
+    font-size: 16px;
+    float: right;
+    margin-left: 7px;
 }
 
 
@@ -557,7 +577,8 @@ input[type=file]{
     background-color: #c20605;
     color: white;
     margin-bottom: 0; 
-    margin-top: 10px
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .site-footer {
@@ -598,13 +619,18 @@ input[type=file]{
 }
 
 /*cards itself*/
-.vertical-gallery > div {
+.vertical-gallery  div {
     border: 3px solid #5c0101;
     min-width: 240px;
     max-width: 260px;
     display:inline-block;
     margin-bottom: 1em;
     color:white;
+    min-height: 70vh;
+}
+
+#class-gallery div{
+    height: 100vh;
 }
 
 .vertical-gallery h1 {
@@ -617,8 +643,12 @@ input[type=file]{
 }
 
 #packages-content,
-#facilities-content,
 #classes-content {
+    background-color: #000000;
+    min-height: 70vh;
+}
+
+#facilities-content {
     background-color: #000000;
 }
 
@@ -628,10 +658,6 @@ input[type=file]{
     background-color: #8d8282b7;
 }
 
-.class-descrpt hr,
-.piece hr{
-    border-top: 3px solid  #5c0101;
-}
 
 .piece {
     min-width: 220px;
@@ -666,26 +692,30 @@ input[type=file]{
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#pkg-img img{
-    width: 13em;
+#class-img img{
+    display: block;
+    margin-left: 1em;
+    margin-right: auto;
+    width: 87%;
     object-fit: cover;
     background-color: #8d8282dc;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
-.class-descrpt,
+#class-descrpt,
 #pkg-descrpt {
     text-align: center;
     height: fit-content;
+    min-height: 160px;
     font-size: 12pt;
     display: fit-content;
     padding: 1em;
     color:#000000;
 }
 
-
-.class-descrpt h2{
+#facil-text h2,
+#class-descrpt h2{
     color: #5c0101;
     padding:14px;
     background-color: #494848c9;
@@ -695,13 +725,15 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
-.class-descrpt p,
+#about-gymtext p,
+#facil-text p,
+#class-descrpt p,
 #pkg-descrpt {
   border: 3px solid #000000;
   background-color: #696868bb;
 }
 
-.class-descrpt h4 {
+#class-descrpt h4 {
     color: #5c0101;
     padding:14px;
     background-color: #494848c9;
@@ -711,13 +743,54 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
-.class-descrpt p{
+#class-descrpt p{
   font-size: 16px;
   padding: 1em;
 }
 
 
+#class-descrpt hr,
+.piece hr{
+    border-top: 3px solid  #5c0101;
+}
+
+
 /*facilities*/
+#facil-img img{
+    display: block;
+    margin-left:3em;
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    background-color: #8d8282dc;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+#facil-text{
+    width: 100%;
+    margin-left: 5em;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    padding:0;
+}
+
+#facil-text h2{
+    margin-top: 1.5em;
+    text-align: center;
+
+}
+
+#facil-text p{
+    margin-top: 1em;
+    text-align: center;
+    color: #000000;
+    padding:14px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    min-height: 8em;
+}
+
 /*Incase this might be needed
 .fcard {
     width: 70vw;
@@ -781,12 +854,3 @@ input[type=file]{
     margin: 0 0 5px;
 }
 */
-
-
-#facil-img img{
-  margin-top: 3em;
-  margin-bottom: 2em;
-}
-
-
-

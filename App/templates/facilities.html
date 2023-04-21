@@ -8,7 +8,7 @@
     <div id="facilities-content" class="card">
         <h1><b>OUR FACILITIES</b></h1>
         {% for facility in facilities %}
-        <div class="datacard">
+        <div id="{{facility.name.lower()}}-facility" class="datacard">
             <section id="facil-img">
                 <img src="../static/images/about-gym1.png" alt="Italian Trulli">
             </section>
