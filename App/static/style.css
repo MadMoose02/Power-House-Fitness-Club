@@ -312,12 +312,14 @@ nav {
      margin-top: 5em;
 }
 
+#facil-text p,
 #about-gymtext p{
     border-right:20px;
     text-align: justify;
     padding-bottom:3em;
 }
 
+#facil-text h2,
 #about-gymtext h2{
     color:#5c0101;
     text-align: left;
@@ -690,6 +692,7 @@ input[type=file]{
 
 
 /*facilities*/
+/*Incase this might be needed
 .fcard {
     width: 70vw;
     display: flex;
@@ -700,13 +703,18 @@ input[type=file]{
     height: 200px;
     border: 1px solid white;
     border-radius: 20px;
-}
 
-.fcard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
+    .horizontal-gallery {
+    border: 3px solid #5c0101;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding:1em;
 
+    
 .card-img > img {
     width: 150px;
     border: 2px solid black;
@@ -716,40 +724,43 @@ input[type=file]{
     margin-right: 15px;
 }
 
-.fcard-text {
+.horizontal-gallery > div {
+  border: 3px solid #5c0101;
+  margin-bottom: 1.5em;
+  color: white;
+}
+
+.horizontal-gallery h1 {
+  font-size: 25pt;
+  text-align: center;
+  padding:14px;
+  background-color: #494848c9;
+  color: #5c0101;
+  border: 3px solid #000000 ;
+}
+
+#fcard-text {
     width: 100%;
     padding: 10px;
     align-items: center;
     color: white;
 }
 
-.fcard-text p {
+.fcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+#fcard-text p {
     margin: 0 0 5px;
 }
+*/
 
-.horizontal-gallery {
-    border: 3px solid #5c0101;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3em;
-    margin-right: 3em;
-    padding:1em;
+
+#facil-img img{
+  margin-top: 3em;
+  margin-bottom: 2em;
 }
 
-/*cards itself*/
-.horizontal-gallery > div {
-    border: 3px solid #5c0101;
-    margin-bottom: 1.5em;
-    color: white;
-}
 
-.horizontal-gallery h1 {
-    font-size: 25pt;
-    text-align: center;
-    padding:14px;
-    background-color: #494848c9;
-    color: #5c0101;
-    border: 3px solid #000000 ;
-}
+

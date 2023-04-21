@@ -5,21 +5,19 @@
 
 {% block content %}
 <section>
-    <div id="facilities-content">
-        <h1>Our Facilities</h1>
-        <div class="horizontal-gallery">
-            {% for facility in facilities %}
-                <div class="fcard">
-                    <div class="card-img">
-                        <img src="../static/images/about-gym1.png" alt="Italian Trulli">
-                    </div>
-                    <div class="fcard-text">
-                        <h4>{{facility.name}}</h4>
-                        <p>{{facility.desc}}</p>
-                    </div>
-                </div>
-            {% endfor %}
+    <div id="facilities-content" class="card">
+        <h1><b>OUR FACILITIES</b></h1>
+        {% for facility in facilities %}
+        <div class="datacard">
+            <section id="facil-img">
+                <img src="../static/images/about-gym1.png" alt="Italian Trulli">
+            </section>
+            <section id="facil-text">
+                <h2><b>{{facility.name}}</b></h2>
+                <p><b>{{facility.desc}}</b></p>
+            </section>
         </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}
