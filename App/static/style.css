@@ -557,7 +557,8 @@ input[type=file]{
     background-color: #c20605;
     color: white;
     margin-bottom: 0; 
-    margin-top: 10px
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .site-footer {
@@ -598,13 +599,18 @@ input[type=file]{
 }
 
 /*cards itself*/
-.vertical-gallery > div {
+.vertical-gallery  div {
     border: 3px solid #5c0101;
     min-width: 240px;
     max-width: 260px;
     display:inline-block;
     margin-bottom: 1em;
     color:white;
+    min-height: 70vh;
+}
+
+#class-gallery div{
+    height: 100vh;
 }
 
 .vertical-gallery h1 {
@@ -620,6 +626,7 @@ input[type=file]{
 #facilities-content,
 #classes-content {
     background-color: #000000;
+    min-height: 70vh;
 }
 
 #packages-content div,
@@ -628,10 +635,6 @@ input[type=file]{
     background-color: #8d8282b7;
 }
 
-.class-descrpt hr,
-.piece hr{
-    border-top: 3px solid  #5c0101;
-}
 
 .piece {
     min-width: 220px;
@@ -666,15 +669,19 @@ input[type=file]{
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#pkg-img img{
-    width: 13em;
+#class-img img{
+    display: block;
+    margin-left: 1em;
+    margin-right: auto;
+    width: 87%;
+    margin-right: 12em;
     object-fit: cover;
     background-color: #8d8282dc;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
-.class-descrpt,
+#class-descrpt,
 #pkg-descrpt {
     text-align: center;
     height: fit-content;
@@ -685,7 +692,7 @@ input[type=file]{
 }
 
 
-.class-descrpt h2{
+#class-descrpt h2{
     color: #5c0101;
     padding:14px;
     background-color: #494848c9;
@@ -695,13 +702,13 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
-.class-descrpt p,
+#class-descrpt p,
 #pkg-descrpt {
   border: 3px solid #000000;
   background-color: #696868bb;
 }
 
-.class-descrpt h4 {
+#class-descrpt h4 {
     color: #5c0101;
     padding:14px;
     background-color: #494848c9;
@@ -711,9 +718,15 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
-.class-descrpt p{
+#class-descrpt p{
   font-size: 16px;
   padding: 1em;
+}
+
+
+#class-descrpt hr,
+.piece hr{
+    border-top: 3px solid  #5c0101;
 }
 
 
