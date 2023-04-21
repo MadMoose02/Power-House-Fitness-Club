@@ -628,6 +628,7 @@ input[type=file]{
     background-color: #8d8282b7;
 }
 
+.class-descrpt hr,
 .piece hr{
     border-top: 3px solid  #5c0101;
 }
@@ -665,32 +666,54 @@ input[type=file]{
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.pkg-piece img {
-    min-width: 150px;
+#pkg-img img{
+    width: 13em;
     object-fit: cover;
     background-color: #8d8282dc;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.pkg-descrpt {
+.class-descrpt,
+#pkg-descrpt {
     text-align: center;
     height: fit-content;
     font-size: 12pt;
     display: fit-content;
     padding: 1em;
     color:#000000;
-    background-color: #6e6b6bdc;
 }
 
-.pkg-descrpt > h2 {
+
+.class-descrpt h2{
+    color: #5c0101;
+    padding:14px;
+    background-color: #494848c9;
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 10px;
+    border: 3px solid #000000;
 }
 
-.pkg-descrpt > h4 {
-    font-size: 1.5rem;
+.class-descrpt p,
+#pkg-descrpt {
+  border: 3px solid #000000;
+  background-color: #696868bb;
+}
+
+.class-descrpt h4 {
+    color: #5c0101;
+    padding:14px;
+    background-color: #494848c9;
+    font-size: 24px;
     margin-top: 0;
     padding-top: 10px;
+    border: 3px solid #000000;
+}
+
+.class-descrpt p{
+  font-size: 16px;
+  padding: 1em;
 }
 
 
