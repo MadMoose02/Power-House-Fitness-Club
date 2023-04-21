@@ -1,11 +1,12 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String
 from App.database import db
 
 class Package(db.Model):
-    id    = Column(Integer, name="package_id", primary_key=True, autoincrement=True)
-    type  = Column(String(20), name="type", nullable=False)
+    __tablename__ = 'packages'
+    id = Column(Integer, name="id", primary_key=True, autoincrement=True)
+    type = Column(String(20), name="type", nullable=False)
     price = Column(String(10), name="price", nullable=False)
-    desc  = Column(String(500), name="description", nullable=False)
+    desc = Column(String(500), name="description", nullable=False)
 
     def __init__(self, type, price, desc):
         self.type = type

@@ -2,7 +2,8 @@ from sqlalchemy import Column, Integer, String, Date
 from App.database import db
 
 class Facility(db.Model):
-    id   = Column(Integer, name="faciltiy_id", primary_key=True, autoincrement=True)
+    __tablename__ = 'facilities'
+    id   = Column(Integer, name="id", primary_key=True, autoincrement=True)
     name = Column(String(20), name="name", nullable=False, unique=True)
     desc = Column(String(500), name="description", nullable=False)
 

@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String
 from App.database import db
 
 class Class(db.Model):
-    id         = Column(Integer,name="class_id", primary_key=True, autoincrement=True)
+    __tablename__ = "classes"
+    id         = Column(Integer, name="id", primary_key=True, autoincrement=True)
     name       = Column(String(20), name="name", nullable=False, unique=False)
     instructor = Column(String(20), name="instructor", nullable=False, unique=False)
     desc       = Column(String(500), name="description", nullable=False, unique=False)
