@@ -5,9 +5,9 @@
 
 {% block content %}
 <section>
-    <div id="pkg_galry_pg" class="card">
+    <div id="packages-content" class="card">
         <h1>Available Packages</h1>
-        <div class="gallery">
+        <div class="vertical-gallery">
             {% for package in packages %}
                 <div id="{{package.type.lower()}}-package" class="piece">
                     <h1 class="pkg-typ"><b>{{package.type}}</b></h1>
