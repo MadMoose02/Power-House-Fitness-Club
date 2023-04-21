@@ -21,7 +21,7 @@ function openUserProfileModal() {
     let userNavProfile = document.querySelector('div#user-nav-profile');
     let userNavProfileModal = document.getElementById('user-nav-profile-modal');
     userNavProfileModal.style.display = 'block';
-    userNavProfileModal.animate(slideModalDown, slideTiming);
+    userNavProfileModal.animate(slideNavProfileModalDown, slideTiming);
     userNavProfile.firstChild.style.filter = 'brightness(70%)';
 }
 
@@ -48,11 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // If the user clicks anywhere outside of the modal (denoted by bounding box), close it
 window.onclick = function (event) {
-    
-    let sidePanelMenu = document.querySelector('#side-panel-menu');
     let userNavProfile = document.querySelector('div#user-nav-profile');
     let userNavProfileModal = document.getElementById('user-nav-profile-modal');
-    let sidePanelMenuBoundingBox = sidePanelMenu.getBoundingClientRect();
     let navProfileModalBoundingBox = userNavProfileModal.getBoundingClientRect();
     let x = event.clientX, y = event.clientY;
     
