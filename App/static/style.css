@@ -696,7 +696,7 @@ input[type=file]{
 }
 
 .fcard-text {
-    width: 60%;
+    width: 100%;
     padding: 10px;
     align-items: center;
     color: white;
