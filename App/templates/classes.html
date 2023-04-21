@@ -1,39 +1,28 @@
 {% extends "layout.html" %}
 {% block title %}Classes - Powerhouse Fitness Club{% endblock %}
 {% block page %}Classes{% endblock %}
-
 {{ super() }}
 
 {% block content %}
 <section>
-    <h1>Classes Offered</h1>
-    <div class="gallery">
-      <div class="pkg-piece">
-        <img src="class2.jpg" alt="Class 1">
-        <div class="pkg-descrpt">
-          <h2 class="pkg-typ">Package 1</h2>
-          <p>A comprehensive course covering various topics.</p>
-          <h4>$1000.00</h4>
+    <div class="classes-content">
+        <h1>Classes Offered</h1>
+        <div class="vertical-gallery">
+            {% for class in classes %}
+                <div id="{{class.name.lower()}}-class" class="pkg-piece">
+                    <div class="pkg-img">
+                        <img src="../static/images/about-gym1.png" alt="Class 1">
+                    </div>
+                    <div class="pkg-descrpt">
+                        <h2>{{class.name}}</h2>
+                        <hr>
+                        <p>{{class.desc}}</p>
+                        <hr>
+                        <h4>Instructed by {{class.instructor}}</h4>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-      </div>
-  
-      <div class="pkg-piece">
-        <img src="class3.jpg" alt="Class 2">
-        <div class="pkg-descrpt">
-          <h2 class="pkg-typ">Class 1</h2>
-          <p>An introductory course covering the basics.</p>
-          <h4>$750.00</h4>
-        </div>
-      </div>
-  
-      <div class="pkg-piece">
-        <img src="class1.jpg" alt="Class 3">
-        <div class="pkg-descrpt">
-          <h2 class="pkg-typ">Class 2</h2>
-          <p>An advanced course covering specialized topics.</p>
-          <h4>$1200.00</h4>
-        </div>
-      </div>
     </div>
   </section>
 {% endblock %}

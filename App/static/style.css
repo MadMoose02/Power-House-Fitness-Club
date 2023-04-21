@@ -598,7 +598,7 @@ input[type=file]{
 }
 
 /*cards itself*/
-.vertical-gallery div {
+.vertical-gallery > div {
     border: 3px solid #5c0101;
     min-width: 240px;
     max-width: 260px;
@@ -656,6 +656,7 @@ input[type=file]{
 .pkg-piece {
     width: 25%;
     margin: 20px;
+    height: fit-content;
     box-sizing: border-box;
     text-align: center;
     border-radius: 20px;
@@ -664,31 +665,33 @@ input[type=file]{
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.pkg-piece img{
-    min-width: 100%;
-    min-height: 100%;
+.pkg-piece img {
+    min-width: 150px;
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
     background-color: #8d8282dc;
-}
-
-.pkg-typ{
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 10px;
 }
 
 .pkg-descrpt {
     text-align: center;
-    height: 10em;
+    height: fit-content;
     font-size: 12pt;
     display: fit-content;
     padding: 1em;
     color:#000000;
     background-color: #6e6b6bdc;
-    border: 3px solid #000000 ;
 }
 
+.pkg-descrpt > h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.pkg-descrpt > h4 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-top: 10px;
+}
 
 
 /*facilities*/
