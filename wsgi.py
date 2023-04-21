@@ -11,7 +11,8 @@ from App.controllers import (
     get_all_users, 
     create_classes, 
     create_packages,
-    create_facilities
+    create_facilities,
+    create_emergency_contact
 )
 
 app = create_app()
@@ -22,32 +23,6 @@ def initialise():
     db.drop_all()
     db.create_all()
     print("Database constructed")
-    
-    # Add default users
-    create_user(
-        'bob', 
-        'bobpass', 
-        'Bob', 
-        'the Builder', 
-        date(1900, 1, 15), 
-        '#10A Nickelodeon Road', 
-        '123545452', 
-        'male',
-        'bob.thebuilder@mail.com'
-    )
-    print("Added test user 'bob'")
-    create_user(
-        'david', 
-        'davidpass', 
-        'David', 
-        'Bossman', 
-        date(1998, 9, 30), 
-        '#9 Avenue Street', 
-        '123545452', 
-        'male', 
-        'david.bossman@mail.com'
-    )
-    print("Added test user 'david'")
     
     # Add all classes
     with open("App/models/classes.json") as f:
@@ -67,6 +42,51 @@ def initialise():
         create_facilities(facilities)
     print("Added all facilities")
     
+    # Add emergency contact for test users
+    create_emergency_contact(
+        fname="Roy",
+        lname="Brady",
+        relation="Brother",
+        contact="19532180062"
+    )
+    create_emergency_contact(
+        fname="Wendy",
+        lname="the Builder",
+        relation="Spouse",
+        contact="5192352346"
+    )
+    
+    # Add default users
+    create_user(
+        username='bob', 
+        password='bobpass', 
+        fname='Bob', 
+        lname='the Builder', 
+        dob=date(1900, 1, 15), 
+        address='#10A Nickelodeon Road', 
+        phone='123545452', 
+        sex='male',
+        email='bob.thebuilder@mail.com',
+        image='../static/images/male.jpg',
+        package_id=1,
+        emergency_contact_id=2
+    )
+    print("Added test user 'bob'")
+    create_user(
+        username='ann', 
+        password='annpass', 
+        fname='Annette', 
+        lname='Layton', 
+        dob=date(1998, 9, 30), 
+        address='#9 Avenue Street', 
+        phone='123545452', 
+        sex='female', 
+        email='annette.layton@mail.com',
+        image='../static/images/female.jpg',
+        package_id=3,
+        emergency_contact_id=3
+    )
+    print("Added test user 'ann'")
     print("Database intialised successfully")
 
 
