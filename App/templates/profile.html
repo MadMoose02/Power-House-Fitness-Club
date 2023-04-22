@@ -40,9 +40,9 @@
                         <select name="package-id" id="package">
                             {% for package in packages %}
                                 {% if user.package_id == package.id %}
-                                    <option value="{{package.type.lower()}}" selected>{{package.type}}</option>
+                                    <option id="{{package.type.lower()}}-package" value="{{package.id}}" selected>{{package.type}}</option>
                                 {% else %}
-                                    <option value="{{package.type.lower()}}">{{package.type}}</option>
+                                    <option id="{{package.type.lower()}}-package" value="{{package.id}}">{{package.type}}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
