@@ -18,7 +18,6 @@ def create_packages(packages):
 
 
 def get_package(id) -> Package:
-    print("Fetching package with id: " + str(id))
     return Package.query.get(id)
 
 
