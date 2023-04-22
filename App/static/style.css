@@ -580,6 +580,10 @@ input[type=file]{
     color:#000000;
 }
 
+input:read-only {
+    cursor: default;
+}
+
 #registerbtn {
     background-color: #5c0101;
     color: #adababdc;
