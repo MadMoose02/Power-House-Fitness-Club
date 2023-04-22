@@ -16,9 +16,9 @@ def create_facilities(facilities):
         create_facility(facility['name'], facility['description'])
 
 
+def get_facility(id) -> Facility:
+    return Facility.query.get(id)
+
+
 def get_facilities() -> list[Facility]:
-    """
-    Returns:
-        List of Facility objects.
-    """
     return Facility.query.all()
