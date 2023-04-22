@@ -95,7 +95,6 @@ function toggleProfileInputsState(state) {
     let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'image', 'package', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
     for (let id of ids) {
         let el = document.getElementById(id);
-        el.readOnly = state;
         el.disabled = state;
     }
 }
@@ -109,5 +108,7 @@ function makeProfileEditable() {
 
     saveProfileBtn.onclick = function () {
         toggleProfileInputsState(true);
+        saveProfileBtn.style.display = 'none';
+        editProfileBtn.style.display = 'block';
     }
 }

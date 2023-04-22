@@ -28,33 +28,27 @@ def profile_page():
     )
     
     
-@profile_views.route('/api/update-user', methods=['POST'])
+@profile_views.route('/profile/update-user', methods=['POST'])
 @login_required
-def update_user():
+def update_user_info():
+    print(f"Form data: {request.form}")
+
     try:
-        if request.form['password'] != request.form['password-repeat']:
-            flash('Passwords do not match', category='error')
-            return redirect(url_for('profile_views.profile_page'))
+        if request.form['password'] is not None and request.form['password-repeat'] is not None:
+            if request.form['password'] != request.form['password-repeat']:
+                flash('Passwords do not match', category='error')
+                return redirect(url_for('profile_views.profile_page'))
         
         if request.form['username'] != current_user.username:
             if username_exists(request.form['username']):
                 flash('Username already exists', category='error')
                 return redirect(url_for('profile_views.profile_page'))
         
-        username = request.form['username']
-        password = request.form['password']
-        fname = request.form['firstname']
-        lname = request.form['lastname']
         dob = date(
             year=int(request.form['dob'].split('-')[0]), 
             month=int(request.form['dob'].split('-')[1]), 
             day=int(request.form['dob'].split('-')[2])
         )
-        address = request.form['address']
-        phone = request.form['contactno']
-        sex = request.form['sex']
-        email = request.form['email']
-        package_id = request.form['package-id']
         
         # Collect emergency contact info
         em_contact_fname = request.form['emgcy-fname']
@@ -70,17 +64,17 @@ def update_user():
         emergency_contact = get_emergency_contact(curr_user.emergency_contact_id)
 
         # Update user information
-        curr_user.username=username
-        curr_user.password=password
-        curr_user.fname=fname
-        curr_user.lname=lname
+        curr_user.username=request.form['username']
+        curr_user.fname=request.form['firstname']
+        curr_user.lname=request.form['lastname']
         curr_user.dob=dob
-        curr_user.address=address
-        curr_user.phone=phone
-        curr_user.sex=sex
-        curr_user.email=email
+        curr_user.address=request.form['address']
+        curr_user.phone=request.form['contactno']
+        curr_user.sex=request.form['sex']
+        curr_user.email=request.form['email']
         curr_user.image=image
-        curr_user.package_id=package_id
+        curr_user.package_id=request.form['package-id']
+        curr_user.set_password(request.form['password'])
         
         # Update emergency contact information
         emergency_contact.fname=em_contact_fname
