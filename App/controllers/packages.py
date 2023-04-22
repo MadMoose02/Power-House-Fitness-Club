@@ -17,5 +17,10 @@ def create_packages(packages):
         create_package(package['type'], package['price'], package['description'])
 
 
+def get_package(id) -> Package:
+    print("Fetching package with id: " + str(id))
+    return Package.query.get(id)
+
+
 def get_packages() -> list[Package]:
     return Package.query.all()
