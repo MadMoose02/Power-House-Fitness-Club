@@ -25,6 +25,9 @@ def create_user(username, password, fname, lname, dob, address, phone,
 def get_user_by_username(username) -> User:
     return User.query.filter_by(username=username).first()
 
+def get_same_names(fname, lname) -> list[User]:
+    return User.query.filter(User.fname == fname, User.lname == lname).all()
+
 def get_user(id) -> User:
     return User.query.get(id)
 
