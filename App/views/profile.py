@@ -4,13 +4,14 @@ from base64 import b64encode
 from flask import Blueprint, redirect, render_template, request, flash, url_for
 from flask_login import current_user, login_required
 
-from App.models import db
+from App.models import db, User
 from App.controllers import (
     get_packages,
     get_emergency_contact,
     get_user,
     update_user_data,
-    get_package
+    get_package,
+    username_exists
 )
 
 profile_views = Blueprint('profile_views', __name__, template_folder='../templates')
@@ -34,6 +35,11 @@ def update_user():
         if request.form['password'] != request.form['password-repeat']:
             flash('Passwords do not match', category='error')
             return redirect(url_for('profile_views.profile_page'))
+        
+        if request.form['username'] != current_user.username:
+            if username_exists(request.form['username']):
+                flash('Username already exists', category='error')
+                return redirect(url_for('profile_views.profile_page'))
         
         username = request.form['username']
         password = request.form['password']

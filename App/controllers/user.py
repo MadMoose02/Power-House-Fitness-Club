@@ -28,6 +28,9 @@ def get_user_by_username(username) -> User:
 def get_same_names(fname, lname) -> list[User]:
     return User.query.filter(User.fname == fname, User.lname == lname).all()
 
+def username_exists(username) -> bool:
+    return True if User.query.filter(User.username == username).first() else False
+
 def get_user(id) -> User:
     return User.query.get(id)
 
