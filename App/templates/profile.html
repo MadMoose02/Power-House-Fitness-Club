@@ -9,7 +9,7 @@
     <div class="reg-container">
         <h1><b>PROFILE</b></h1>
         <section>
-            <form id="reg-form" action="/profile/update-user" enctype="multipart/form-data" method="post">
+            <form id="edit-profile-form" class="form" action="/profile/update-user" enctype="multipart/form-data" method="post">
                 <div class="reg-card">
                     <h1><b>MEMBER'S PROFILE INFORMATION</b></h1>
                     <p><b>Select the buttons at the bottom of the page to edit & save changes.</b></p>
@@ -30,14 +30,20 @@
                         <input type="date" name="dob" id="dob" value="{{user.dob}}" required readonly="readonly">
                         <br><br>
                         <label for="sex"><b>Sex</b></label>
-                        <select name="sex" id="sex" readonly="readonly">
+                        <select id="disabled-sex" disabled>
+                            <option>{{user.sex.capitalize()}}</option>
+                        </select>
+                        <select class="hidden" name="sex" id="sex" readonly="readonly">
                             <option {{'selected' if user.sex == 'male'}} value="male">Male</option>
                             <option {{'selected' if user.sex == 'female'}} value="female">Female</option>
                             <option {{'selected' if user.sex == 'other'}} value="other">Other</option>
                         </select>
                         <br><br>
                         <label for="package-id"><b>Package</b></label><br>
-                        <select name="package-id" id="package" readonly="readonly">
+                        <select id="disabled-package" disabled>
+                            <option>{{user_package.type}}</option>
+                        </select>
+                        <select class="hidden" name="package-id" id="package" readonly="readonly">
                             {% for package in packages %}
                                 {% if user.package_id == package.id %}
                                     <option id="{{package.type.lower()}}-package" value="{{package.id}}" selected>{{package.type}}</option>
@@ -64,7 +70,8 @@
                         <br><br>
                         <label for="image"><b>Change Profile Image</b></label><br>
                         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <input type="file" name="image" id="image" style="width:100%;" readonly="readonly">
+                            <input class="hidden" type="file" name="image" id="image" style="width:100%; color: black">
+                            <input type="file" id="disabled-image" style="width:100%;" disabled>
                         </div>
                         <br><br>
                         <hr>
@@ -97,37 +104,4 @@
         </section>
     </div>
 </div>
-<script>
-    function disableProfileInputsState(state) {
-        let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'image', 'package', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
-        for (let id of ids) {
-            let el = document.getElementById(id);
-            state == true ? el.removeAttribute("readonly") : el.setAttribute("readonly", "readonly");
-        }
-    }
-    
-    function makeProfileEditable() {
-        let editProfileBtn = document.querySelector('#edit-profile-btn');
-        let cancelEditProfileBtn = document.querySelector('#cancel-edit-profile-btn');
-        let saveProfileBtn = document.querySelector('#save-profile-btn');
-        editProfileBtn.style.display = 'none';
-        cancelEditProfileBtn.style.display = 'flex';
-        saveProfileBtn.style.display = 'block';
-        disableProfileInputsState(true);
-    
-        saveProfileBtn.onclick = function () {
-            disableProfileInputsState(false);
-            saveProfileBtn.style.display = 'none';
-            cancelEditProfileBtn.style.display = 'none';
-            editProfileBtn.style.display = 'flex';
-        }
-    
-        cancelEditProfileBtn.onclick = function () {
-            disableProfileInputsState(false);
-            saveProfileBtn.style.display = 'none';
-            cancelEditProfileBtn.style.display = 'none';
-            editProfileBtn.style.display = 'flex';
-        }
-    }
-</script>
 {% endblock %}

@@ -515,13 +515,13 @@ button:active { filter: brightness(60%); }
     font-family: Calibri, Helvetica, sans-serif;
 }
 
-#reg-form h1 {
+.form h1 {
     display: flex;
     justify-content: center;
     color: #5c0101;
 }
 
-#reg-form h2 {
+.form h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -578,6 +578,7 @@ button:active { filter: brightness(60%); }
     font-size: 18px;
     background-color: #adababdc;
     border: 1px solid #000000;
+    border-radius: 3px;
 }
 
 input[type=file]{
@@ -586,8 +587,17 @@ input[type=file]{
     color:#000000;
 }
 
+input:read-only::placeholder {
+    color: rgba(0,0,0,0.42);
+}
+
+textarea:read-only {
+    color: rgba(0,0,0,0.42);
+}
+
 input:read-only {
     cursor: default;
+    color: rgba(0,0,0,0.42);
 }
 
 #registerbtn {
@@ -646,6 +656,18 @@ input:read-only {
     justify-content: center;
     align-items: center;
     height: 40px;
+    filter: brightness(100%);
+}
+
+#edit-profile-btn:hover, 
+#cancel-edit-profile-btn::hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+#edit-profile-btn:active, 
+#cancel-edit-profile-btn::active {
+    filter: brightness(60%);
 }
 
 /* Footer */

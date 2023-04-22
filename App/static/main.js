@@ -90,3 +90,44 @@ function closeAlertMessages() {
     let alertNav = document.querySelector('#alert-messages-nav');
     alertNav.style.display = 'none';
 }
+
+function disableProfileInputsState(state) {
+    let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'package', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
+    let disabled_ids = ['sex', 'package', 'image'];
+    for (let id of ids) {
+        let el = document.getElementById(id);
+        state == true ? el.setAttribute("readonly", "readonly") : el.removeAttribute("readonly");
+    }
+    for (let did of disabled_ids) {
+        let del = document.querySelector(`#disabled-${did}`);
+        state == true ? del.classList.remove('hidden') : del.classList.add('hidden');
+        del = document.querySelector(`#${did}`);
+        state == true ? del.classList.add('hidden') : del.classList.remove('hidden');
+    }
+}
+
+function makeProfileEditable() {
+    let editProfileBtn = document.querySelector('#edit-profile-btn');
+    let cancelEditProfileBtn = document.querySelector('#cancel-edit-profile-btn');
+    let saveProfileBtn = document.querySelector('#save-profile-btn');
+    editProfileBtn.style.display = 'none';
+    cancelEditProfileBtn.style.display = 'flex';
+    saveProfileBtn.style.display = 'block';
+    disableProfileInputsState(false);
+
+    saveProfileBtn.onclick = function () {
+        disableProfileInputsState(true);
+        saveProfileBtn.style.display = 'none';
+        cancelEditProfileBtn.style.display = 'none';
+        editProfileBtn.style.display = 'flex';
+    }
+
+    cancelEditProfileBtn.onclick = function () {
+        disableProfileInputsState(true);
+        saveProfileBtn.style.display = 'none';
+        cancelEditProfileBtn.style.display = 'none';
+        editProfileBtn.style.display = 'flex';
+        document.getElementById('edit-profile-form').reset();
+        console.log('Form reset');
+    }
+}

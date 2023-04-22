@@ -18,9 +18,8 @@ def retrieve_current_user():
     return get_user(current_user.id)
 
 def login(username: str, password: str) -> User:
-    user = None
-    if '@' in username: user = User.query.filter_by(email=username).first()
-    else: user = User.query.filter_by(username=username).first()
+    user = User.query.filter_by(username=username).first()
+    if not user: user = User.query.filter_by(email=username).first()
     if not user: return None
     if not user.check_password(password): return None
     return user
