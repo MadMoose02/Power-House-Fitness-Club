@@ -1,7 +1,6 @@
-import click, sys, json
+import click, json
 from base64 import b64encode
-from flask import Flask
-from flask.cli import with_appcontext, AppGroup
+from flask.cli import AppGroup
 from datetime import date
 
 from App.database import db, get_migrate
@@ -65,7 +64,7 @@ def initialise():
         lname='the Builder', 
         dob=date(1900, 1, 15), 
         address='#10A Nickelodeon Road', 
-        phone='123545452', 
+        phone='123-5432', 
         sex='male',
         email='bob.thebuilder@mail.com',
         image=b64encode(open("App/static/images/male.jpg", "rb").read()),
@@ -80,7 +79,7 @@ def initialise():
         lname='Layton', 
         dob=date(1998, 9, 30), 
         address='#9 Avenue Street', 
-        phone='123545452', 
+        phone='235-4545', 
         sex='female', 
         email='annette.layton@mail.com',
         image=b64encode(open("App/static/images/female.jpg", "rb").read()),
