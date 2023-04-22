@@ -615,9 +615,12 @@ input:read-only {
 #register-sign-in-btn {
     background-color: #5c0101;
     color: #adababdc;
-    margin-bottom: 1em;
     border: 0; 
     padding: 10px;
+}
+
+#register-sign-in-btn {
+    margin-bottom: 1em;
 }
 
 #profile-btns button {
@@ -625,6 +628,18 @@ input:read-only {
     float: right;
     margin-left: 7px;
     width: 120px;
+}
+
+#edit-profile-btn, #cancel-edit-profile-btn {
+    background-color: #5c0101;
+    color: #adababdc;
+    font-size: 16px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
 }
 
 /* Footer */

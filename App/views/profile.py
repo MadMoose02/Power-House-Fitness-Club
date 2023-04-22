@@ -31,8 +31,7 @@ def profile_page():
 @profile_views.route('/profile/update-user', methods=['POST'])
 @login_required
 def update_user_info():
-    print(f"Form data: {request.form}")
-
+        
     try:
         if request.form['password'] is not None and request.form['password-repeat'] is not None:
             if request.form['password'] != request.form['password-repeat']:
@@ -86,7 +85,7 @@ def update_user_info():
         flash('Profile updated', category='info')
         
     except Exception as e:
-        db.rollback()
-        flash("Unable to register", category='error')
-    
-    return redirect(url_for('profile_views.profile_page'))
+        flash("Unable to update profile", category='error')
+        
+    finally:
+        return redirect(url_for('profile_views.profile_page'))
