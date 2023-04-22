@@ -631,6 +631,9 @@ input[type=file]{
     margin-left: 7px;
 }
 
+#edit-btn, #save-btn {
+    width: 100px;
+}   
 
 /* Footer */
 

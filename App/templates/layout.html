@@ -56,7 +56,7 @@
                     <ul style="margin-top: 5px">
                         <li class="nav-item">
                             {% if user %}
-                                <div id="user-nav-profile"><img id="user-nav-profile-img" src="{{user.image}}"></div>
+                                <div id="user-nav-profile"><img id="user-nav-profile-img" src="data:image/png;base64,{{user.image.decode()}}"></div>
                             {% else %}
                                 <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/default-user.png"></div>
                             {% endif %}

@@ -30,7 +30,7 @@ def login_action():
     print(f"Received login attempt: [{data['username-email']}: {data['password']}]")
     if not user: 
         print(f"Invalid username or password")
-        flash('Invalid username or password')
+        flash('Invalid username or password', category='error')
     else:
         login_user(user)
         print(f"Logged in user: [{user.id}: {user.fname} {user.lname}]")

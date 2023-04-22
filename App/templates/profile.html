@@ -9,84 +9,88 @@
     <div class="reg-container">
         <h1><b>PROFILE</b></h1>
         <section>
-            <form id="reg-form" action="/register">
+            <form id="reg-form" action="/api/update-user" enctype="multipart/form-data" method="post">
                 <div class="reg-card">
                     <h1><b>MEMBER'S PROFILE INFORMATION</b></h1>
                     <p><b>Select the buttons at the bottom of the page to edit & save changes.</b></p>
                     <hr>
                     
                     <section id="memberinfo">
-                        <h2><b>Member Information:</b><h2>
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" placeholder=" Enter username" name="username" id="username" value="{{user.username}}" required>
+                        <br><br>
                         <label for="firstname"><b>First Name</b></label>
-                        <input type="text" placeholder="Member's First Name" name="firstname" id="firstname" required>
+                        <input type="text" placeholder=" First name" name="firstname" id="firstname" value="{{user.fname}}" required>
                         <br><br>
                         <label for="lastname"><b>Last Name</b></label>
-                        <input type="text" placeholder="Member's Last Name" name="lastname" id="lastname" required>
+                        <input type="text" placeholder=" Last name" name="lastname" id="lastname" value="{{user.lname}}" required>
                         <br><br>
                         <label for="date"><b>Date of Birth</b></label>
                         <br>
-                        <input type="date" name="dob">
+                        <input type="date" name="dob" value="{{user.dob}}">
                         <br><br>
-                        <label for="sex-options"><b>Sex</b></label>
-                        <select name="sex-options" id="sex">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                        <label for="sex"><b>Sex</b></label>
+                        <select name="sex" id="sex">
+                            <option {{'selected' if user.sex == 'male'}} value="male">Male</option>
+                            <option {{'selected' if user.sex == 'female'}} value="female">Female</option>
+                            <option {{'selected' if user.sex == 'other'}} value="other">Other</option>
                         </select>
                         <br><br>
-                        <label for="package-options"><b>Package</b></label><br>
-                        <select name="package-options" id="package">
+                        <label for="package-id"><b>Package</b></label><br>
+                        <select name="package-id" id="package">
                             {% for package in packages %}
-                                <option value="{{package.type.lower()}}">{{package.type}}</option>
+                                {% if user.package_id == package.id %}
+                                    <option value="{{package.type.lower()}}" selected>{{package.type}}</option>
+                                {% else %}
+                                    <option value="{{package.type.lower()}}">{{package.type}}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
                         <br><br>
                         <label for="address"><b>Address</b></label><br>
-                        <textarea rows="4" cols="50" name="address" placeholder="Member's text here..."></textarea>
+                        <textarea rows="4" cols="50" name="address" placeholder=" Resident address">{{user.address}}</textarea>
                         <br><br>
                         <label for="contactno"><b>Contact Number</b></label>
-                        <input type="text" placeholder="Member's Contact Number" name="contactno" id="contactno" required>
+                        <input type="text" placeholder=" Contact phone number" name="contactno" id="contactno" value="{{user.phone}}" required>
                         <br><br>
                         <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Member's Email" name="email" id="email" required>
+                        <input type="text" placeholder=" Email address" name="email" id="email" value="{{user.email}}" required>
                         <br><br>
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Member's Password" name="psw" id="psw" required>
+                        <label for="password"><b>New Password</b></label>
+                        <input type="password" placeholder=" Enter a new password" name="password" id="password">
                         <br><br>
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeated Password" name="psw-repeat" id="psw-repeat" required>
+                        <label for="password-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder=" Confirm your password" name="password-repeat" id="password-repeat">
                         <br><br>
-                        <label for="img-upload"><b>Custom Profile Image</b></label><br>
+                        <label for="image"><b>Change Profile Image</b></label><br>
                         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <input type="file" name="fileToUpload" id="img-upload" style="width:100%;">
+                            <input type="file" name="image" style="width:100%;">
                         </div>
                         <br><br>
                         <hr>
                     </section>
 
                     <section id="emgcy-contact">
-                        <h2><b>Emergency Contact Information:</b></h2>
+                        <h2><b>Emergency Contact Information</b></h2>
                         <label for="emgcy-fname"><b>First Name</b></label>
-                        <input type="text" placeholder="Emergency Contact's First Name" name="emgcy-fname" id="emgcy-fname" required>
+                        <input type="text" placeholder=" First name" name="emgcy-fname" id="emgcy-fname" value="{{emergency_contact.fname}}" required>
                         <br><br>
                         <label for="emgcy-lname"><b>Last Name</b></label>
-                        <input type="text" placeholder="Emergency Contact's Last Name" name="emgcy-lname" id="emgcy-lname" required>
+                        <input type="text" placeholder=" Last name" name="emgcy-lname" id="emgcy-lname" value="{{emergency_contact.lname}}" required>
                         <br><br>
                         <label for="relationship"><b>Relationship To Member</b></label>
-                        <input type="text" placeholder="Emergency Contact's Relationship" name="relationship" id="relationship" required>
+                        <input type="text" placeholder=" Relationship to member" name="relationship" id="relationship" value="{{emergency_contact.relationship}}" required>
                         <br><br>
                         <label for="emgcy-contactno"><b>Contact Number</b></label>
-                        <input type="text" placeholder="Emergency Contact's Contact Number" name="emgcy-contactno" id="emgcy-contactno">
+                        <input type="text" placeholder=" Contact phone number" name="emgcy-contactno"  id="emgcy-contactno" value="{{emergency_contact.contact}}" required>
                         <br><br>
                         <hr>
-                        <div id="profile-btns">
-                            <button type="submit" id="exit-btn"><b>EXIT</b></button>
-                            <button type="submit" id="clr-btn"><b>CLEAR</b></button>
-                            <button type="submit" id="save-btn"><b>SAVE</b></button>
-                            <button type="submit" id="edit-btn"><b>EDIT</b></button>
-                            
-                        </div>
                     </section>
+                    
+                    <div id="profile-btns" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+                        <button id="edit-btn"><b>EDIT</b></button>
+                        <button type="submit" id="save-btn"><b>SAVE</b></button>
+                    </div>
                 </div>
             </form>
         </section>
