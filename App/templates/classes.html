@@ -5,21 +5,24 @@
 
 {% block content %}
     <div id="classes-content" class="card">
-        <h1>Classes Offered</h1>
+        <h1><b>CLASSES OFFERED</b></h1>
         <div id="class-gallery" class="vertical-gallery" >
             {% for class in classes %}
-            <div id="{{class.name.lower()}}-class" class="pkg-piece">
-                <section id="class-img">
-                    <img  src="../static/images/about-gym1.png" alt="Class 1">
-                </section>
-                <section id="class-descrpt" >
-                    <h2><b>{{class.name}}</b></h2>
-                    <hr>
-                    <p><b>{{class.desc}}</b></p>
-                    <hr>
-                    <h4><b>Instructed by {{class.instructor}}<b></h4>
-                </section>
-            </div>
+                <div id="{{class.name.lower()}}-class" class="pkg-piece">
+                    <section id="class-img">
+                        <img  src="../static/images/about-gym1.png" alt="Class 1">
+                    </section>
+                    <section id="class-descrpt" >
+                        <h2><b>{{class.name}}</b></h2>
+                        <hr>
+                        <p><b>{{class.desc}}</b></p>
+                        <hr>
+                        <h4 style="font-size: 20px;">
+                            <span style="font-weight: bold;">Instructed by</span>
+                            <br>
+                            <b>{{class.instructor}}<b></h4>
+                    </section>
+                </div>
             {% endfor %}
         </div>
     </div>
