@@ -303,7 +303,7 @@ button:active { filter: brightness(60%); }
     margin-left: 3em;
     margin-right: 3em;
     width:90%;
-    padding-right: 50px;
+    padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 10px;
 }
@@ -316,6 +316,27 @@ button:active { filter: brightness(60%); }
     background-color: #000000;
 }
 
+#slogan{
+    border: 3px solid #000000;
+    background-color: #adababdc;
+    margin:2em;
+    padding:3em;
+}
+
+#slogan h2{
+    background-color: #494848c9;
+    border: 3px solid #000000;
+    margin-top: 0;
+}
+
+#slogan h3{
+    color:#000000;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 #about-imgs img{
      margin-bottom: 24px;
 }
@@ -324,30 +345,30 @@ button:active { filter: brightness(60%); }
     padding-top: 3em;
 }
 
-#facil-text p,
-#about-gymtext p{
+#facil-text p{
     border-right:20px;
     text-align: justify;
     padding-bottom:3em;
 }
 
+#mission p,
 #about-gymtext p{
-    margin-left: 2em;
-    margin-bottom: 3em;
-    padding: 2em;
+    text-align: justify;
 }
 
-
+#about-gymtext {
+    margin:3em;
+    margin-top:0;
+    margin-right:1em;
+    padding:2em;
+}
 
 #about-gymtext h2 {
+    margin-top: 0;
     text-align: center;
     color:#5c0101;
     font-size: 30pt;
-    margin-left: 30px;
     background-color: #494848c9;
-    padding: 10px;
-    margin-top: 0;
-    margin-bottom: 10px;
     border: 3px solid #000000;
 }
 
@@ -357,13 +378,19 @@ button:active { filter: brightness(60%); }
     font-size: 30pt;
 }
 
-#location,
-#mission {
+#location {
     padding: 3em;
     padding-bottom: 2em;
 }
 
-#location h2,
+
+#mission {
+    margin: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 2em;
+}
+
 #mission h2 {
     background-color: #494848c9;
     padding: 10px;
@@ -379,15 +406,7 @@ button:active { filter: brightness(60%); }
     font-size: 30pt;
 }
 
-#mission h3,
-#slogan h3{
-    color:#000000;
-    font-size: 30pt;
-    text-align: center;
-}
-
-#location h3,
-#mission p{
+#location h3{
     padding: 1em;
     text-align: justify;
 }
@@ -396,21 +415,28 @@ button:active { filter: brightness(60%); }
     height:45em;
 }
 
-#location h2{
-    color:#5c0101;
-    text-align: center;
-    font-size: 30pt;
-}
-
 #location h3{
     color:#000000;
     text-align: center;
     font-size: 15pt;
+    margin-top:0;
+}
+
+#location h2{
+    color:#5c0101;
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #494848c9;
+    padding:5px;
+    border:3px solid #000000;
 }
 
 #map{
+    padding:1em;
     padding-bottom: 50%;
     position: relative;
+    
 }
 
 #map div{
@@ -418,11 +444,22 @@ button:active { filter: brightness(60%); }
 }
 
 #map iframe{
-    height: 25em;
-    width: 35em;
+    height: 37em;
+    width: 30em;
     justify-content: center;
     left: 0;
     top: 0;
+}
+
+#map-descrpt {
+    margin-left:2em;
+    margin-top: 10em;
+    padding:14px;
+    padding-top: 0;
+    border:3px solid #000000;
+    height:18em;
+    background-color: #adababdc;
+    
 }
 
 /*Register Page*/
@@ -533,6 +570,7 @@ button:active { filter: brightness(60%); }
     text-align: left;
     color: #000000;
 }
+
 
 #memberinfo input,
 #memberinfo select,
@@ -763,14 +801,13 @@ input[type=file]{
     border: 3px solid #000000;
 }
 
-#location h3,
-#mission p,
-#about-gymtext p,
+#mission,
+#about-gymtext,
 #facil-text p,
 #class-descrpt p,
 #pkg-descrpt {
   border: 3px solid #000000;
-  background-color: #696868bb;
+  background-color: #adababdc;
 }
 
 #class-descrpt h4 {
