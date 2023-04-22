@@ -34,7 +34,6 @@ def register():
             flash('Passwords do not match', category='error')
             return redirect(url_for('register_views.register_page'))
         
-        password = request.form['password']
         fname = request.form['firstname']
         lname = request.form['lastname']
         num = len(get_same_names(fname, lname))
@@ -44,48 +43,37 @@ def register():
             month=int(request.form['dob'].split('-')[1]), 
             day=int(request.form['dob'].split('-')[2])
         )
-        address = request.form['address']
-        phone = request.form['contactno']
-        sex = request.form['sex']
-        email = request.form['email']
         image = b64encode(request.files['image'].read()) if request.files['image'] else None
-        package_id = request.form['package-id']
         
         # If image is not provided, use default image for sex of user
         if image is None:
-            if sex == "other":  image = "App/static/images/default-user.png"
-            elif sex == "male": image = "App/static/images/male.jpg"
+            if request.form['sex'] == "other":  image = "App/static/images/default-user.png"
+            elif request.form['sex'] == "male": image = "App/static/images/male.jpg"
             else: image = "App/static/images/female.jpg"
             image = b64encode(open(path.join(path.dirname(__file__).split('App')[0], image), 'rb').read())
         
-        # Collect emergency contact info
-        em_contact_fname = request.form['emgcy-fname']
-        em_contact_lname = request.form['emgcy-lname']
-        en_contact_relationship = request.form['relationship']
-        em_contact_contact = request.form['emgcy-contactno']
-        
         # Add emergency contact first
         create_emergency_contact(
-            fname=em_contact_fname,
-            lname=em_contact_lname,
-            relation=en_contact_relationship,
-            contact=em_contact_contact
+            fname=request.form['emgcy-fname'],
+            lname=request.form['emgcy-lname'],
+            relation=request.form['relationship'],
+            contact=request.form['emgcy-contactno']
         )
         emergency_contact_id = get_emergency_contact(len(get_all_emergency_contacts())).id
 
         # Add new user
         create_user(
             username=username,
-            password=password,
-            fname=fname,
-            lname=lname,
+            password=request.form['password'],
+            fname=request.form['firstname'],
+            lname=request.form['lastname'],
             dob=dob,
-            address=address,
-            phone=phone,
-            sex=sex,
-            email=email,
+            address=request.form['address'],
+            phone=request.form['contactno'],
+            sex=request.form['sex'],
+            email=request.form['email'],
             image=image,
-            package_id=package_id,
+            package_id=request.form['package-id'],
             emergency_contact_id=emergency_contact_id
         )
 
