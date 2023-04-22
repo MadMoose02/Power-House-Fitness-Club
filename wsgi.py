@@ -47,13 +47,13 @@ def initialise():
         fname="Wendy",
         lname="the Builder",
         relation="Spouse",
-        contact="5192352346"
+        contact="519-2352"
     )
     create_emergency_contact(
         fname="Roy",
         lname="Layton",
         relation="Brother",
-        contact="19532180062"
+        contact="953-2180"
     )
     
     # Add default users
