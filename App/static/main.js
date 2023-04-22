@@ -89,5 +89,25 @@ function toggleNavMobileMenu() {
 function closeAlertMessages() {
     let alertNav = document.querySelector('#alert-messages-nav');
     alertNav.style.display = 'none';
+}
 
+function toggleProfileInputsState(state) {
+    let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'image', 'package', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
+    for (let id of ids) {
+        let el = document.getElementById(id);
+        el.readOnly = state;
+        el.disabled = state;
+    }
+}
+
+function makeProfileEditable() {
+    let editProfileBtn = document.querySelector('#edit-profile-btn');
+    editProfileBtn.style.display = 'none';
+    let saveProfileBtn = document.querySelector('#save-profile-btn');
+    saveProfileBtn.style.display = 'block';
+    toggleProfileInputsState(false);
+
+    saveProfileBtn.onclick = function () {
+        toggleProfileInputsState(true);
+    }
 }
