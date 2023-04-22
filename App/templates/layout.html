@@ -108,7 +108,7 @@
         {% else %}
             <div class="modal-content" style="margin: 0 auto">
                 <h4 style="margin-bottom: 10px">{{user.fname}} {{user.lname}}</h4>
-                <p style="margin: 0">{{user.username}}</p>
+                <p style="margin: 0">@{{user.username}}</p>
                 <p style="margin: 0">{{user_package.type}} Membership</p>
                 <p style="margin: 0; margin-bottom: 15px">{{user.email}}</p>
                 <form action="/logout" method="post">
@@ -134,7 +134,7 @@
         {% endif %}
     {% endwith %}
 
-    <div class="container" id="content"">
+    <div class="container" id="content">
         {% block content %}
             {% block page %}{% endblock %}
         {% endblock %}
@@ -152,8 +152,7 @@
   <footer class="site-footer">
     <div class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px">
         <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center">
-            <p style="margin-top: 10px">Address</p>
-            <p>Contact</p>
+            <p style="margin-top: 10px">Trincity Central Road, Trincity<br>Near East Gates Mall.</p>
         </div>
         <div class="social-wrapper">
           <ul style="margin: 0 auto">
