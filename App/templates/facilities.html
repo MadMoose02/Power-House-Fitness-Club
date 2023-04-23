@@ -9,17 +9,17 @@
         <h1><b>OUR FACILITIES</b></h1>
         {% for facility in facilities %}
             <div id="{{facility.name.lower()}}-facility" class="datacard">
-                <section id="facil-text">
-                    <section id="facil-img">
-                        <img src="../static/images/about-gym1.png" alt="Italian Trulli" style="margin-left: 0">
-                    </section>
-                    <div style="display: flex; flex-direction: column; justify-content: flex-start; min-height: 15em; width: 100%; margin-bottom: 0">
-                        <h2><b>{{facility.name}}</b></h2>
-                        <p style="margin: 0; padding: 15px; font-weight: normal; font-size: 19px"><b>{{facility.desc}}</b></p>
-                    </div>
+                <section class="datacard-img">
+                    <img src="../static/images/about-gym1.png" alt="Italian Trulli">
                 </section>
+                <div class="datacard-text">
+                    <h2 class="datacard-title"><b>{{facility.name}}</b></h2>
+                    <p class="datacard-desc"><b>{{facility.desc}}</b></p>
+                </div>
             </div>
         {% endfor %}
     </div>
 </section>
 {% endblock %}
+
+

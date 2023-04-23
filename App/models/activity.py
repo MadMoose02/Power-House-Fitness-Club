@@ -6,7 +6,7 @@ class Activity(db.Model):
     __tablename__ = 'activity'
     user = relationship('User', backref='activity', cascade="all, delete")
     id = Column(Integer, name="id", primary_key=True, autoincrement=True)
-    user_id = Column(Integer, db.ForeignKey('user.id'), nullable=False, unique=True)
+    user_id = Column(Integer, db.ForeignKey('user.id'), nullable=False)
     date = Column(Date, name="date", nullable=False)
     pre_workout = Column(Boolean, name="pre_workout", default=False)
     energy_level = Column(String(20), name="energy_level", default=False)

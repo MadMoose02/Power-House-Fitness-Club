@@ -1,30 +1,34 @@
 [
     {
-        "name": "Personal Training",
-        "description": "Personal trainers can help you get the most out of your training. Personal trainers can help you get the most out of your training."
+        "name": "Cardio machines",
+        "description": "A range of machines, all designed to help you burn calories and increase your heart rate."
     },
     {
-        "name": "Facil 1 - Personal Training",
-        "description": "Trial - Personal trainers can help you get the most out of your training."
+        "name": "Weights",
+        "description": "Weight training boosts metabolism, promotes better bone health, and reduces your risk of inflammation."
     },
     {
-        "name": "Facility 2 - Yoga Studio",
-        "description": "This is meant to be a test run for sizing cards"
+        "name": "Showers",
+        "description": "Showers are a great way to end after working up a sweat and is available to all adults"
     },
     {
-        "name": "Facility 3",
-        "description": "Facility 3 description"
+        "name": "Group Fitness Studio",
+        "description": "A studio space for group fitness classes such as yoga, Pilates, Zumba, and spinning."
     },
     {
-        "name": "Facility 4",
-        "description": "Facility 4 description"
+        "name": "Pools",
+        "description": "You can get in some low-impact swimming workouts while cooling yourself down."
     },
     {
-        "name": "Facility 5",
-        "description": "Facility 5 description"
+        "name": "Basketball Courts",
+        "description": "Playing basketball is a great way to get in some cardiovascular exercise"
     },
     {
-        "name": "Facility 6",
-        "description": "Facility 6 description"
+        "name": "Massage Therapy",
+        "description": "Massage is a great way to decrease DOMS and potentially decrease recovery times from intense workouts"
+    },
+    {
+        "name": "Sauna and Steam Room",
+        "description": "A relaxation area with a dry sauna and a steam room for post-workout recovery."
     }
 ]

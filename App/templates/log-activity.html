@@ -5,8 +5,51 @@
 
 {% block content %}
 <section>
-    <div id="wallet-content" class="card">
+    <div id="wallet-content">
         <h1><b>LOG COMPLETED ACTIVITY</b></h1>
+        <div style="background: white" class="card">
+            <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+            <form id="log-activity" action="/log-activity" method="post" style="margin: 40px">
+                <section>
+                    <fieldset>
+                        <legend>Date</legend>
+                        <input type="date" name="date" id="date" required>
+                    </fieldset>
+                    <br><br>
+                    <fieldset>
+                        <legend>Had Pre-Workout/Meal/Snack?</legend>
+                        <input type="radio" name="pre-workout" id="had-pre-workout" value="True" style="position: relative; opacity: 100%; margin-top: 1px" checked>
+                        <label for="had-pre-workout">Yes</label><br>
+                        <input type="radio" name="pre-workout" id="no-pre-workout"  value="False" style="position: relative; opacity: 100%; margin-top: 1px">
+                        <label for="no-pre-workout">No</label><br>
+                    </fieldset>
+                    <br><br>
+                    <fieldset>
+                        <legend>Select energy level</legend>
+                        <input type="radio" name="energy-level" id="low-energy" value="Low" style="position: relative; opacity: 100%; margin-top: 1px" checked>
+                        <label for="low-energy">Low</label><br>
+                        <input type="radio" name="energy-level" id="medium-energy" value="Medium" style="position: relative; opacity: 100%; margin-top: 1px">
+                        <label for="medium-energy">Medium</label><br>
+                        <input type="radio" name="energy-level" id="high-energy" value="High" style="position: relative; opacity: 100%; margin-top: 1px">
+                        <label for="high-energy">High</label>
+                    </fieldset>
+                    <br><br>
+                    <fieldset>
+                        <legend>Activity/Exercise Details</legend>
+                        <textarea name="details" id="details" style="border: 1px solid; max-width: inherit" required></textarea>
+                    </fieldset>
+                </section>
+
+                <section style="display: flex; flex-direction: row; justify-content: center">
+                    <button id-"submit-activity-log" type="submit" style="font-size: 18px; width: 100px; margin-top: 40px; height: 40px;">Submit</button>
+                </section>
+            </form>
+        </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById('date').valueAsDate = new Date();
+        })
+    </script>
 </section>
 {% endblock %}

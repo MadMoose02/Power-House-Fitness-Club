@@ -40,7 +40,7 @@ def edit_profile_page():
     
 @profile_views.route('/profile/update-user', methods=['POST'])
 @login_required
-def update_user_info(username: str):
+def update_user_info():
         
     try:
         if request.form['password'] is not None and request.form['password-repeat'] is not None:
