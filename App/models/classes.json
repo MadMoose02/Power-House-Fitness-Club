@@ -1,17 +1,37 @@
 [
     {
-        "name": "Beginner",
+        "name": "Yoga",
         "instructor": "Jessie Elliott",
-        "description": "An introductory course covering the basics."
+        "description": "A basic yoga session will consist of an instructor going over various stretches and poses with you while you focus on breath and mindfulness."
     },
     {
-        "name": "Comprehensive",
+        "name": "Spin",
         "instructor": "Cornelia Pope",
-        "description": "A comprehensive course covering various topics."
+        "description": "Consists of a group of people on stationary bikes who pedal together with the aid of an instructor at the front of the class"
     },
     {
-        "name": "Advanced",
+        "name": "Boot camp",
         "instructor": "Ophelia Romero",
-        "description": "An advanced course covering specialized topics."
+        "description": "Intensive drills and workouts to tone up before joining the military."
+    },
+    {
+        "name": "Hybrid",
+        "instructor": "Mia Ferguson",
+        "description": "Most fitness classes focus on one main type of exercise like yoga or cycling, but you can also take hybrid classes to keep things fresh."
+    },
+    {
+        "name": "Barre",
+        "instructor": "Nellie Barton",
+        "description": "Barre classes combine disciplines with Ballet, Pilates, and Yoga."
+    },
+    {
+        "name" : "Pilates",
+        "instructor": "Frank Rodgers",
+        "description": "Pilates consists of about 500 separate exercises designed to strengthen and lengthen all major muscle groups."
+    },
+    {
+        "name" : "Active Aging",
+        "instructor": "",
+        "description": "Classes that are designed for seniors or older adults and meant to help maintain flexibility, strength, and cardiovascular health."
     }
 ]
