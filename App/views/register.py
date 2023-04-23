@@ -13,7 +13,8 @@ from App.controllers import (
     get_emergency_contact,
     get_all_emergency_contacts,
     create_user,
-    get_same_names
+    get_same_names,
+    create_wallet
 )
 
 register_views = Blueprint('register_views', __name__, template_folder='../templates')
@@ -33,6 +34,7 @@ def register_page():
 @register_views.route('/register', methods=['POST'])
 def register():
     print(request.form.to_dict())
+
     try:
         if request.form['password'] != request.form['password-repeat']:
             flash('Passwords do not match', category='error')
@@ -64,7 +66,10 @@ def register():
             contact=request.form['emgcy-contactno']
         )
         emergency_contact_id = get_emergency_contact(len(get_all_emergency_contacts())).id
-
+        
+        # Create wallet
+        new_wallet = create_wallet(200, 0)
+        
         # Add new user
         create_user(
             username=username,
@@ -78,13 +83,14 @@ def register():
             email=request.form['email'],
             image=image,
             package_id=request.form['package-id'],
-            emergency_contact_id=emergency_contact_id
+            emergency_contact_id=emergency_contact_id,
+            wallet_id=new_wallet.id
         )
 
         flash('Registration complete. Account created successfully', category='info')
         
     except Exception as e:
-        db.session.rollback()
-        flash("Unable to register", category='error')
-    
-    return redirect(url_for('index_views.home_page'))
+        flash('Error occurred during registration. Please try again', category='error')
+        
+    finally:
+        return redirect(url_for('index_views.home_page'))
