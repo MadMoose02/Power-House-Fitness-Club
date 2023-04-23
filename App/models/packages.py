@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from App.database import db
 
 class Package(db.Model):
-    __tablename__ = 'packages'
+    __tablename__ = 'package'
     id = Column(Integer, name="id", primary_key=True, autoincrement=True)
     type = Column(String(20), name="type", nullable=False)
     price = Column(String(10), name="price", nullable=False)

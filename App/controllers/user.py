@@ -19,6 +19,7 @@ def create_user(username, password, fname, lname, dob, address, phone,
     )
     db.session.add(new_user)
     db.session.commit()
+    print(f"Added user '{username}'")
     return new_user
 
 

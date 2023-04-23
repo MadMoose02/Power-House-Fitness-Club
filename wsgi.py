@@ -1,7 +1,7 @@
 import click, json
 from base64 import b64encode
 from flask.cli import AppGroup
-from datetime import date
+from datetime import date, datetime
 
 from App.database import db, get_migrate
 from App.main import create_app
@@ -12,7 +12,8 @@ from App.controllers import (
     create_classes, 
     create_packages,
     create_facilities,
-    create_emergency_contact
+    create_emergency_contact,
+    create_wallet
 )
 
 app = create_app()
@@ -68,10 +69,10 @@ def initialise():
         sex='male',
         email='bob.thebuilder@mail.com',
         image=b64encode(open("App/static/images/male.jpg", "rb").read()),
-        package_id=1,
+        package_id=2,
         emergency_contact_id=1
     )
-    print("Added test user 'bob'")
+    
     create_user(
         username='ann', 
         password='annpass', 
@@ -86,7 +87,20 @@ def initialise():
         package_id=3,
         emergency_contact_id=2
     )
-    print("Added test user 'ann'")
+    
+    # Create wallet for default users
+    create_wallet(
+        user_id=1,
+        debit=300,
+        credit=0
+    )
+    
+    create_wallet(
+        user_id=2,
+        debit=350,
+        credit=0
+    )
+    
     print("Database intialised successfully")
 
 

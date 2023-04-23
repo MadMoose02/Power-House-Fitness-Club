@@ -212,6 +212,7 @@ button:active { filter: brightness(60%); }
     font-family: Calibri, Helvetica, sans-serif;
     background-color: black;
     color:rgb(163, 160, 160);
+    font-size: 12px;
 }
 
 #user-nav-profile-modal {

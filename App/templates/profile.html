@@ -7,100 +7,17 @@
 {% block content %}
 <div>
     <div class="reg-container">
-        <h1><b>PROFILE</b></h1>
+        <h1><b>MY PROFILE</b></h1>
         <section>
-            <form id="edit-profile-form" class="form" action="/profile/update-user" enctype="multipart/form-data" method="post">
-                <div class="reg-card">
-                    <h1><b>MEMBER'S PROFILE INFORMATION</b></h1>
-                    <p><b>Select the buttons at the bottom of the page to edit & save changes.</b></p>
-                    <hr>
-                    
-                    <section id="memberinfo">
-                        <label for="username"><b>Username</b></label>
-                        <input type="text" placeholder=" Enter username" name="username" id="username" value="{{user.username}}" required readonly="readonly">
-                        <br><br>
-                        <label for="firstname"><b>First Name</b></label>
-                        <input type="text" placeholder=" First name" name="firstname" id="firstname" value="{{user.fname}}" required readonly="readonly">
-                        <br><br>
-                        <label for="lastname"><b>Last Name</b></label>
-                        <input type="text" placeholder=" Last name" name="lastname" id="lastname" value="{{user.lname}}" required readonly="readonly">
-                        <br><br>
-                        <label for="date"><b>Date of Birth</b></label>
-                        <br>
-                        <input type="date" name="dob" id="dob" value="{{user.dob}}" required readonly="readonly">
-                        <br><br>
-                        <label for="sex"><b>Sex</b></label>
-                        <select id="disabled-sex" disabled>
-                            <option>{{user.sex.capitalize()}}</option>
-                        </select>
-                        <select class="hidden" name="sex" id="sex" readonly="readonly">
-                            <option {{'selected' if user.sex == 'male'}} value="male">Male</option>
-                            <option {{'selected' if user.sex == 'female'}} value="female">Female</option>
-                            <option {{'selected' if user.sex == 'other'}} value="other">Other</option>
-                        </select>
-                        <br><br>
-                        <label for="package-id"><b>Package</b></label><br>
-                        <select id="disabled-package" disabled>
-                            <option>{{user_package.type}}</option>
-                        </select>
-                        <select class="hidden" name="package-id" id="package" readonly="readonly">
-                            {% for package in packages %}
-                                {% if user.package_id == package.id %}
-                                    <option id="{{package.type.lower()}}-package" value="{{package.id}}" selected>{{package.type}}</option>
-                                {% else %}
-                                    <option id="{{package.type.lower()}}-package" value="{{package.id}}">{{package.type}}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                        <br><br>
-                        <label for="address"><b>Address</b></label><br>
-                        <textarea rows="4" cols="50" id="address" name="address" placeholder=" Resident address" readonly="readonly">{{user.address}}</textarea>
-                        <br><br>
-                        <label for="contactno"><b>Contact Number</b></label>
-                        <input type="text" placeholder=" Contact phone number" name="contactno" id="contactno" value="{{user.phone}}" required readonly="readonly">
-                        <br><br>
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder=" Email address" name="email" id="email" value="{{user.email}}" required readonly="readonly">
-                        <br><br>
-                        <label for="password"><b>New Password</b></label>
-                        <input type="password" placeholder=" Enter a new password" name="password" id="password" readonly="readonly">
-                        <br><br>
-                        <label for="password-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder=" Confirm your password" name="password-repeat" id="password-repeat" readonly="readonly">
-                        <br><br>
-                        <label for="image"><b>Change Profile Image</b></label><br>
-                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <input class="hidden" type="file" name="image" id="image" style="width:100%; color: black">
-                            <input type="file" id="disabled-image" style="width:100%;" disabled>
-                        </div>
-                        <br><br>
-                        <hr>
-                    </section>
-
-                    <section id="emgcy-contact">
-                        <h2><b>Emergency Contact Information</b></h2>
-                        <label for="emgcy-fname"><b>First Name</b></label>
-                        <input type="text" placeholder=" First name" name="emgcy-fname" id="emgcy-fname" value="{{emergency_contact.fname}}" required readonly="readonly">
-                        <br><br>
-                        <label for="emgcy-lname"><b>Last Name</b></label>
-                        <input type="text" placeholder=" Last name" name="emgcy-lname" id="emgcy-lname" value="{{emergency_contact.lname}}" required readonly="readonly">
-                        <br><br>
-                        <label for="relationship"><b>Relationship To Member</b></label>
-                        <input type="text" placeholder=" Relationship to member" name="relationship" id="relationship" value="{{emergency_contact.relationship}}" required readonly="readonly">
-                        <br><br>
-                        <label for="emgcy-contactno"><b>Contact Number</b></label>
-                        <input type="text" placeholder=" Contact phone number" name="emgcy-contactno"  id="emgcy-contactno" value="{{emergency_contact.contact}}" required readonly="readonly">
-                        <br><br>
-                        <hr>
-                    </section>
-                    
-                    <div id="profile-btns" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-                        <a id="edit-profile-btn" onclick="makeProfileEditable();"><b>EDIT</b></a>
-                        <a id="cancel-edit-profile-btn" style="display: none"><b>CANCEL</b></a>
-                        <button type="submit" id="save-profile-btn" class="hidden"><b>SAVE</b></button>
-                    </div>
-                </div>
-            </form>
+            <div style="background: white">
+                <h2>There be text here</h2>
+                <ul>
+                    <li><a href="/profile/edit-user">EDIT MY INFO</a></li>
+                    <li><a href="/log-activity">LOG NEW ACTIVITY</a></li>
+                    <li><a href="/activty-tracking">ACTIVITY TRACKING</a></li>
+                    <li><a href="/transactions">TRANSACTION HISTORY</a></li>
+                </ul>
+            </div>
         </section>
     </div>
 </div>
