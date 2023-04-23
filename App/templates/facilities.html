@@ -61,9 +61,14 @@
         </section>
         <br>
         <div style="text-align:center">
-            <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
-            <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
-            <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
+            <span id="facility-slide-dot-1" class="slidenav-dot" onclick="currentSlide(1)"></span> 
+            <span id="facility-slide-dot-2" class="slidenav-dot" onclick="currentSlide(2)"></span> 
+            <span id="facility-slide-dot-3" class="slidenav-dot" onclick="currentSlide(3)"></span> 
+            <span id="facility-slide-dot-4" class="slidenav-dot" onclick="currentSlide(4)"></span> 
+            <span id="facility-slide-dot-5" class="slidenav-dot" onclick="currentSlide(5)"></span> 
+            <span id="facility-slide-dot-6" class="slidenav-dot" onclick="currentSlide(6)"></span> 
+            <span id="facility-slide-dot-7" class="slidenav-dot" onclick="currentSlide(7)"></span> 
+            <span id="facility-slide-dot-8" class="slidenav-dot" onclick="currentSlide(8)"></span> 
         </div>
         <script>
             let slideIndex = 1;
@@ -102,19 +107,42 @@
         <h1><b>AVAILABLE FACILITIES</b></h1>
         <div class="card-data" class="row">
             {% for facility in facilities %}
-            <div class="center">
-                <section id="{{facility.name.lower()}}-facility" class="card">
+            <div id="{{facility.name.lower()}}-facility" class="center hidden">
+                <section class="card">
                     <h2>{{facility.name}}</h2>
                     <hr>
-                    <p>{{facility.desc}}</p>
+                    <p>{{facility.description}}</p>
                     <!--to increase fit-coin debit
                     <p><button class="package-button">Contact</button></p>
                     -->
                 </section>
             </div>
             {% endfor %}
-            <a href="#" class="viewMore"><b>View More</b></a>
-        </div>    
+            <a id="view-more-btn" class="viewMore" onclick="viewMoreFacilities(2)"><b>View More</b></a>
+        </div>
+        <script>
+            let num_displayed = {{num_to_display | safe}};
+
+            function showDatacards(num) {
+                let container = document.querySelectorAll("#facilpg-datacards > div > div");
+                console.log(container);
+                for (let i = 0; i < num; i++) {
+                    container[i].classList.remove("hidden");
+                }
+            }
+
+            function viewMoreFacilities(num) {
+                facilities = {{facilities | safe}};
+                num_displayed += num;
+                if (num_displayed >= facilities.length) {
+                    num_displayed = facilities.length;
+                    document.getElementById("view-more-btn").style.display = "none";
+                }
+                showDatacards(num_displayed);
+            }
+
+            showDatacards(num_displayed);
+        </script>
     </section>
 </section>
         
