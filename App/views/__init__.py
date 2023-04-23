@@ -9,6 +9,7 @@ from .profile import profile_views
 from .wallet import wallet_views
 from .activity import activity_views
 from .transaction import transaction_views
+from .discussion import discussion_views
 
 views = [
     index_views, 
@@ -21,5 +22,6 @@ views = [
     profile_views,
     wallet_views,
     activity_views,
-    transaction_views
+    transaction_views,
+    discussion_views
 ]

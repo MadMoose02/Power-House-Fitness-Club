@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Forum - Powerhouse Fitness Club{% endblock %}
+{% block page %}Forum{% endblock %}
+{{ super() }}
+
+{% block content %}
+<section>
+    <div id="forum-content" class="card">
+        <h1><b>Powerhouse Fitness Club Forum</b></h1>
+        <hr><br>
+        <h4>Engage with the fitness community</h4>
+        <section>
+            <form action="/forum/filter" method="post" style="width: 400px">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                    <input type="text" placeholder="Search" name="query">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </section>
+        <br><hr>
+        <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+            {% if discussions %}
+                {% if filter %}
+                    <p>Showing results for '{{query}}'</p>
+                {% endif %}
+                {% for discussion in discussions %}
+                <a style="display:block" href="/forum/{{discussion.id}}">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                        <div>
+                            <h3>{{discussion.title}}</h3>
+                            <p>Started by {{get_user(discussion.started_by).username}}</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            {% elif filter %}
+                <p>No discussions with title '{{query}}'</p>
+            {% else %}
+                <p>No discussions</p>
+            {% endif %}
+        </section>
+        <br><hr>
+        <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+            <form action="/start-discussion" method="post" style="width: 400px">
+                <input type="text" name="title" placeholder="Title of Discussion">
+                <textarea name="content" placeholder="Message"></textarea>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+                    <button type="submit">Create Discussion</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
+{% endblock %}
+
+

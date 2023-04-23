@@ -6,3 +6,5 @@ from .emergency_contact import *
 from .wallet import *
 from .transaction import *
 from .activity import *
+from .discussion import *
+from .message import *

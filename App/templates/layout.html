@@ -51,13 +51,14 @@
                         <li class="nav-item"><a href="/packages">Packages</a></li>
                         <li class="nav-item"><a href="/facilities">Facilities</a></li>
                         <li class="nav-item"><a href="/classes">Classes</a></li>
+                        <li class="nav-item"><a href="/forum">Forum</a></li>
                     </ul>
                     <ul style="margin-top: 5px">
                         <li class="nav-item">
                             {% if user %}
-                                <div id="user-nav-profile"><img id="user-nav-profile-img" src="data:image/png;base64,{{user.image.decode()}}"></div>
+                            <div id="user-nav-profile"><img id="user-nav-profile-img" src="data:image/png;base64,{{user.image.decode()}}"></div>
                             {% else %}
-                                <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/default-user.png"></div>
+                            <div id="user-nav-profile"><img id="user-nav-profile-img" src="../static/images/default-user.png"></div>
                             {% endif %}
                         </li>
                     </ul>
@@ -72,6 +73,7 @@
                                 <li class="nav-item"><a href="/packages">Packages</a></li>
                                 <li class="nav-item"><a href="/facilities">Facilities</a></li>
                                 <li class="nav-item"><a href="/classes">Classes</a></li>
+                                <li class="nav-item"><a href="/forum">Forum</a></li>
                             </ul>
                         </div>
                     </div>
