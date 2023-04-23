@@ -8,7 +8,7 @@ from App.controllers import (
     get_package, 
     create_activity, 
     add_debit,
-    get_all_activities_json,
+    get_all_activities_of_user_json,
     create_transaction
 )
 
@@ -38,7 +38,7 @@ def add_activity_log():
         energy_level=request.form['energy-level'],
         details=request.form['details'],
     ):
-        # Add points to the user's wallet
+        # Add fitcoins to the user's wallet
         add_debit(wallet_id=current_user.wallet_id, debit=debit_points)
         dt = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
         create_transaction(
@@ -46,10 +46,10 @@ def add_activity_log():
             wallet_id=current_user.wallet_id, 
             type="Debit",
             amount=debit_points,
-            details="Added 10 points to debit for completing a workout",
+            details="Added 10 fitcoins to debit for completing an activity",
             datetime=dt
         )
-        flash("Activity successfully logged. Points added to fitness wallet", category='success')
+        flash("Activity successfully logged. Fitcoins added to wallet", category='success')
     else:
         flash("Something went wrong whilst logging your activity. Try again", category='error')
         db.session.rollback()
@@ -66,5 +66,5 @@ def activty_tracking_page():
         'activtiy-tracking.html', 
         user=user, 
         user_package=user_package,
-        activities = get_all_activities_json()
+        activities = get_all_activities_of_user_json(current_user.id)
     )
