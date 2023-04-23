@@ -17,7 +17,9 @@ from App.controllers import (
     create_wallet,
     create_activity,
     add_debit,
-    create_transaction
+    create_transaction,
+    create_discussion,
+    create_message
 )
 
 app = create_app()
@@ -127,9 +129,26 @@ def initialise():
             wallet_id=2, 
             type="Debit",
             amount=10,
-            details="Added 10 points to debit for completing a workout",
+            details="Added 10 Fitcoins to debit for completing a workout",
             datetime=random_day.strftime("%Y-%m-%d %H:%M:%S")
         )
+        
+    # Add comments to the forum
+    create_discussion(title="How do I start with HIT?", started_by=1)
+    create_message(
+        discussion_id=1,
+        user_id=1,
+        content="I'm unsure how to start doing High Intensity Training. How do I begin?",
+        external_link="",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    create_message(
+        discussion_id=1,
+        user_id=2,
+        content="Hi there! Maybe this can help you?",
+        external_link="https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
     
     print("Database intialised successfully")
 
