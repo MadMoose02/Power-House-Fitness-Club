@@ -23,3 +23,11 @@ def get_transaction(id) -> Transaction:
 
 def get_all_transactions() -> list[Transaction]:
     return Transaction.query.all()
+
+
+def get_all_transactions_of_user(user_id) -> list[Transaction]:
+    return Transaction.query.filter_by(user_id=user_id).all()
+
+
+def get_all_transactions_of_user_json(user_id) -> list[Transaction]:
+    return [i.get_json() for i in get_all_transactions_of_user(user_id)]
