@@ -754,10 +754,6 @@ input[type=file]{
     color: #9b0404;
 }
 
-#registerbtn {
-    margin-top: 0;
-}
-
 #regpg-signin {
     margin-bottom: 3em;
     margin-top: 5em;
@@ -774,6 +770,17 @@ input[type="file"]::file-selector-button,
     border-radius: 5px;
     color:  #000000;
 }
+
+#reg-form > section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+#reg-form > section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 /*Profile Page*/
 #disabled-image{

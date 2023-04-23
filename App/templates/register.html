@@ -17,7 +17,7 @@
     </section>
     <section class="form-container">
         <form id="reg-form" action="/register" method="post" enctype="multipart/form-data">
-            <section id="memberinfo">
+            <section id="memberinfo" class="visible">
                 <h2><b>MEMBER INFORMATION</b></h2>
                 <label for="firstname"><b>FIRST NAME</b></label>
                 <input type="text" placeholder=" First Name" name="firstname" id="firstname" required>
@@ -64,11 +64,11 @@
                 </div>
                 <br><br>
                 <hr>
+                <a class="btn-style" onclick="advanceSection(1);"><b>CONTINUE</b></a>
             </section>
-
-            <a href="#" class="btn-style"><b>CONTINUE</b></a>
-
-            <section id="emgcy-contact">
+            
+            
+            <section id="emgcy-contact" class="hidden">
                 <h2><b>EMERGENCY CONTACT INFORMATION</b></h2>
                 <label for="emgcy-fname"><b>FIRST NAME</b></label>
                 <input type="text" placeholder=" First Name" name="emgcy-fname" id="emgcy-fname" required>
@@ -83,15 +83,38 @@
                 <input type="text" placeholder=" Contact Phone Number" name="emgcy-contactno" id="emgcy-contactno" required>
                 <br><br>
                 <hr>
+                <p id="terms-condit">By creating an account you agree to our <a href="#"><b>Terms & Privacy Conditions.</b></a></p>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                    <a class="btn-style" onclick="advanceSection(-1);"><b>BACK</b></a>
+                    <button type="submit" id="registerbtn" class="btn-style"><b>REGISTER</b></button>
+                </div>
             </section>
-            <p id="terms-condit">By creating an account you agree to our <a href="#"><b>Terms & Privacy Conditions.</b></a></p>
-            <button type="submit" id="registerbtn" class="btn-style"><b>REGISTER</b></button>
         </form>
     </section>
     <section id="regpg-signin">
         <p>Already have an account? </p>
         <button id="register-signin-btn" type="submit" onclick="openUserProfileModal();" style="font-weight: bolder">Login</button>
     </section>
+
+    <script>
+        let sectionIndex = 0;
+        function advanceSection(indexIncrement) {
+            let sections = document.querySelectorAll("form > section");
+            let currentSection = sections[sectionIndex];
+            currentSection.classList.remove("visible");
+            sectionIndex += indexIncrement;
+            sectionIndex = sectionIndex < 0 ? 0 : sectionIndex;
+            let nextSection = sections[sectionIndex];
+            currentSection.classList.add("hidden");
+            nextSection.classList.remove("hidden");
+            nextSection.classList.add("visible");
+
+            document.querySelector('#reg-form').scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+            })
+        }
+    </script>
 </section>
 
 {% endblock %}

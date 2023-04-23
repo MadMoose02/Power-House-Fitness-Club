@@ -52,8 +52,6 @@ window.onclick = function (event) {
     let userNavProfileModal = document.getElementById('user-nav-profile-modal');
     let navProfileModalBoundingBox = userNavProfileModal.getBoundingClientRect();
     let x = event.clientX, y = event.clientY;
-
-    console.log(event.target.id);
     
     if (event.target.id === 'user-nav-profile-img' || event.target.parentNode.id === 'user-nav-profile') return;
     if (event.target.id === 'register-signin-btn') return;
