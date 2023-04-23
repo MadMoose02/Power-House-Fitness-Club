@@ -407,6 +407,24 @@ button:active { filter: brightness(60%); }
     transform: translate(-50%, -50%);
 }
 
+/*Packages Template*/
+.pkgs{
+    background-color: #000000;
+    padding: 2em;
+}
+
+.pkgs * {
+    box-sizing: border-box;
+  }
+.pkgs .card{
+    background-color: #222121d5;
+}
+
+.pkgs img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
 
 /*Home Page*/
 #homepage {
@@ -514,24 +532,6 @@ button:active { filter: brightness(60%); }
 
 
 /*Home Page - Packages*/
-#homepg-pkgs{
-    background-color: #000000;
-    padding: 2em;
-}
-
-#homepg-pkgs * {
-    box-sizing: border-box;
-  }
-#homepg-pkgs .card{
-    background-color: #4b4949;
-}
-
-#homepg-pkgs img{
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
 #homepg-facil {
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 4em;
@@ -581,6 +581,9 @@ button:active { filter: brightness(60%); }
 
 }
 
+#about-gymtext {
+    text-align: justify;
+}
 
 #location p{
     font-size: 12pt;
@@ -590,3 +593,46 @@ button:active { filter: brightness(60%); }
     color: #a8a5a5;
 }
 
+
+/*Packages Page*/
+#package-page{
+    border: 3px solid #9b0404;
+}
+#pkg-card-data {
+    font-family: Oswald;
+}
+#pkg-card-data h2{
+    font-size: 35pt ;
+    color:#000000;
+}
+
+#pkg-card-data h3{
+    font-size: 25pt ;
+    color: #c20605;
+}
+
+#pkg-card-data p{
+    text-align: justify;
+    color: #7c7b7b;
+}
+
+#pkg-card-data .card{
+    border: 3px solid #9b0404;
+    min-height: 52vh;
+    border-radius: 10px;
+}
+  .package-button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .package-button:hover {
+    background-color: #555;
+  }
