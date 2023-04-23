@@ -1,7 +1,6 @@
-
 services:
 - type: web
-  name: flask-postgres-api
+  name: Powerhouse-Fitness-Club-Web
   env: python
   repo: https://github.com/MadMoose02/Power-House-Fitness-Club
   plan: free
@@ -10,34 +9,33 @@ services:
   buildCommand: "pip install -r requirements.txt"
   startCommand: "gunicorn wsgi:app"
   envVars:
-  - fromGroup: flask-postgres-api-settings
+  - fromGroup: Powerhouse-Fitness-Club-Web-Settings
   - key: POSTGRES_URL
     fromDatabase:
-      name: flask-postgres-api-db
+      name: Powerhouse-Fitness-Club-Web-Database
       property: host
   - key: POSTGRES_USER
     fromDatabase:
-      name: flask-postgres-api-db
+      name: Powerhouse-Fitness-Club-Web-Database
       property: user
   - key: POSTGRES_PASSWORD
     fromDatabase:
-      name: flask-postgres-api-db
+      name: Powerhouse-Fitness-Club-Web-Database
       property: password
   - key: POSTGRES_DB
     fromDatabase:
-      name: flask-postgres-api-db
-      property: database 
+      name: Powerhouse-Fitness-Club-Web-Database
+      property: database
 
 envVarGroups:
-- name: flask-postgres-api-settings
+- name: Powerhouse-Fitness-Club-Web-Settings
   envVars:
   - key: ENV
     value: production
   - key: FLASK_APP
     value: wsgi.py
     
-
 databases:
-- name: flask-postgres-api-db
+- name: Powerhouse-Fitness-Club-Web-Database
   plan: free
-  databaseName: mydb
+  databaseName: phfc-database
