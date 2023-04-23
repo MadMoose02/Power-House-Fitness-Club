@@ -21,4 +21,8 @@ def get_discussions_by_user(user_id) -> list[Discussion]:
 
 
 def get_discussions_by_title(title) -> list[Discussion]:
-    return Discussion.query.filter_by(title=title).all()
+    discussions = get_all_discussions()
+    list = []
+    for discussion in discussions:
+        if title.lower() in discussion.title.lower(): list.append(discussion)
+    return list

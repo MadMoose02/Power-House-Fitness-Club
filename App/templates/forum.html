@@ -20,6 +20,9 @@
         <br><hr>
         <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
             {% if discussions %}
+                {% if filter %}
+                    <p>Showing results for '{{query}}'</p>
+                {% endif %}
                 {% for discussion in discussions %}
                 <a style="display:block" href="/forum/{{discussion.id}}">
                     <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
