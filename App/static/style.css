@@ -613,7 +613,7 @@ button:active { filter: brightness(60%); }
 
 #pkg-card-data p{
     text-align: justify;
-    color: #7c7b7b;
+    color: #d6d4d4bb;
 }
 
 #pkg-card-data .card{
