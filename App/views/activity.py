@@ -8,7 +8,7 @@ from App.controllers import (
     get_package, 
     create_activity, 
     add_debit,
-    get_all_activities,
+    get_all_activities_json,
     create_transaction
 )
 
@@ -66,5 +66,5 @@ def activty_tracking_page():
         'activtiy-tracking.html', 
         user=user, 
         user_package=user_package,
-        activities = get_all_activities()
+        activities = get_all_activities_json()
     )
