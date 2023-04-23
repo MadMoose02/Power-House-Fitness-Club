@@ -11,12 +11,12 @@
         <div style="background: white; display: flex; flex-direction: column; justify-content: center; align-items: center">
             <h2>MY ACTIVITY THIS WEEK</h2>
             <div style="background: white" class="card">
-                <canvas id="activity-chart" style="width:100%;max-width:700px"></canvas>
+                <canvas id="activity-chart" style="width:100%; max-width:600px"></canvas>
             </div>
             <br><br>
             <h2>ALL MY ACTIVITY</h2>
             <div class="card">
-                <table style="width: 46rem">
+                <table style="width: 600px">
                     <tr>
                         <th>Date</th>
                         <th>Pre-Workout</th>
@@ -39,6 +39,10 @@
     <script>
         let activities = {{ activities | tojson }};
 
+        function compareDates(date1, date2) {
+            return date1.getTime() === date2.getTime();
+        }
+
         function buildShortDate(date) {
             return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
         }
@@ -58,11 +62,16 @@
         }
 
         let data = [], dates = getCurrentWeekDates();
+        let count = 0;
         for (let i = 0; i < dates.length; i++) {
-            if (activities.find(activity => activity.date === dates[i])) {
-                data.push(activities.find(activity => activity.date === dates[i]).count);
+            let d1 = new Date(dates[i]);
+            for (let j = 0; j < activities.length; j++) {
+                let d2 = new Date(activities[j].date);
+                if (compareDates(d1, d2)) count++;
             }
+            data.push(count);
         }
+
         console.log(data);
         
         new Chart (

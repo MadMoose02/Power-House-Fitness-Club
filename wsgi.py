@@ -1,7 +1,8 @@
 import click, json
+from random import randint
 from base64 import b64encode
 from flask.cli import AppGroup
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 from App.database import db, get_migrate
 from App.main import create_app
@@ -13,7 +14,8 @@ from App.controllers import (
     create_packages,
     create_facilities,
     create_emergency_contact,
-    create_wallet
+    create_wallet,
+    create_activity
 )
 
 app = create_app()
@@ -100,6 +102,21 @@ def initialise():
         emergency_contact_id=2,
         wallet_id=2
     )
+    
+    # Add test data to data
+    energy_lvl_labels = ["Low", "Medium", "High"]
+    for i in range(1, 20):
+        energy_lvl = randint(0, 2)
+        start_date = datetime.today().date() - timedelta(days=30)
+        days_between = (datetime.today().date() - start_date).days
+        random_day = start_date + timedelta(days=randint(0, days_between))
+        create_activity(
+            user_id=1, 
+            date=random_day, 
+            pre_workout=randint(0, 1),
+            energy_level=energy_lvl_labels[energy_lvl],
+            details=f"This is test activity #{i}"
+        )
     
     print("Database intialised successfully")
 
