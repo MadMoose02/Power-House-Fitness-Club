@@ -13,3 +13,11 @@ def create_activity(user_id, date, pre_workout, energy_level, details) -> Activi
     db.session.add(new_activity)
     db.session.commit()
     return new_activity
+
+
+def get_activity(id) -> Activity:
+    return Activity.query.get(id)
+
+
+def get_all_activities() -> list[Activity]:
+    return Activity.query.all()

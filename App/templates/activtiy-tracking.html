@@ -7,6 +7,24 @@
 <section>
     <div id="wallet-content" class="card">
         <h1><b>ACTIVITY TRACKING</b></h1>
+        <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+        <div style="background: white" class="card">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Pre-Workout</th>
+                    <th>Energy Level</th>
+                    <th>Details</th>
+                </tr>
+                {% for activity in activities %}
+                    <tr>
+                        <td>{{ activity.date }}</td>
+                        <td>{{ activity.pre_workout }}</td>
+                        <td>{{ activity.energy_level }}</td>
+                        <td>{{ activity.details }}</td>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 </section>
 {% endblock %}

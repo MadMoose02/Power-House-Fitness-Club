@@ -57,6 +57,17 @@ def initialise():
         contact="953-2180"
     )
     
+    # Create wallet for default users
+    create_wallet(
+        debit=300,
+        credit=0
+    )
+    
+    create_wallet(
+        debit=350,
+        credit=0
+    )
+    
     # Add default users
     create_user(
         username='bob', 
@@ -70,7 +81,8 @@ def initialise():
         email='bob.thebuilder@mail.com',
         image=b64encode(open("App/static/images/male.jpg", "rb").read()),
         package_id=2,
-        emergency_contact_id=1
+        emergency_contact_id=1,
+        wallet_id=1
     )
     
     create_user(
@@ -85,20 +97,8 @@ def initialise():
         email='annette.layton@mail.com',
         image=b64encode(open("App/static/images/female.jpg", "rb").read()),
         package_id=3,
-        emergency_contact_id=2
-    )
-    
-    # Create wallet for default users
-    create_wallet(
-        user_id=1,
-        debit=300,
-        credit=0
-    )
-    
-    create_wallet(
-        user_id=2,
-        debit=350,
-        credit=0
+        emergency_contact_id=2,
+        wallet_id=2
     )
     
     print("Database intialised successfully")

@@ -8,6 +8,7 @@ class User(db.Model, UserMixin):
     __tablename__ = 'user'
     package = relationship('Package', backref='user')
     emrg_contact = relationship('EmergencyContact', backref='user')
+    wallet = relationship('Wallet', backref='user')
     id = Column(Integer, name="id", primary_key=True, autoincrement=True)
     username = Column(String(20), name="username", nullable=False, unique=True)
     password = Column(String(120), name="password_hash", nullable=False, unique=False)
@@ -21,9 +22,10 @@ class User(db.Model, UserMixin):
     image = Column(LargeBinary, name="image", nullable=False, unique=False)
     package_id = Column(Integer, db.ForeignKey('package.id'), nullable=False)
     emergency_contact_id = Column(Integer, db.ForeignKey('emergency_contact.id'), nullable=False)
+    wallet_id = Column(Integer, db.ForeignKey('wallet.id'), nullable=False)
 
     def __init__(self, username, password, fname, lname, dob, address, phone, 
-                 sex, email, image, package_id, emergency_contact_id):
+                 sex, email, image, package_id, emergency_contact_id, wallet_id):
         self.username = username
         self.fname = fname
         self.lname = lname
@@ -35,6 +37,7 @@ class User(db.Model, UserMixin):
         self.image = image
         self.package_id = package_id
         self.emergency_contact_id = emergency_contact_id
+        self.wallet_id = wallet_id
         self.set_password(password)
 
     def get_json(self) -> dict:
@@ -49,7 +52,8 @@ class User(db.Model, UserMixin):
             'sex': self.sex,
             'email': self.email,
             'package_id': self.package_id,
-            'emergency_contact_id': self.emergency_contact_id
+            'emergency_contact_id': self.emergency_contact_id,
+            'wallet_id' : self.wallet_id
         }
 
     def set_password(self, password: str) -> None:

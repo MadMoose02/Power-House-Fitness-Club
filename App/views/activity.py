@@ -3,7 +3,13 @@ from flask import Blueprint, redirect, render_template, request, url_for, flash
 from flask_login import current_user, login_required
 
 from App.models import db
-from App.controllers import retrieve_current_user, get_package, create_activity
+from App.controllers import (
+    retrieve_current_user, 
+    get_package, 
+    create_activity, 
+    add_debit,
+    get_all_activities
+)
 
 activity_views = Blueprint('activity_views', __name__, template_folder='../templates')
 
@@ -30,10 +36,13 @@ def add_activity_log():
         energy_level=request.form['energy-level'],
         details=request.form['details'],
     ):
-        flash("Activity successfully logged", category='success')
+        # Add points to the user's wallet
+        add_debit(wallet_id=current_user.wallet_id, debit=10)
+        flash("Activity successfully logged. Points added to fitness wallet", category='success')
     else:
         flash("Something went wrong whilst logging your activity. Try again", category='error')
         db.rollback()
+        
     return redirect(url_for('activity_views.log_activity_page'))
 
 
@@ -42,4 +51,9 @@ def add_activity_log():
 def activty_tracking_page():
     user = retrieve_current_user() if current_user.is_authenticated else None
     user_package = get_package(user.package_id).get_json() if user else None
-    return render_template('activtiy-tracking.html', user=user, user_package=user_package)
+    return render_template(
+        'activtiy-tracking.html', 
+        user=user, 
+        user_package=user_package,
+        activities = get_all_activities()
+    )

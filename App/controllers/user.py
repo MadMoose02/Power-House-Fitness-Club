@@ -2,7 +2,7 @@ from App.models import User
 from App.database import db
 
 def create_user(username, password, fname, lname, dob, address, phone, 
-                 sex, email, image, package_id, emergency_contact_id) -> User:
+                 sex, email, image, package_id, emergency_contact_id, wallet_id) -> User:
     new_user = User(
         username=username, 
         password=password, 
@@ -15,7 +15,8 @@ def create_user(username, password, fname, lname, dob, address, phone,
         email=email,
         image=image,
         package_id=package_id,
-        emergency_contact_id=emergency_contact_id
+        emergency_contact_id=emergency_contact_id,
+        wallet_id=wallet_id
     )
     db.session.add(new_user)
     db.session.commit()
