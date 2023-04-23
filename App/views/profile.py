@@ -1,5 +1,5 @@
 from os import path
-from datetime import date
+from datetime import date, datetime
 from base64 import b64encode
 from flask import Blueprint, redirect, render_template, request, flash, url_for
 from flask_login import current_user, login_required
@@ -16,7 +16,11 @@ from App.controllers import (
     username_exists,
     delete_userclass,
     create_userclass,
-    get_userclasses_by_user_id
+    get_userclasses_by_user_id,
+    create_transaction,
+    add_credit,
+    add_debit,
+    get_userclass
 )
 
 profile_views = Blueprint('profile_views', __name__, template_folder='../templates')
@@ -60,13 +64,12 @@ def edit_classes_page():
 @profile_views.route('/profile/add-class', methods=['POST'])
 @login_required
 def add_user_class():
-    print(request.form.to_dict())
     user_classes = [i.get_json() for i in get_userclasses_by_user_id(current_user.id)]
     if request.form['class-name'] in " ".join([i['class_name'] for i in user_classes]):
         flash('User already in class', category='error')
         return redirect(url_for('profile_views.edit_classes_page'))
     
-    if create_userclass(current_user.id, request.form['class-id'], request.form['class-name']):
+    if create_userclass(current_user.id, request.form['class-id'], request.form['class-name'], False):
         flash('Class added successfully', category='success')
         
     else:
@@ -75,11 +78,52 @@ def add_user_class():
     return redirect(url_for('profile_views.edit_classes_page'))
 
 
+@profile_views.route('/profile/add-class-fitcoin', methods=['POST'])
+def add_user_class_fitcoin():
+    user_classes = [i.get_json() for i in get_userclasses_by_user_id(current_user.id)]
+    if request.form['class-name'] in " ".join([i['class_name'] for i in user_classes]):
+        flash('User already in class', category='error')
+        return redirect(url_for('profile_views.edit_classes_page'))
+    
+    if create_userclass(current_user.id, request.form['class-id'], request.form['class-name'], True):
+        add_credit(
+            wallet_id=current_user.wallet_id,
+            credit=int(request.form['class-price'])
+        )
+        create_transaction(
+            user_id=current_user.id,
+            wallet_id=current_user.wallet_id,
+            type='Credit',
+            amount=request.form['class-price'],
+            details=f'Sign up fee for {request.form["class-name"]} class',
+            datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        )
+        flash('Class added successfully', category='success')
+        
+    else:
+        flash('Unable to add class. Please try again', category='error')
+        
+    return redirect(url_for('profile_views.edit_classes_page'))
+
 @profile_views.route('/profile/remove-class', methods=['POST'])
 @login_required
 def remove_user_class():
+    if get_userclass(current_user.id, request.form['class-id']).paid_by_fitcoin:
+        add_debit(
+            wallet_id=current_user.wallet_id,
+            debit=int(request.form['class-price'])
+        )
+        create_transaction(
+            user_id=current_user.id,
+            wallet_id=current_user.wallet_id,
+            type='Debit',
+            amount=request.form['class-price'],
+            details=f'Reimbursement of sign up fee for dropping {request.form["class-name"]} class',
+            datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        )
+        
     delete_userclass(current_user.id, request.form['class-id'])
-    flash('Class removed successfully', category='success')    
+    flash('Class removed successfully', category='success')
     return redirect(url_for('profile_views.edit_classes_page'))
 
     

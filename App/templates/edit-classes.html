@@ -21,16 +21,25 @@
                     {% if class.name in user_classes %}
                         <form action="/profile/remove-class" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
+                            <input type="hidden" name="class-name" value="{{class.name}}">
+                            <input type="hidden" name="class-price" value="500">
                             <button class="drop-class-btn">DROP</button>
                         </form>
                     {% elif user_package.type in class.package.split(', ')%}
                         <form action="/profile/add-class" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
+                            <input type="hidden" name="class-price" value="500">
                             <button class="add-class-btn">ADD</button>
                         </form>
                     {% else %}
                         <h4><b>REQUIRES '{{"' OR '".join(class.package.split(', '))}}' PACKAGE</b><h4>
+                        <form action="/profile/add-class-fitcoin" method="post">
+                            <input type="hidden" name="class-id" value="{{class.id}}">
+                            <input type="hidden" name="class-name" value="{{class.name}}">
+                            <input type="hidden" name="class-price" value="500">
+                            <button class="add-class-btn">ADD USING 500 FITCOINS</button>
+                        </form>
                     {% endif %}
                 </section>
             </div>
