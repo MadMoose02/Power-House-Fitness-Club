@@ -15,7 +15,9 @@ from App.controllers import (
     create_facilities,
     create_emergency_contact,
     create_wallet,
-    create_activity
+    create_activity,
+    add_debit,
+    create_transaction
 )
 
 app = create_app()
@@ -107,7 +109,7 @@ def initialise():
     energy_lvl_labels = ["Low", "Medium", "High"]
     for i in range(1, 20):
         energy_lvl = randint(0, 2)
-        start_date = datetime.today().date() - timedelta(days=30)
+        start_date = datetime.today().date() - timedelta(days=20)
         days_between = (datetime.today().date() - start_date).days
         random_day = start_date + timedelta(days=randint(0, days_between))
         create_activity(
@@ -116,6 +118,17 @@ def initialise():
             pre_workout=randint(0, 1),
             energy_level=energy_lvl_labels[energy_lvl],
             details=f"This is test activity #{i}"
+        )
+        
+        # Add points to the user's wallet
+        add_debit(wallet_id=2, debit=10)
+        create_transaction(
+            user_id=1, 
+            wallet_id=2, 
+            type="Debit",
+            amount=10,
+            details="Added 10 points to debit for completing a workout",
+            datetime=random_day.strftime("%Y-%m-%d %H:%M:%S")
         )
     
     print("Database intialised successfully")
