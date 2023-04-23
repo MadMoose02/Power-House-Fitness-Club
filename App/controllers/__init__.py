@@ -7,3 +7,5 @@ from .emergency_contact import *
 from .transaction import *
 from .wallet import *
 from .activity import *
+from .discussion import *
+from .message import *
