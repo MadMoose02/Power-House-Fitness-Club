@@ -52,7 +52,7 @@ def add_activity_log():
         flash("Activity successfully logged. Points added to fitness wallet", category='success')
     else:
         flash("Something went wrong whilst logging your activity. Try again", category='error')
-        db.rollback()
+        db.session.rollback()
         
     return redirect(url_for('activity_views.log_activity_page'))
 
