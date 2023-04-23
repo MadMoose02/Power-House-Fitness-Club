@@ -7,9 +7,8 @@ from flask_login import current_user
 from App.models import db, User
 from App.controllers import (
     retrieve_current_user, 
-    get_packages,
+    get_all_packages_json,
     get_package,
-    get_all_users,
     create_emergency_contact,
     get_emergency_contact,
     get_all_emergency_contacts,
@@ -23,7 +22,12 @@ register_views = Blueprint('register_views', __name__, template_folder='../templ
 def register_page():
     user = retrieve_current_user() if current_user.is_authenticated else None
     user_package = get_package(user.package_id).get_json() if user else None
-    return render_template('register.html', user=user, user_package=user_package, packages=get_packages())
+    return render_template(
+        'register.html', 
+        user=user, 
+        user_package=user_package, 
+        packages=get_all_packages_json()
+    )
 
 
 @register_views.route('/register', methods=['POST'])

@@ -6,11 +6,12 @@ from flask_login import current_user, login_required
 
 from App.models import db, User
 from App.controllers import (
-    get_packages,
+    get_all_packages_json,
     get_emergency_contact,
     get_user,
     update_user_data,
     get_package,
+    get_all_packages_json,
     username_exists
 )
 
@@ -33,7 +34,7 @@ def edit_profile_page():
         'edit-profile.html', 
         user=current_user,
         user_package=get_package(current_user.package_id).get_json(),
-        packages=get_packages(),
+        packages=get_all_packages_json(),
         emergency_contact=get_emergency_contact(current_user.emergency_contact_id).get_json()
     )
     

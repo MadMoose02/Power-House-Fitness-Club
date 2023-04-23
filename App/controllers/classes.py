@@ -21,5 +21,9 @@ def get_class(id) -> Class:
     return Class.query.get(id)
 
 
-def get_classes() -> list[Class]:
+def get_all_classes() -> list[Class]:
     return Class.query.all()
+
+
+def get_all_classes_json() -> list[Class]:
+    return [class_.get_json() for class_ in get_all_classes()]

@@ -2,7 +2,7 @@ from flask import Blueprint, redirect, render_template, request, send_from_direc
 from flask_login import current_user, login_required
 
 from App.models import db
-from App.controllers import retrieve_current_user, get_packages, get_package
+from App.controllers import retrieve_current_user, get_package
 
 wallet_views = Blueprint('wallet_views', __name__, template_folder='../templates')
 
