@@ -12,14 +12,12 @@ class Activity(db.Model):
     energy_level = Column(String(20), name="energy_level", default=False)
     details = Column(String(150), name="details", nullable=False)
     
-    
     def __init__(self, user_id, date, pre_workout, energy_level, details) -> dict:
         self.user_id = user_id
         self.date = date
         self.pre_workout = pre_workout
         self.energy_level = energy_level
         self.details = details
-        
         
     def get_json(self) -> dict:
         return {

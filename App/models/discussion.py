@@ -9,11 +9,9 @@ class Discussion(db.Model):
     title = Column(String(100), name="title", nullable=False, unique=True)
     started_by = Column(Integer, db.ForeignKey('user.id'), nullable=False)
     
-    
     def __init__(self, title, started_by):
         self.title = title
         self.started_by = started_by
-        
         
     def get_json(self) -> dict:
         return {
