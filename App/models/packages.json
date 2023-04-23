@@ -11,12 +11,12 @@
     },
     {
         "type": "Premium",
-        "price": "$350.00",
-        "description": "Inclusive of standard package & massage room/sauna access, advanced classes & more."
+        "price": "$475.00",
+        "description": "Inclusive of standard package, massage services, pool & room/sauna access. Includes access to combat and barre classes."
     },
     {
         "type": "Group",
-        "price": "$1,500.00", 
-        "description": "Each group member pays $300 for a premium type membership."
+        "price": "$1,200.00", 
+        "description": "Each group member pays for a premium type membership at a discounted price."
     }
 ]
