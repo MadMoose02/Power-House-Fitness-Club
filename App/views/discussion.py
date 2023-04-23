@@ -63,7 +63,12 @@ def start_new_discussion():
     
     discussion = create_discussion(request.form['title'], current_user.id)
     if discussion:
-        create_message(discussion.id, current_user.id, request.form['content'], datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        create_message(
+            discussion.id, 
+            current_user.id, 
+            request.form['content'],
+            request.form['external_link'],
+            datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         flash('Discussion created successfully', category='success')
     else:
         flash('Unable to create discussion. Please try again', category='error')    

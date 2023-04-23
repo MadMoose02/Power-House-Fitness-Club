@@ -20,6 +20,9 @@
                             <div>
                                 <h3>{{get_user(message.user_id).username}} | {{message.datetime}}</h3>
                                 <p>{{message.content}}</p>
+                                {% if message.external_link %}
+                                <a class="button" href="{{message.external_link}}" target="_blank">Visit External Link</a>
+                                {% endif %}
                             </div>
                         {% endfor %}
                     {% else %}
@@ -32,6 +35,7 @@
         <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
             <form action="/forum/{{discussion.id}}/create-message" method="post" style="width: 400px">
                 <textarea name="content" placeholder="Message"></textarea>
+                <input name="external_link" placeholder="External Link">
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
                     <button type="submit">Send Message</button>
                 </div>
