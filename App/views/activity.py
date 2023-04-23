@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from flask import Blueprint, redirect, render_template, request, url_for, flash
 from flask_login import current_user, login_required
 
@@ -8,7 +8,8 @@ from App.controllers import (
     get_package, 
     create_activity, 
     add_debit,
-    get_all_activities
+    get_all_activities,
+    create_transaction
 )
 
 activity_views = Blueprint('activity_views', __name__, template_folder='../templates')
@@ -25,6 +26,7 @@ def log_activity_page():
 @login_required
 def add_activity_log():
     print(request.form.to_dict())
+    debit_points = 10
     if create_activity(
         user_id=current_user.id,
         date=date(
@@ -37,7 +39,16 @@ def add_activity_log():
         details=request.form['details'],
     ):
         # Add points to the user's wallet
-        add_debit(wallet_id=current_user.wallet_id, debit=10)
+        add_debit(wallet_id=current_user.wallet_id, debit=debit_points)
+        dt = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
+        create_transaction(
+            user_id=current_user.id, 
+            wallet_id=current_user.wallet_id, 
+            type="Debit",
+            amount=debit_points,
+            details="Added 10 points to debit for completing a workout",
+            datetime=dt
+        )
         flash("Activity successfully logged. Points added to fitness wallet", category='success')
     else:
         flash("Something went wrong whilst logging your activity. Try again", category='error')

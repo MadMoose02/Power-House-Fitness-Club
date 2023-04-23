@@ -7,6 +7,26 @@
 <section>
     <div id="wallet-content" class="card">
         <h1><b>TRANSACTION HISTORY</b></h1>
+        <hr>
+        <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+        <div id="transaction-history">
+            <table>
+                <tr>
+                    <th>Date & TIme</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Details</th>
+                </tr>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.datetime }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.details }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 </section>
 {% endblock %}
