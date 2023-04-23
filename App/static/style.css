@@ -582,7 +582,12 @@ button:active { filter: brightness(60%); }
     border-radius: 3px;
 }
 
-input[type=file]{
+fieldset > div {
+    background-color: white;
+    border: 1px solid #000000;
+}
+
+input[type=file] {
     padding: 15px;
     font-size: 16px;
     color:#000000;
@@ -629,7 +634,8 @@ input:read-only {
 }
 
 #profile-btns button,
-#register-sign-in-btn {
+#register-sign-in-btn,
+#submit-activity-log {
     background-color: #5c0101;
     color: #adababdc;
     border: 0; 
@@ -647,7 +653,9 @@ input:read-only {
     width: 120px;
 }
 
-#edit-profile-btn, #cancel-edit-profile-btn {
+#edit-profile-btn, 
+#cancel-edit-profile-btn, 
+#submit-activity-log {
     background-color: #5c0101;
     color: #adababdc;
     font-size: 16px;
@@ -661,13 +669,15 @@ input:read-only {
 }
 
 #edit-profile-btn:hover, 
-#cancel-edit-profile-btn::hover {
+#cancel-edit-profile-btn::hover,
+#submit-activity-log {
     cursor: pointer;
     filter: brightness(80%);
 }
 
 #edit-profile-btn:active, 
-#cancel-edit-profile-btn::active {
+#cancel-edit-profile-btn::active,
+#submit-activity-log {
     filter: brightness(60%);
 }
 
