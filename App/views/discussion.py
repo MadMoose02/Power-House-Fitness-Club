@@ -26,9 +26,29 @@ def forum_page():
         'forum.html', 
         user=user, 
         user_package=user_package, 
-        discussions=get_all_discussions(),
-        get_user=get_user
+        discussions=discussions,
+        get_user=get_user,
+        filter=False,
+        query=''
     )
+    
+    
+@discussion_views.route('/forum/filter', methods=['POST'])
+def filtered_forum_page():
+    user = retrieve_current_user() if current_user.is_authenticated else None
+    user_package = get_package(user.package_id).get_json() if user else None
+    discussions = get_all_discussions() 
+    if request.form['query']: discussions=get_discussions_by_title(request.form['query'])
+    return render_template(
+        'forum.html', 
+        user=user, 
+        user_package=user_package, 
+        discussions=discussions,
+        get_user=get_user,
+        filter=True,
+        query=request.form['query']
+    )
+    
 
 
 @discussion_views.route('/start-discussion', methods=['POST'])

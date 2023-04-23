@@ -10,9 +10,9 @@
         <hr><br>
         <h4>Engage with the fitness community</h4>
         <section>
-            <form>
+            <form action="/forum/filter" method="post" style="width: 400px">
                 <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Search" name="query">
                     <button type="submit">Search</button>
                 </div>
             </form>
@@ -30,8 +30,10 @@
                     </div>
                 </a>
                 {% endfor %}
+            {% elif filter %}
+                <p>No discussions with title '{{query}}'</p>
             {% else %}
-                <p>No discussions yet. Start one now!</p>
+                <p>No discussions</p>
             {% endif %}
         </section>
         <br><hr>
