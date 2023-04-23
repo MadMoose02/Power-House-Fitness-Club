@@ -5,70 +5,132 @@
 {{ super() }}
 
 {% block content %}
-<div id="homepage-contents" class="card">
+<section id="homepage">
     <h1>Powerhouse Fitness Club</h1>
-    <div class="slideshow-container">
-        <div class="homepg-slides fade">
-          <div class="homepg-slide-numbers">1 / 3</div>
-          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
-          <div class="slide-caption">Caption Text</div>
+    <h2><b>Available Classes</b></h2>
+    <section id="homepg-classes">
+        <section class="slideshow-container">
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">1 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+                <div class="slide-caption">Caption Text</div>
+            </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">2 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+                <div class="slide-caption">Caption Two</div>
+            </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">3 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+                <div class="slide-caption">Caption Three</div>
+            </div>
+            
+            <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
+            <a class="next-arrow" onclick="changeSlide(1)">❯</a>
+        </section>
+        <br>
+        <div style="text-align:center">
+            <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
         </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function changeSlide(slide) {
+                showSlides(slideIndex += slide);
+            }
+            
+            function currentSlide(slide) {
+                showSlides(slideIndex = slide);
+            }
+            
+            function showSlides(slide) {
+                let i;
+                let slides = document.getElementsByClassName("homepg-slides");
+                let dots = document.getElementsByClassName("slidenav-dot");
+                if (slide > slides.length) {
+                    slideIndex = 1;
+                }    
+                if (slide < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace("active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </section>
+
+    <section id="homepg-pkgs">
+        <h2><b>Packages Available</b></h2>
+        <div class="row">
+            <div class="column">
+            <div class="card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            </div>
         
-        <div class="homepg-slides fade">
-          <div class="homepg-slide-numbers">2 / 3</div>
-          <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
-          <div class="slide-caption">Caption Two</div>
+            <div class="column">
+            <div class="card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            </div>
+            
+            <div class="column">
+            <div class="card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            </div>
+            
+            <div class="column">
+            <div class="card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            </div>
         </div>
-        
-        <div class="homepg-slides fade">
-          <div class="homepg-slide-numbers">3 / 3</div>
-          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
-          <div class="slide-caption">Caption Three</div>
+    </section>
+
+    <section id="homepg-facil">
+        <h2><b>Facilities Available</b></h2>
+        <div class="scrolling-wrapper">
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+            </div>
+            <div class="horizontal-card">
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+            </div>
         </div>
-        
-        <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
-        <a class="next-arrow" onclick="changeSlide(1)">❯</a>
-        
-    </div>
-    <br>
-        
-    <div style="text-align:center">
-        <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
-        <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
-        <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
-    </div>
-        
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function changeSlide(slide) {
-            showSlides(slideIndex += slide);
-        }
-        
-        function currentSlide(slide) {
-            showSlides(slideIndex = slide);
-        }
-        
-        function showSlides(slide) {
-            let i;
-            let slides = document.getElementsByClassName("homepg-slides");
-            let dots = document.getElementsByClassName("slidenav-dot");
-            if (slide > slides.length) {
-                slideIndex = 1;
-            }    
-            if (slide < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace("active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
-</div>
+    </section>
+</section>
 {% endblock %}
