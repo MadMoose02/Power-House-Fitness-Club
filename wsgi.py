@@ -122,14 +122,14 @@ def initialise():
             details=f"This is test activity #{i}"
         )
         
-        # Add points to the user's wallet
+        # Add fitcoins to the user's wallet
         add_debit(wallet_id=2, debit=10)
         create_transaction(
             user_id=1, 
             wallet_id=2, 
             type="Debit",
             amount=10,
-            details="Added 10 Fitcoins to debit for completing a workout",
+            details="Added 10 Fitcoins to debit for completing an activity",
             datetime=random_day.strftime("%Y-%m-%d %H:%M:%S")
         )
         
