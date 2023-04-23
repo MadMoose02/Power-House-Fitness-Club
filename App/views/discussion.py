@@ -61,7 +61,9 @@ def start_new_discussion():
         flash('Discussion with that title already exists!', category='error')
         return redirect(url_for('discussion_views.forum_page'))
     
-    if create_discussion(request.form['title'], current_user.id):
+    discussion = create_discussion(request.form['title'], current_user.id)
+    if discussion:
+        create_message(discussion.id, current_user.id, request.form['content'], datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         flash('Discussion created successfully', category='success')
     else:
         flash('Unable to create discussion. Please try again', category='error')    
