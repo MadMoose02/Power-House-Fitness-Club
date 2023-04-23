@@ -39,7 +39,7 @@ def profile_page():
 @login_required
 def edit_profile_page():
     return render_template(
-        'edit-profile.html', 
+        'edit-user.html', 
         user=current_user,
         user_package=get_package(current_user.package_id).get_json(),
         packages=get_all_packages_json(),

@@ -771,6 +771,10 @@ input[type="file"]::file-selector-button,
     color:  #000000;
 }
 
+#registerbtn{
+    font-family: Oswald;
+}
+
 #reg-form > section {
     opacity: 0;
     transform: translateY(20px);
