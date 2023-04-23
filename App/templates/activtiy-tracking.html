@@ -62,8 +62,8 @@
         }
 
         let data = [], dates = getCurrentWeekDates();
-        let count = 0;
         for (let i = 0; i < dates.length; i++) {
+            let count = 0;
             let d1 = new Date(dates[i]);
             for (let j = 0; j < activities.length; j++) {
                 let d2 = new Date(activities[j].date);
