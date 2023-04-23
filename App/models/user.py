@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from App.database import db
 
 class User(db.Model, UserMixin):
-    __tablename__ = 'users'
+    __tablename__ = 'user'
     package = relationship('Package', backref='user')
     emrg_contact = relationship('EmergencyContact', backref='user')
     id = Column(Integer, name="id", primary_key=True, autoincrement=True)
@@ -19,8 +19,8 @@ class User(db.Model, UserMixin):
     sex = Column(String(10), name="gender", nullable=False, unique=False)
     email = Column(String(50), name="email", nullable=False, unique=False)
     image = Column(LargeBinary, name="image", nullable=False, unique=False)
-    package_id = Column(Integer, db.ForeignKey('packages.id'), nullable=False)
-    emergency_contact_id = Column(Integer, db.ForeignKey('emergency_contacts.id'), nullable=False)
+    package_id = Column(Integer, db.ForeignKey('package.id'), nullable=False)
+    emergency_contact_id = Column(Integer, db.ForeignKey('emergency_contact.id'), nullable=False)
 
     def __init__(self, username, password, fname, lname, dob, address, phone, 
                  sex, email, image, package_id, emergency_contact_id):

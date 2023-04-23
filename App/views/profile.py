@@ -22,6 +22,16 @@ def profile_page():
     return render_template(
         'profile.html', 
         user=current_user,
+        user_package=get_package(current_user.package_id).get_json()
+    )
+    
+    
+@profile_views.route('/profile/edit-user', methods=['GET'])
+@login_required
+def edit_profile_page():
+    return render_template(
+        'edit-profile.html', 
+        user=current_user,
         user_package=get_package(current_user.package_id).get_json(),
         packages=get_packages(),
         emergency_contact=get_emergency_contact(current_user.emergency_contact_id).get_json()

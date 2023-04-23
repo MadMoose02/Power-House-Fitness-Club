@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from App.database import db
 
 class EmergencyContact(db.Model):
-    __tablename__ = 'emergency_contacts'
+    __tablename__ = 'emergency_contact'
     id       = Column(Integer, name="id", primary_key=True, autoincrement=True)
     fname    = Column(String(50), name="first_name", nullable=False, unique=False)
     lname    = Column(String(50), name="last_name", nullable=False, unique=False)

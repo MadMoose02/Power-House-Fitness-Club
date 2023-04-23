@@ -212,6 +212,7 @@ button:active { filter: brightness(60%); }
     font-family: Calibri, Helvetica, sans-serif;
     background-color: black;
     color:rgb(163, 160, 160);
+    font-size: 12px;
 }
 
 #user-nav-profile-modal {
@@ -545,7 +546,12 @@ button:active { filter: brightness(60%); }
     border: 1px solid #000000;
 }
 
-input[type=file]{
+fieldset > div {
+    background-color: white;
+    border: 1px solid #000000;
+}
+
+input[type=file] {
     padding: 15px;
     font-size: 16px;
     color:#000000;
@@ -579,7 +585,8 @@ input[type=file]{
 }
 
 #profile-btns button,
-#register-sign-in-btn {
+#register-sign-in-btn,
+#submit-activity-log {
     background-color: #5c0101;
     color: #adababdc;
     margin-bottom: 1em;
@@ -593,6 +600,36 @@ input[type=file]{
     margin-left: 7px;
 }
 
+<<<<<<< HEAD
+=======
+#edit-profile-btn, 
+#cancel-edit-profile-btn, 
+#submit-activity-log {
+    background-color: #5c0101;
+    color: #adababdc;
+    font-size: 16px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    filter: brightness(100%);
+}
+
+#edit-profile-btn:hover, 
+#cancel-edit-profile-btn::hover,
+#submit-activity-log {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+#edit-profile-btn:active, 
+#cancel-edit-profile-btn::active,
+#submit-activity-log {
+    filter: brightness(60%);
+}
+>>>>>>> 8d357b57509cd780edbac469284d710b5040daaf
 
 /* Footer */
 
@@ -809,11 +846,132 @@ input[type=file]{
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 .datacard-img {
     margin-right: 1em;
     flex: 1;
   }
   
+=======
+#facil-text {
+    min-width: 90%;
+}
+
+
+
+
+/*Home Page*/
+#homepage-contents{
+    background-color: #000000;
+}
+.slideshow-container {
+    font-family: Verdana, sans-serif;
+    max-width: 100em;
+    position: relative;
+}
+
+
+.slideshow-container * {
+    box-sizing: border-box
+  }
+  
+.homepg-slides {
+    display: none
+}
+  
+.slideshow-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+  
+.prev-arrow, .next-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+  
+.next-arrow {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+.prev-arrow:hover, .next-arrow:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+  
+.slide-caption {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+  
+.homepg-slide-numbers {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+.slidenav-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.slidenav-dot:hover {
+    background-color: #717171;
+}
+  
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+
+  
+/* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); */
+/*Incase this might be needed
+.fcard {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 20px;
+>>>>>>> 8d357b57509cd780edbac469284d710b5040daaf
 
 .datacard-img img {
     width: 100%;
