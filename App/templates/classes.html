@@ -4,26 +4,89 @@
 {{ super() }}
 
 {% block content %}
-    <div id="classes-content" class="card">
-        <h1><b>CLASSES OFFERED</b></h1>
-        <div id="class-gallery" class="vertical-gallery" >
-            {% for class in classes %}
-                <div id="{{class.name.lower()}}-class" class="pkg-piece">
-                    <section id="class-img">
-                        <img  src="../static/images/about-gym1.png" alt="Class 1">
-                    </section>
-                    <section id="class-descrpt" >
-                        <h2><b>{{class.name}}</b></h2>
-                        <hr>
-                        <p><b>{{class.desc}}</b></p>
-                        <hr>
-                        <h4 style="font-size: 20px;">
-                            <span style="font-weight: bold;">Instructed by</span>
-                            <br>
-                            <b>{{class.instructor}}<b></h4>
-                    </section>
-                </div>
-            {% endfor %}
+<section id="class-page">
+    <h1><b>OUR CLASSES</b></h1>
+    <section id="classpg-gallery">
+        <section class="slideshow-container">
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">1 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+                <div class="slide-caption">Caption Text</div>
+            </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">2 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+                <div class="slide-caption">Caption Two</div>
+            </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">3 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+                <div class="slide-caption">Caption Three</div>
+            </div>
+            
+            <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
+            <a class="next-arrow" onclick="changeSlide(1)">❯</a>
+        </section>
+        <br>
+        <div style="text-align:center">
+            <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
         </div>
-    </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function changeSlide(slide) {
+                showSlides(slideIndex += slide);
+            }
+            
+            function currentSlide(slide) {
+                showSlides(slideIndex = slide);
+            }
+            
+            function showSlides(slide) {
+                let i;
+                let slides = document.getElementsByClassName("homepg-slides");
+                let dots = document.getElementsByClassName("slidenav-dot");
+                if (slide > slides.length) {
+                    slideIndex = 1;
+                }    
+                if (slide < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace("active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </section>
+    <section id="classpg-datacards" class="pkgs">
+        <h1><b>AVAILABLE CLASSES</b></h1>
+        <div id="classes-card-data" class="row">
+            {% for class in classes %}
+            <div class="center">
+                <section id="{{class.name.lower()}}-class" class="card">
+                    <h2>{{class.name}}</h2>
+                    <hr>
+                    <h3>Instructor: {{class.instructor}}</h3>
+                    <hr>
+                    <p>{{class.desc}}</p>
+                    <!--to increase fit-coin debit
+                    <p><button class="package-button">Contact</button></p>
+                    -->
+                </section>
+            </div>
+            {% endfor %}
+            <a href="#" id="viewMore"><b>View More</b></a>
+        </div>    
+    </section>
+</section>
 {% endblock %}
