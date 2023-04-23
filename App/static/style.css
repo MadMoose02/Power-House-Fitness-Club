@@ -290,7 +290,7 @@ button:active { filter: brightness(60%); }
 }
 
 .card img {
-    max-width: 200px;
+    max-width: 350px;
     border: 3px solid #000000;
     border-radius: 10px;
     margin-right: 15px;
@@ -299,12 +299,14 @@ button:active { filter: brightness(60%); }
 
 .datacard {
     border: 3px solid #5c0101;
-    margin-top: 2em;
+    margin-top:0;
     margin-bottom: 2em;
     margin-left: 3em;
     margin-right: 3em;
     width:90%;
-    padding-top: 5px;
+    padding-right: 50px;
+    padding-left: 30px;
+    padding-bottom: 10px;
 }
 
 #card {
@@ -315,80 +317,54 @@ button:active { filter: brightness(60%); }
     background-color: #000000;
 }
 
-#slogan{
-    border: 3px solid #000000;
-    background-color: #adababdc;
-    margin:2em;
-    padding:3em;
-}
-
-#slogan h2{
-    background-color: #494848c9;
-    border: 3px solid #000000;
-    margin-top: 0;
-}
-
-#slogan h3{
-    color:#000000;
-    font-size: 30pt;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-#about-imgs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
 #about-imgs img{
-    margin-bottom: 24px;
+     margin-bottom: 24px;
 }
 
 #about-gym {
     padding-top: 3em;
 }
 
-#mission p,
-#about-gymtext p,
-#facil-text p{
+#facil-text p,
+#about-gymtext p{
+    border-right:20px;
     text-align: justify;
+    padding-bottom:3em;
 }
 
-#about-gymtext,
-#facil-text {
-    margin-top:0;
-    margin-right:1em;
-    padding:2em;
-    border: 1px solid black;
-    border-radius: 10px;
+#about-gymtext p{
+    margin-left: 2em;
+    margin-bottom: 3em;
+    padding: 2em;
 }
 
-#about-gymtext h2,
-#facil-text h2 {
-    margin-top: 0;
+
+
+#about-gymtext h2 {
     text-align: center;
     color:#5c0101;
     font-size: 30pt;
+    margin-left: 30px;
     background-color: #494848c9;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
     border: 3px solid #000000;
 }
 
-#location {
+#facil-text h2{
+    color:#5c0101;
+    text-align: left;
+    font-size: 30pt;
+}
+
+#location,
+#mission {
     padding: 3em;
     padding-bottom: 2em;
 }
 
-
-#mission {
-    margin: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    padding: 2em;
-}
-
+#location h2,
 #mission h2 {
     background-color: #494848c9;
     padding: 10px;
@@ -404,7 +380,15 @@ button:active { filter: brightness(60%); }
     font-size: 30pt;
 }
 
-#location h3{
+#mission h3,
+#slogan h3{
+    color:#000000;
+    font-size: 30pt;
+    text-align: center;
+}
+
+#location h3,
+#mission p{
     padding: 1em;
     text-align: justify;
 }
@@ -413,28 +397,21 @@ button:active { filter: brightness(60%); }
     height:45em;
 }
 
+#location h2{
+    color:#5c0101;
+    text-align: center;
+    font-size: 30pt;
+}
+
 #location h3{
     color:#000000;
     text-align: center;
     font-size: 15pt;
-    margin-top:0;
-}
-
-#location h2{
-    color:#5c0101;
-    font-size: 30pt;
-    text-align: center;
-    margin-bottom: 0;
-    background-color: #494848c9;
-    padding:5px;
-    border:3px solid #000000;
 }
 
 #map{
-    padding:1em;
     padding-bottom: 50%;
     position: relative;
-    
 }
 
 #map div{
@@ -442,22 +419,11 @@ button:active { filter: brightness(60%); }
 }
 
 #map iframe{
-    height: 37em;
-    width: 30em;
+    height: 25em;
+    width: 35em;
     justify-content: center;
     left: 0;
     top: 0;
-}
-
-#map-descrpt {
-    margin-left:2em;
-    margin-top: 10em;
-    padding:14px;
-    padding-top: 0;
-    border:3px solid #000000;
-    height:18em;
-    background-color: #adababdc;
-    
 }
 
 /*Register Page*/
@@ -516,13 +482,13 @@ button:active { filter: brightness(60%); }
     font-family: Calibri, Helvetica, sans-serif;
 }
 
-.form h1 {
+#reg-form h1 {
     display: flex;
     justify-content: center;
     color: #5c0101;
 }
 
-.form h2 {
+#reg-form h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,7 +535,6 @@ button:active { filter: brightness(60%); }
     color: #000000;
 }
 
-
 #memberinfo input,
 #memberinfo select,
 #emgcy-contact input,
@@ -579,7 +544,6 @@ button:active { filter: brightness(60%); }
     font-size: 18px;
     background-color: #adababdc;
     border: 1px solid #000000;
-    border-radius: 3px;
 }
 
 fieldset > div {
@@ -591,19 +555,6 @@ input[type=file] {
     padding: 15px;
     font-size: 16px;
     color:#000000;
-}
-
-input:read-only::placeholder {
-    color: rgba(0,0,0,0.42);
-}
-
-textarea:read-only {
-    color: rgba(0,0,0,0.42);
-}
-
-input:read-only {
-    cursor: default;
-    color: rgba(0,0,0,0.42);
 }
 
 #registerbtn {
@@ -638,21 +589,19 @@ input:read-only {
 #submit-activity-log {
     background-color: #5c0101;
     color: #adababdc;
+    margin-bottom: 1em;
     border: 0; 
     padding: 10px;
 }
 
-#register-sign-in-btn {
-    margin-bottom: 1em;
-}
-
-#profile-btns button {
+#profile-btns button{
     font-size: 16px;
     float: right;
     margin-left: 7px;
-    width: 120px;
 }
 
+<<<<<<< HEAD
+=======
 #edit-profile-btn, 
 #cancel-edit-profile-btn, 
 #submit-activity-log {
@@ -680,6 +629,7 @@ input:read-only {
 #submit-activity-log {
     filter: brightness(60%);
 }
+>>>>>>> 8d357b57509cd780edbac469284d710b5040daaf
 
 /* Footer */
 
@@ -735,8 +685,8 @@ input:read-only {
 .vertical-gallery {
     border: 3px solid #5c0101;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     margin-left: 3em;
     margin-right: 3em;
@@ -755,7 +705,7 @@ input:read-only {
 }
 
 #class-gallery div{
-    height: max-content;
+    height: 100vh;
 }
 
 .vertical-gallery h1 {
@@ -825,7 +775,7 @@ input:read-only {
     object-fit: cover;
     background-color: #8d8282dc;
     margin-top: 25px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 
 #class-descrpt,
@@ -839,6 +789,7 @@ input:read-only {
     color:#000000;
 }
 
+#facil-text h2,
 #class-descrpt h2{
     color: #5c0101;
     padding:14px;
@@ -849,13 +800,14 @@ input:read-only {
     border: 3px solid #000000;
 }
 
-#mission,
-#about-gymtext,
-#facil-text,
+#location h3,
+#mission p,
+#about-gymtext p,
+#facil-text p,
 #class-descrpt p,
 #pkg-descrpt {
   border: 3px solid #000000;
-  background-color: #adababdc;
+  background-color: #696868bb;
 }
 
 #class-descrpt h4 {
@@ -879,36 +831,28 @@ input:read-only {
     border-top: 3px solid  #5c0101;
 }
 
-
-
-
-#facil-img img,
-#facil-text {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    min-height: 15em;
-}
-
-#facil-text:hover {
-    transition: all 0.2s ease;
-    transform: translateY(-5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-#facil-text {
+.datacard {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    height: 20em;
-    width: 600px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-#facil-text h2{
-   font-size: 20pt;
+.datacard:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
+.datacard-img {
+    margin-right: 1em;
+    flex: 1;
+  }
+  
+=======
 #facil-text {
     min-width: 90%;
 }
@@ -1027,55 +971,33 @@ input:read-only {
     height: 200px;
     border: 1px solid white;
     border-radius: 20px;
+>>>>>>> 8d357b57509cd780edbac469284d710b5040daaf
 
-    .horizontal-gallery {
-    border: 3px solid #5c0101;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3em;
-    margin-right: 3em;
-    padding:1em;
-
-    
-.card-img > img {
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 20px;
-    object-fit: cover;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.horizontal-gallery > div {
-  border: 3px solid #5c0101;
-  margin-bottom: 1.5em;
-  color: white;
-}
-
-.horizontal-gallery h1 {
-  font-size: 25pt;
-  text-align: center;
-  padding:14px;
-  background-color: #494848c9;
-  color: #5c0101;
-  border: 3px solid #000000 ;
-}
-
-#fcard-text {
+.datacard-img img {
     width: 100%;
-    padding: 10px;
-    align-items: center;
-    color: white;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
-.fcard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+.datacard-text {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    justify-content: flex-start;
+    min-height: 15em;
+    margin-left: 1em;
 }
 
-#fcard-text p {
-    margin: 0 0 5px;
+.datacard-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
 }
-*/
+
+.datacard-desc {
+    font-size: 1rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
