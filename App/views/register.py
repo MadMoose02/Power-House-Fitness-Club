@@ -47,9 +47,9 @@ def register():
         
         # If image is not provided, use default image for sex of user
         if image is None:
-            if request.form['sex'] == "other":  image = "App/static/images/default-user.png"
-            elif request.form['sex'] == "male": image = "App/static/images/male.jpg"
-            else: image = "App/static/images/female.jpg"
+            if request.form['sex'] == "other":  image = "App/static/images/user/default-user.png"
+            elif request.form['sex'] == "male": image = "App/static/images/user/male.jpg"
+            else: image = "App/static/images/user/female.jpg"
             image = b64encode(open(path.join(path.dirname(__file__).split('App')[0], image), 'rb').read())
         
         # Add emergency contact first
