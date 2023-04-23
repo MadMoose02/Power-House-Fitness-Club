@@ -112,13 +112,10 @@
                     <h2>{{facility.name}}</h2>
                     <hr>
                     <p>{{facility.description}}</p>
-                    <!--to increase fit-coin debit
-                    <p><button class="package-button">Contact</button></p>
-                    -->
                 </section>
             </div>
             {% endfor %}
-            <a id="view-more-btn" class="viewMore" onclick="viewMoreFacilities(2)"><b>View More</b></a>
+            <a id="view-more-btn" class="btn-style" onclick="viewMoreFacilities(2)"><b>View More</b></a>
         </div>
         <script>
             let num_displayed = {{num_to_display | safe}};
