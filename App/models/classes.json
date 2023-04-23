@@ -10,14 +10,14 @@
         "description": "Consists of a group of people on stationary bikes who pedal together with the aid of an instructor at the front of the class"
     },
     {
-        "name": "Boot camp",
+        "name": "Bootcamp",
         "instructor": "Ophelia Romero",
         "description": "Intensive drills and workouts to tone up before joining the military."
     },
     {
-        "name": "Hybrid",
+        "name": "Combat",
         "instructor": "Mia Ferguson",
-        "description": "Most fitness classes focus on one main type of exercise like yoga or cycling, but you can also take hybrid classes to keep things fresh."
+        "description": "Combat is a cardio class inspired by martial arts where you can punch, kick and strike your way through a total body workout to motivating music."
     },
     {
         "name": "Barre",
