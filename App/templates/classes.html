@@ -70,10 +70,10 @@
     </section>
     <section id="classpg-datacards" class="pkgs">
         <h1><b>AVAILABLE CLASSES</b></h1>
-        <div id="classes-card-data" class="row">
+        <div class="card-data" class="row">
             {% for class in classes %}
             <div class="center">
-                <section id="{{class.name.lower()}}-class" class="card">
+                <section id="{{class.name.lower()}}-class" class="card" >
                     <h2>{{class.name}}</h2>
                     <hr>
                     <h3>Instructor: {{class.instructor}}</h3>
@@ -85,7 +85,7 @@
                 </section>
             </div>
             {% endfor %}
-            <a href="#" id="viewMore"><b>View More</b></a>
+            <a href="#" class="viewMore"><b>View More</b></a>
         </div>    
     </section>
 </section>

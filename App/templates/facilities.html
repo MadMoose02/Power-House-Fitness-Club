@@ -4,22 +4,90 @@
 {{ super() }}
 
 {% block content %}
-<section>
-    <div id="facilities-content" class="card">
-        <h1><b>OUR FACILITIES</b></h1>
-        {% for facility in facilities %}
-            <div id="{{facility.name.lower()}}-facility" class="datacard">
-                <section class="datacard-img">
-                    <img src="../static/images/about-gym1.png" alt="Italian Trulli">
-                </section>
-                <div class="datacard-text">
-                    <h2 class="datacard-title"><b>{{facility.name}}</b></h2>
-                    <p class="datacard-desc"><b>{{facility.desc}}</b></p>
-                </div>
+<section id="facilities-page">
+    <h1><b>OUR FACILITIES</b></h1>
+    <section id="facilpg-gallery">
+        <section class="slideshow-container">
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">1 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+                <div class="slide-caption">Caption Text</div>
             </div>
-        {% endfor %}
-    </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">2 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+                <div class="slide-caption">Caption Two</div>
+            </div>
+            
+            <div class="homepg-slides fade">
+                <div class="homepg-slide-numbers">3 / 3</div>
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+                <div class="slide-caption">Caption Three</div>
+            </div>
+            
+            <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
+            <a class="next-arrow" onclick="changeSlide(1)">❯</a>
+        </section>
+        <br>
+        <div style="text-align:center">
+            <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
+            <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function changeSlide(slide) {
+                showSlides(slideIndex += slide);
+            }
+            
+            function currentSlide(slide) {
+                showSlides(slideIndex = slide);
+            }
+            
+            function showSlides(slide) {
+                let i;
+                let slides = document.getElementsByClassName("homepg-slides");
+                let dots = document.getElementsByClassName("slidenav-dot");
+                if (slide > slides.length) {
+                    slideIndex = 1;
+                }    
+                if (slide < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace("active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </section>
+    <section id="facilpg-datacards" class="pkgs">
+        <h1><b>AVAILABLE FACILITIES</b></h1>
+        <div class="card-data" class="row">
+            {% for facility in facilities %}
+            <div class="center">
+                <section id="{{facility.name.lower()}}-facility" class="card">
+                    <h2>{{facility.name}}</h2>
+                    <hr>
+                    <p>{{facility.desc}}</p>
+                    <!--to increase fit-coin debit
+                    <p><button class="package-button">Contact</button></p>
+                    -->
+                </section>
+            </div>
+            {% endfor %}
+            <a href="#" class="viewMore"><b>View More</b></a>
+        </div>    
+    </section>
 </section>
+        
 {% endblock %}
 
 
