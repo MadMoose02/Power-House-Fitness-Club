@@ -7,6 +7,49 @@
 <section>
     <div id="wallet-content" class="card">
         <h1><b>MY WALLET</b></h1>
+        <h2 id="table-title" >credit</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Source</th>
+				<th>Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+<!-- start of cantent block -->
+			<tr>
+				<td>Salary</td>
+				<td>$5000</td>
+			</tr>
+			<tr>
+				<td>Freelance work</td>
+				<td>$1000</td>
+			</tr>
+<!--would be logged by database with jinja  -->
+		</tbody>
+	</table>
+
+	<h2 id="table-title">debit</h2>
+	<table>
+		<thead>
+ <!-- start of cantent block -->
+			<tr>
+				<th>Category</th>
+				<th>Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Rent</td>
+				<td>$1000</td>
+			</tr>
+			<tr>
+				<td>Groceries</td>
+				<td>$200</td>
+			</tr>
+<!--would be logged by database with jinja  -->
+		</tbody>
+	</table>
     </div>
 </section>
 {% endblock %}
