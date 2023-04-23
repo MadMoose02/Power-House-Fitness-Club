@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}Add/Drop Classes - Powerhouse Fitness Club{% endblock %}
+{% block page %}Add/Drop Classes{% endblock %}
+{{ super() }}
+
+{% block content %}
+<section id="class-page">
+    <h1><b>ADD/DROP CLASSES</b></h1>
+    <hr>
+    <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+    <section id="classpg-datacards" class="pkgs">
+        <div class="card-data" class="row">
+            {% for class in classes %}
+            <div id="{{class.name.lower()}}-class" class="center">
+                <section class="card" >
+                    <h2>{{class.name}}</h2>
+                    <hr>
+                    <h3>Instructor: {{class.instructor}}</h3>
+                    <hr>
+                    <p>{{class.description}}</p>
+                    {% if class.name in user_classes %}
+                        <form action="/profile/remove-class" method="post">
+                            <input type="hidden" name="class-id" value="{{class.id}}">
+                            <button class="drop-class-btn">DROP</button>
+                        </form>
+                    {% elif user_package.type in class.package.split(', ')%}
+                        <form action="/profile/add-class" method="post">
+                            <input type="hidden" name="class-id" value="{{class.id}}">
+                            <input type="hidden" name="class-name" value="{{class.name}}">
+                            <button class="add-class-btn">ADD</button>
+                        </form>
+                    {% else %}
+                        <h4><b>REQUIRES '{{"' OR '".join(class.package.split(', '))}}' PACKAGE</b><h4>
+                    {% endif %}
+                </section>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</section>
+{% endblock %}

@@ -8,48 +8,13 @@
     <h1><b>OUR CLASSES</b></h1>
     <section id="classpg-gallery">
         <section class="slideshow-container">
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">1 / 7</div>
-                <img src="../static/images/classes/yoga.jpg">
-                <div class="slide-caption">Yoga</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">2 / 7</div>
-                <img src="../static/images/classes/spin.jpg">
-                <div class="slide-caption">Spin</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">3 / 7</div>
-                <img src="../static/images/classes/bootcamp.jpg">
-                <div class="slide-caption">Bootcamp</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">4 / 7</div>
-                <img src="../static/images/classes/combat.jpg">
-                <div class="slide-caption">Combat</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">5 / 7</div>
-                <img src="../static/images/classes/barre.jpg">
-                <div class="slide-caption">Barre</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">6 / 7</div>
-                <img src="../static/images/classes/pilates.jpg">
-                <div class="slide-caption">Pilates</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">7 / 7</div>
-                <img src="../static/images/classes/active-aging.jpg">
-                <div class="slide-caption">Active Aging</div>
-            </div>
-            
+            {% for class in classes %}
+                <div class="homepg-slides fade">
+                    <div class="homepg-slide-numbers">{{class.id}} / {{clen}}</div>
+                    <img src="../static/images/classes/{{class.filename}}">
+                    <div class="slide-caption">{{class.name}}</div>
+                </div>
+            {% endfor %}
             <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
             <a class="next-arrow" onclick="changeSlide(1)">❯</a>
         </section>
@@ -96,8 +61,8 @@
         <h1><b>AVAILABLE CLASSES</b></h1>
         <div class="card-data" class="row">
             {% for class in classes %}
-            <div class="center">
-                <section id="{{class.name.lower()}}-class" class="card" >
+            <div id="{{class.name.lower()}}-class" class="center hidden">
+                <section class="card" >
                     <h2>{{class.name}}</h2>
                     <hr>
                     <h3>Instructor: {{class.instructor}}</h3>
@@ -106,8 +71,31 @@
                 </section>
             </div>
             {% endfor %}
-            <a href="#" class="btn-style"><b>View More</b></a>
-        </div>    
+            <a id="view-more-btn" class="viewMore" onclick="viewMoreClasses({{num_to_display}})"><b>View More</b></a>
+        </div>
+        <script>
+            let num_displayed = {{num_to_display | safe}};
+
+            function showDatacards(num) {
+                let container = document.querySelectorAll("#classpg-datacards > div > div");
+                console.log(container);
+                for (let i = 0; i < num; i++) {
+                    container[i].classList.remove("hidden");
+                }
+            }
+
+            function viewMoreClasses(num) {
+                classes = {{classes | safe}};
+                num_displayed += num;
+                if (num_displayed >= classes.length) {
+                    num_displayed = classes.length;
+                    document.getElementById("view-more-btn").style.display = "none";
+                }
+                showDatacards(num_displayed);
+            }
+
+            showDatacards(num_displayed);
+        </script>
     </section>
 </section>
 {% endblock %}

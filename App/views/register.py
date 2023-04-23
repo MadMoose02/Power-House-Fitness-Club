@@ -84,7 +84,7 @@ def register():
         flash('Registration complete. Account created successfully', category='info')
         
     except Exception as e:
-        db.rollback()
+        db.session.rollback()
         flash("Unable to register", category='error')
     
     return redirect(url_for('index_views.home_page'))

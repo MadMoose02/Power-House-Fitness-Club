@@ -1,34 +1,50 @@
 [
     {
         "name": "Cardio machines",
-        "description": "A range of machines, all designed to help you burn calories and increase your heart rate."
+        "description": "A range of machines, all designed to help you burn calories and increase your heart rate.",
+        "filename": "cardio.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Weights",
-        "description": "Weight training boosts metabolism, promotes better bone health, and reduces your risk of inflammation."
+        "description": "Weight training boosts metabolism, promotes better bone health, and reduces your risk of inflammation.",
+        "filename": "weights.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Showers",
-        "description": "Showers are a great way to end after working up a sweat and is available to all adults"
+        "description": "Showers are a great way to end after working up a sweat and is available to all adults",
+        "filename": "showers.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Group Fitness Studio",
-        "description": "A studio space for group fitness classes such as yoga, Pilates, Zumba, and spinning."
+        "description": "A studio space for group fitness classes such as yoga, Pilates, Zumba, and spinning.",
+        "filename": "group-fitness.jpg",
+        "package": ["Group"]
     },
     {
         "name": "Pools",
-        "description": "You can get in some low-impact swimming workouts while cooling yourself down."
+        "description": "You can get in some low-impact swimming workouts while cooling yourself down.",
+        "filename": "pool.jpg",
+        "package": ["Premium", "Group"]
     },
     {
         "name": "Basketball Courts",
-        "description": "Playing basketball is a great way to get in some cardiovascular exercise"
+        "description": "Playing basketball is a great way to get in some cardiovascular exercise",
+        "filename": "basketball-court.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Massage Therapy",
-        "description": "Massage is a great way to decrease DOMS and potentially decrease recovery times from intense workouts"
+        "description": "Massage is a great way to decrease DOMS and potentially decrease recovery times from intense workouts",
+        "filename": "massage-therapy.jpg",
+        "package": ["Premium", "Group"]
     },
     {
         "name": "Sauna and Steam Room",
-        "description": "A relaxation area with a dry sauna and a steam room for post-workout recovery."
+        "description": "A relaxation area with a dry sauna and a steam room for post-workout recovery.",
+        "filename": "sauna.jpg",
+        "package": ["Premium", "Group"]
     }
 ]

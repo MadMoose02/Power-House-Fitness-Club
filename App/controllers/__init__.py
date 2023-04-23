@@ -9,3 +9,4 @@ from .wallet import *
 from .activity import *
 from .discussion import *
 from .message import *
+from .user_class import *

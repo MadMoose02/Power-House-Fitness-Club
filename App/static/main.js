@@ -92,8 +92,8 @@ function closeAlertMessages() {
 }
 
 function disableProfileInputsState(state) {
-    let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'package', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
-    let disabled_ids = ['sex', 'package', 'image'];
+    let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
+    let disabled_ids = ['sex', 'image'];
     for (let id of ids) {
         let el = document.getElementById(id);
         state == true ? el.setAttribute("readonly", "readonly") : el.removeAttribute("readonly");

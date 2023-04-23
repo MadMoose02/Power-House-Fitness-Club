@@ -14,7 +14,6 @@ class Transaction(db.Model):
     details = Column(String(150), name="details", nullable=False)
     datetime = Column(String(20), name="date", nullable=False)
     
-    
     def __init__(self, user_id, wallet_id, type, amount, details, datetime) -> dict:
         self.user_id = user_id
         self.wallet_id = wallet_id
@@ -22,7 +21,6 @@ class Transaction(db.Model):
         self.amount = amount
         self.details = details
         self.datetime = datetime
-        
         
     def get_json(self) -> dict:
         return {

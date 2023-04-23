@@ -2,36 +2,50 @@
     {
         "name": "Yoga",
         "instructor": "Jessie Elliott",
-        "description": "A basic yoga session will consist of an instructor going over various stretches and poses with you while you focus on breath and mindfulness."
+        "description": "A basic yoga session will consist of an instructor going over various stretches and poses with you while you focus on breath and mindfulness.",
+        "filename": "yoga.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Spin",
         "instructor": "Cornelia Pope",
-        "description": "Consists of a group of people on stationary bikes who pedal together with the aid of an instructor at the front of the class"
+        "description": "Consists of a group of people on stationary bikes who pedal together with the aid of an instructor at the front of the class",
+        "filename": "spin.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Bootcamp",
         "instructor": "Ophelia Romero",
-        "description": "Intensive drills and workouts to tone up before joining the military."
+        "description": "Intensive drills and workouts to tone up before joining the military.",
+        "filename": "bootcamp.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name": "Combat",
         "instructor": "Mia Ferguson",
-        "description": "Combat is a cardio class inspired by martial arts where you can punch, kick and strike your way through a total body workout to motivating music."
+        "description": "Combat is a cardio class inspired by martial arts where you can punch, kick and strike your way through a total body workout to motivating music.",
+        "filename": "combat.jpg",
+        "package": ["Premium", "Group"]
     },
     {
         "name": "Barre",
         "instructor": "Nellie Barton",
-        "description": "Barre classes combine disciplines with Ballet, Pilates, and Yoga."
+        "description": "Barre classes combine disciplines with Ballet, Pilates, and Yoga.",
+        "filename": "barre.jpg",
+        "package": ["Premium", "Group"]
     },
     {
         "name" : "Pilates",
         "instructor": "Frank Rodgers",
-        "description": "Pilates consists of about 500 separate exercises designed to strengthen and lengthen all major muscle groups."
+        "description": "Pilates consists of about 500 separate exercises designed to strengthen and lengthen all major muscle groups.",
+        "filename": "pilates.jpg",
+        "package": ["Standard", "Premium", "Group"]
     },
     {
         "name" : "Active Aging",
         "instructor": "Miguel Norman",
-        "description": "Classes that are designed for seniors or older adults and meant to help maintain flexibility, strength, and cardiovascular health."
+        "description": "Classes that are designed for seniors or older adults and meant to help maintain flexibility, strength, and cardiovascular health.",
+        "filename": "active-aging.jpg",
+        "package": ["Standard", "Premium", "Group"]
     }
 ]

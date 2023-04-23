@@ -690,7 +690,27 @@ input[type="file"]::file-selector-button:hover,
     background-color: #000000;
     border: 3px solid #9b0404;
 }
+/* wallet starter  */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+th{
+    padding: 8px;
+}
+td {
+    padding: 8px;
+}
 
+th {
+    background-color: #ccc;
+}
+
+.income {
+    background-color: #e6ffe6;
+}
 
 
 /*Registration Page*/
@@ -758,4 +778,7 @@ input[type="file"]::file-selector-button,
 /*Profile Page*/
 #disabled-image{
     
+}
+.expenses {
+    background-color: #ffe6e6;
 }

@@ -8,54 +8,13 @@
     <h1><b>OUR FACILITIES</b></h1>
     <section id="facilpg-gallery">
         <section class="slideshow-container">
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">1 / 8</div>
-                <img src="../static/images/facilities/cardio.jpg">
-                <div class="slide-caption">Treadmills for Cardio Exercise</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">2 / 8</div>
-                <img src="../static/images/facilities/weights.jpg">
-                <div class="slide-caption">Dumbells for Free Weight Workouts</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">3 / 8</div>
-                <img src="../static/images/facilities/showers.jpg">
-                <div class="slide-caption">Showers</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">4 / 8</div>
-                <img src="../static/images/facilities/group-fitness.jpg">
-                <div class="slide-caption">Group Fitness Rooms</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">5 / 8</div>
-                <img src="../static/images/facilities/pool.jpg">
-                <div class="slide-caption">Indoor Pool</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">6 / 8</div>
-                <img src="../static/images/facilities/basketball-court.jpg">
-                <div class="slide-caption">Basketball Court</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">7 / 8</div>
-                <img src="../static/images/facilities/massage-therapy.jpg">
-                <div class="slide-caption">Massage Therapy Services</div>
-            </div>
-            
-            <div class="homepg-slides fade">
-                <div class="homepg-slide-numbers">8 / 8</div>
-                <img src="../static/images/facilities/sauna.jpg">
-                <div class="slide-caption">Sauna Room</div>
-            </div>
-            
+            {% for facility in facilities %}
+                <div class="homepg-slides fade">
+                    <div class="homepg-slide-numbers">{{ facility.id }} / {{flen}}</div>
+                    <img src="../static/images/facilities/{{facility.filename}}">
+                    <div class="slide-caption">{{facility.name}}</div>
+                </div>
+            {% endfor %}
             <a class="prev-arrow" onclick="changeSlide(-1)">❮</a>
             <a class="next-arrow" onclick="changeSlide(1)">❯</a>
         </section>

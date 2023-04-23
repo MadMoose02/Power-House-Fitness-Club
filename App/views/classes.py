@@ -16,5 +16,6 @@ def classes_page():
         user=user, 
         user_package=user_package, 
         classes=get_all_classes_json(),
-        num_to_display=num_to_display
+        num_to_display=num_to_display,
+        clen=len(get_all_classes_json())
     )

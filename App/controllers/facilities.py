@@ -1,10 +1,12 @@
 from App.models import Facility
 from App.database import db
 
-def create_facility(name, description) -> Facility:
+def create_facility(name, description, filename, package) -> Facility:
     new_facility = Facility(
         name=name,
-        desc=description
+        desc=description,
+        filename=filename,
+        package=package
     )
     db.session.add(new_facility)
     db.session.commit()
@@ -13,7 +15,12 @@ def create_facility(name, description) -> Facility:
 
 def create_facilities(facilities):
     for facility in facilities:
-        create_facility(facility['name'], facility['description'])
+        create_facility(
+            facility['name'], 
+            facility['description'], 
+            facility['filename'], 
+            ", ".join(facility['package'])
+        )
 
 
 def get_facility(id) -> Facility:
@@ -24,5 +31,5 @@ def get_all_facilities() -> list[Facility]:
     return Facility.query.all()
 
 
-def get_all_facilities_json() -> list[Facility]:
+def get_all_facilities_json() -> list[dict]:
     return [facility.get_json() for facility in get_all_facilities()]

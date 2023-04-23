@@ -11,13 +11,11 @@ class Message(db.Model):
     content = Column(String(500), name="content", nullable=False)
     datetime = Column(String(20), name="datetime", nullable=False)
     
-    
     def __init__(self, discussion_id, user_id, content, datetime):
         self.discussion_id = discussion_id
         self.user_id = user_id
         self.content = content
         self.datetime = datetime
-        
         
     def get_json(self) -> dict:
         return {
