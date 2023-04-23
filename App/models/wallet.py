@@ -6,6 +6,7 @@ class Wallet(db.Model):
     id = Column(Integer, name="id", primary_key=True, autoincrement=True)
     debit = Column(Integer, name="debit", default=0)
     credit = Column(Integer, name="credit", default=0)
+    balance = Column(Integer, name="balance", default=0)
     
     def __init__(self, debit, credit):
         self.debit = debit
@@ -15,5 +16,6 @@ class Wallet(db.Model):
         return {
             "id" : self.id,
             "debit": self.debit,
-            "credit": self.credit
+            "credit": self.credit,
+            "balance": self.balance
         }
