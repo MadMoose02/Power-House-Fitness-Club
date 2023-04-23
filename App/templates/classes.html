@@ -96,21 +96,44 @@
         <h1><b>AVAILABLE CLASSES</b></h1>
         <div class="card-data" class="row">
             {% for class in classes %}
-            <div class="center">
-                <section id="{{class.name.lower()}}-class" class="card" >
+            <div id="{{class.name.lower()}}-class" class="center hidden">
+                <section class="card" >
                     <h2>{{class.name}}</h2>
                     <hr>
                     <h3>Instructor: {{class.instructor}}</h3>
                     <hr>
-                    <p>{{class.desc}}</p>
+                    <p>{{class.description}}</p>
                     <!--to increase fit-coin debit
                     <p><button class="package-button">Contact</button></p>
                     -->
                 </section>
             </div>
             {% endfor %}
-            <a href="#" class="viewMore"><b>View More</b></a>
-        </div>    
+            <a id="view-more-btn" class="viewMore" onclick="viewMoreClasses({{num_to_display}})"><b>View More</b></a>
+        </div>
+        <script>
+            let num_displayed = {{num_to_display | safe}};
+
+            function showDatacards(num) {
+                let container = document.querySelectorAll("#classpg-datacards > div > div");
+                console.log(container);
+                for (let i = 0; i < num; i++) {
+                    container[i].classList.remove("hidden");
+                }
+            }
+
+            function viewMoreClasses(num) {
+                classes = {{classes | safe}};
+                num_displayed += num;
+                if (num_displayed >= classes.length) {
+                    num_displayed = classes.length;
+                    document.getElementById("view-more-btn").style.display = "none";
+                }
+                showDatacards(num_displayed);
+            }
+
+            showDatacards(num_displayed);
+        </script>
     </section>
 </section>
 {% endblock %}
