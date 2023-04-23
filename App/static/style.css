@@ -272,10 +272,7 @@ button:active { filter: brightness(60%); }
     filter: brightness(50%);
 }
 
-
-
 /* Footer */
-
 .tiktok-icon,
 .facebook-icon,
 .instagram-icon{
@@ -323,24 +320,19 @@ button:active { filter: brightness(60%); }
     margin: 0 5px;
 }
 
-/*horizontal cards - 4 per line*/
+/*horizontal cards template - 4 per line*/
 .column {
     float: left;
     width: 25%;
     padding: 0 10px;
   }
   
-  /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
+.row {
+    margin: 0 -5px;
+}
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+ 
   
-  /* Responsive columns */
   @media screen and (max-width: 600px) {
     .column {
       width: 100%;
@@ -349,7 +341,6 @@ button:active { filter: brightness(60%); }
     }
   }
   
-  /* Style the counter cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
@@ -362,7 +353,7 @@ button:active { filter: brightness(60%); }
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/*Scrolling Cards - Horizontal*/
+/*Scrolling Cards Template - Horizontal*/
 .scrolling-wrapper {
     -webkit-overflow-scrolling: touch;
     display: flex;
@@ -386,14 +377,14 @@ button:active { filter: brightness(60%); }
     display: none;
 }
 
-/*Div Center*/
+/*Div Center Template*/
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
 }
 
-/*Text on Img*/
+/*Text on Img Template*/
 .img-container {
     position: relative;
     text-align: center;
