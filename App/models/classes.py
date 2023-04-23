@@ -7,16 +7,19 @@ class Class(db.Model):
     name       = Column(String(20), name="name", nullable=False, unique=False)
     instructor = Column(String(20), name="instructor", nullable=False, unique=False)
     desc       = Column(String(500), name="description", nullable=False, unique=False)
+    filename   = Column(String(20), name="filename", nullable=False, unique=False)
 
-    def __init__(self, name, instructor, desc):
+    def __init__(self, name, instructor, desc, filename):
         self.name = name
         self.instructor = instructor
         self.desc = desc
+        self.filename = filename
         
     def get_json(self) -> dict:
         return {
             'id': self.id,
             'name': self.name,
             'instructor': self.instructor,
-            'description': self.desc
+            'description': self.desc,
+            'filename': self.filename
         }

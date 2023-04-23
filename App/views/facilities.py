@@ -16,5 +16,6 @@ def facilities_page():
         user=user, 
         user_package=user_package, 
         facilities=get_all_facilities_json(),
-        num_to_display=num_to_display
+        num_to_display=num_to_display,
+        flen = len(get_all_facilities_json())
     )
