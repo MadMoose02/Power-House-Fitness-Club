@@ -12,7 +12,11 @@ from App.controllers import (
     update_user_data,
     get_package,
     get_all_packages_json,
-    username_exists
+    get_all_classes_json,
+    username_exists,
+    delete_userclass,
+    create_userclass,
+    get_userclasses_by_user_id
 )
 
 profile_views = Blueprint('profile_views', __name__, template_folder='../templates')
@@ -38,6 +42,46 @@ def edit_profile_page():
         emergency_contact=get_emergency_contact(current_user.emergency_contact_id).get_json()
     )
     
+
+@profile_views.route('/profile/edit-classes', methods=['GET'])
+@login_required
+def edit_classes_page():
+    user_classes = [i.get_json()['class_name'] for i in get_userclasses_by_user_id(current_user.id)]
+    print(user_classes)
+    return render_template(
+        'edit-classes.html', 
+        user=current_user,
+        user_package=get_package(current_user.package_id).get_json(),
+        classes=get_all_classes_json(),
+        user_classes=user_classes
+    )
+    
+    
+@profile_views.route('/profile/add-class', methods=['POST'])
+@login_required
+def add_user_class():
+    print(request.form.to_dict())
+    user_classes = [i.get_json() for i in get_userclasses_by_user_id(current_user.id)]
+    if request.form['class-name'] in " ".join([i['class_name'] for i in user_classes]):
+        flash('User already in class', category='error')
+        return redirect(url_for('profile_views.edit_classes_page'))
+    
+    if create_userclass(current_user.id, request.form['class-id'], request.form['class-name']):
+        flash('Class added successfully', category='success')
+        
+    else:
+        flash('Unable to add class. Please try again', category='error')
+        
+    return redirect(url_for('profile_views.edit_classes_page'))
+
+
+@profile_views.route('/profile/remove-class', methods=['POST'])
+@login_required
+def remove_user_class():
+    delete_userclass(current_user.id, request.form['class-id'])
+    flash('Class removed successfully', category='success')    
+    return redirect(url_for('profile_views.edit_classes_page'))
+
     
 @profile_views.route('/profile/update-user', methods=['POST'])
 @login_required
