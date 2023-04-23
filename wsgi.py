@@ -83,7 +83,7 @@ def initialise():
         phone='123-5432', 
         sex='male',
         email='bob.thebuilder@mail.com',
-        image=b64encode(open("App/static/images/male.jpg", "rb").read()),
+        image=b64encode(open("App/static/images/user/male.jpg", "rb").read()),
         package_id=2,
         emergency_contact_id=1,
         wallet_id=1
@@ -99,7 +99,7 @@ def initialise():
         phone='235-4545', 
         sex='female', 
         email='annette.layton@mail.com',
-        image=b64encode(open("App/static/images/female.jpg", "rb").read()),
+        image=b64encode(open("App/static/images/user/female.jpg", "rb").read()),
         package_id=3,
         emergency_contact_id=2,
         wallet_id=2
