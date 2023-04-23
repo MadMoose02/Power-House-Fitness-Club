@@ -250,14 +250,7 @@ button:active { filter: brightness(60%); }
     padding: 5px;
 }
 
-#user-nav-profile > img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-#user-nav-profile-img:hover {
+#user-nav-profile:hover {
     filter: brightness(70%);
     cursor: pointer;
     -webkit-filter: brightness(70%);
@@ -268,8 +261,15 @@ button:active { filter: brightness(60%); }
     transition: all 0.2s ease;
 }
 
-#user-nav-profile-img:active {
+#user-nav-profile:active {
     filter: brightness(50%);
+}
+
+#user-nav-profile > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Footer */
