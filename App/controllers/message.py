@@ -1,11 +1,12 @@
 from App.models import Message
 from App.database import db
 
-def create_message(discussion_id, user_id, content, datetime) -> Message:
+def create_message(discussion_id, user_id, content, external_link, datetime) -> Message:
     new_message = Message(
         discussion_id=discussion_id,
         user_id=user_id,
         content=content,
+        external_link=external_link,
         datetime=datetime
     )   
     db.session.add(new_message)
