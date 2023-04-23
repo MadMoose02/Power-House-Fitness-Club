@@ -558,8 +558,8 @@ button:active { filter: brightness(60%); }
     padding: 50px;
     padding-top: 5px;
     text-align: center;
-    background-color: #171718;
-    color: white;
+    color: #a8a5a5;
+    font-family: Oswald;
 }
 
 #mission-text {
@@ -587,5 +587,6 @@ button:active { filter: brightness(60%); }
     font-family: Oswald;
     margin-top: 0;
     margin-bottom: 2em;
+    color: #a8a5a5;
 }
 
