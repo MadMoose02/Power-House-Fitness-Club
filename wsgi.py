@@ -49,6 +49,11 @@ def initialise():
         create_facilities(facilities)
     print("Added all facilities")
     
+    # Create user wallets
+    wallet_1 = create_wallet(debit=0, credit=0)
+    wallet_2 = create_wallet(debit=0, credit=0)
+    wallet_3 = create_wallet(debit=0, credit=0)
+    
     # Add emergency contact for test users
     create_emergency_contact(
         fname="Wendy",
@@ -62,21 +67,16 @@ def initialise():
         relation="Brother",
         contact="953-2180"
     )
-    
-    # Create wallet for default users
-    create_wallet(
-        debit=300,
-        credit=0
-    )
-    
-    create_wallet(
-        debit=350,
-        credit=0
+    create_emergency_contact(
+        fname="Daniel",
+        lname="Allen",
+        relation="Father",
+        contact="968-6296"
     )
     
     # Add default users
-    create_user(
-        username='bob', 
+    bob = create_user(
+        username='bob',
         password='bobpass', 
         fname='Bob', 
         lname='the Builder', 
@@ -88,11 +88,11 @@ def initialise():
         image=b64encode(open("App/static/images/user/male.jpg", "rb").read()),
         package_id=2,
         emergency_contact_id=1,
-        wallet_id=1
+        wallet_id=wallet_1.id
     )
     
-    create_user(
-        username='ann', 
+    ann = create_user(
+        username='annette.layton', 
         password='annpass', 
         fname='Annette', 
         lname='Layton', 
@@ -104,7 +104,23 @@ def initialise():
         image=b64encode(open("App/static/images/user/female.jpg", "rb").read()),
         package_id=3,
         emergency_contact_id=2,
-        wallet_id=2
+        wallet_id=wallet_2.id
+    )
+    
+    sam = create_user(
+        username='sam.allen',
+        password='sampass',
+        fname="Samantha",
+        lname="Allen",
+        dob=date(2000, 4, 10),
+        address="43929 SE 160th Street, North Bend",
+        phone="282-1784",
+        sex="female",
+        email="samantha.allen@mail.com",
+        image=b64encode(open("App/static/images/user/sam.jpg", "rb").read()),
+        package_id=1,
+        emergency_contact_id=3,
+        wallet_id=wallet_3.id
     )
     
     # Add test data to data
@@ -115,7 +131,7 @@ def initialise():
         days_between = (datetime.today().date() - start_date).days
         random_day = start_date + timedelta(days=randint(0, days_between))
         create_activity(
-            user_id=1, 
+            user_id=bob.id, 
             date=random_day, 
             pre_workout=randint(0, 1),
             energy_level=energy_lvl_labels[energy_lvl],
@@ -123,10 +139,10 @@ def initialise():
         )
         
         # Add fitcoins to the user's wallet
-        add_debit(wallet_id=2, debit=10)
+        add_debit(wallet_id=bob.id, debit=10)
         create_transaction(
-            user_id=1, 
-            wallet_id=2, 
+            user_id=bob.id, 
+            wallet_id=bob.wallet_id, 
             type="Debit",
             amount=10,
             details="Added 10 Fitcoins to debit for completing an activity",
@@ -134,19 +150,58 @@ def initialise():
         )
         
     # Add comments to the forum
-    create_discussion(title="How do I start with HIT?", started_by=1)
+    create_discussion(title="How do I start with HIT?", started_by=bob.id)
     create_message(
         discussion_id=1,
-        user_id=1,
+        user_id=bob.id,
         content="I'm unsure how to start doing High Intensity Training. How do I begin?",
         external_link="",
         datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
     create_message(
         discussion_id=1,
-        user_id=2,
+        user_id=ann.id,
         content="Hi there! Maybe this can help you?",
         external_link="https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    
+    create_discussion("Recommendations for pre-workout Meal/Snacks?", started_by=ann.id)
+    create_message(
+        discussion_id=2,
+        user_id=ann.id,
+        content="Any recommendations for a simple yet nutritous pre-workout meal or snack? I'd love to hear them!",
+        external_link="",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    create_message(
+        discussion_id=2,
+        user_id=bob.id,
+        content="How about yogurt? Or maybe a banana?",
+        external_link="",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    create_message(
+        discussion_id=2,
+        user_id=sam.id,
+        content="Crix and tuna",
+        external_link="",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    
+    create_discussion("Why are the packages so expensive?", started_by=sam.id)
+    create_message(
+        discussion_id=3,
+        user_id=sam.id,
+        content="I'm a student and Powerhouse Fitness Club's student package is still a bit pricey.",
+        external_link="",
+        datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    create_message(
+        discussion_id=3,
+        user_id=bob.id,
+        content=f"I blame @{ann.username} for this.",
+        external_link="https://www.youtube.com/watch?v=mAG7DnQDljg",
         datetime=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
     
