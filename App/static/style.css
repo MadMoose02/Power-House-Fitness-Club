@@ -407,6 +407,7 @@ button:active { filter: brightness(60%); }
 .img-container h2{
     font-size: 30pt;
     color:#000000;
+    line-height: 95%;
 }
 
 .centered {
