@@ -10,11 +10,14 @@
         <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
         <div class="centered">
             <h1><b>ENGAGE WITH THE FITNESS COMMUNITY</b></h1>
-            <p>Hey there gym goers! As an avenue for our members to stay connected with each other beyond the gym walls, 
-                we are thrilled to launch this forum. We hope you'll find the area to be a resourceful avenue for fitness 
+            <!-- <p>Hey there gym goers! As an avenue for our members to stay connected with each other beyond the gym walls, 
+                we are thrilled to launch this forum. We hope you'll find the area to be a resourceful avenue for fitness 
                 advice, inspiration, and support, whether you've been a regular for some time or only recently began. 
                 Please take this opportunity to introduce yourself and share with us your fitness goals.
-                We want to hear from you, the members!</p>
+                We want to hear from you, the members!</p> -->
+            <p>As an avenue for our members to stay connected with each other beyond the gym walls, 
+                we are thrilled to launch this forum. We hope that our members find this area to be a resourceful avenue 
+                for fitness advice, inspiration and support.</p>
         </div>
     </section>
     <section>
@@ -42,13 +45,17 @@
                         <div id="discussion-descrpt" >
                             <div class="card">
                                 <h3>{{discussion.title}}</h3>
-                                <p>Started by {{get_user(discussion.started_by).username}}</p>
+                                <p>Started by @{{get_user(discussion.started_by).username}}</p>
                             </div>
                         </div>
                     </a>
                     {% endfor %}
+                    {% if filter %}
+                        <span id="clear-filter-btn" class="btn-style" onclick="location.href='/forum'">Clear Filter</span>
+                    {% endif %}
                 {% elif filter %}
                     <p>No discussions with title '{{query}}'</p>
+                    <span id="clear-filter-btn" class="btn-style" onclick="location.href='/forum'">Clear Filter</span>
                 {% else %}
                     <p>No discussions</p>
                 {% endif %}
