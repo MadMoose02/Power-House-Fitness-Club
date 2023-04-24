@@ -57,7 +57,8 @@ def edit_classes_page():
         user=current_user,
         user_package=get_package(current_user.package_id).get_json(),
         classes=get_all_classes_json(),
-        user_classes=user_classes
+        user_classes=user_classes,
+        num_to_display=2
     )
     
     
