@@ -126,6 +126,10 @@ function makeProfileEditable() {
     document.querySelector('#edit-profile-form').scrollIntoView({
         behavior: 'smooth'
     });
+    document.querySelector('#image').onchange = function () {
+        console.log('Image changed');
+        document.querySelector('#profile-image-preview').src = URL.createObjectURL(this.files[0]);
+    }
 
     saveProfileBtn.onclick = function () {
         disableProfileInputsState(true);

@@ -76,7 +76,7 @@
                 <div id="profile-image-container" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <label for="image"><b>PROFILE PHOTO</b></label><br>
                     <div style="display: flex; justify-content: center; align-items: center">
-                        <img style="margin-top; 20px; width: 300px; border: 1px solid black; border-radius: 14px" src="data:image/png;base64,{{user.image.decode()}}">
+                        <img id="profile-image-preview" style="margin-top; 20px; width: 300px; border: 1px solid black; border-radius: 14px" src="data:image/png;base64,{{user.image.decode()}}">
                     </div>
                     <input class="hidden" type="file" name="image" id="image" style="margin-top: 20px; width:100%; color: black">
                 </div>
