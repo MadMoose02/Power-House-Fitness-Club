@@ -772,7 +772,8 @@ input[type=file]{
 }
 
 input[type="file"]::file-selector-button,
-#register-signin-btn{
+#register-signin-btn
+{
     background-color: #9b0404;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -914,4 +915,102 @@ input[type="file"]::file-selector-button,
 
 #transaction-history-page table tr:nth-child(odd){
     background-color: #1b1b1bd5;
+}
+
+
+/*Forum Page*/
+#forum-content {
+    background-color: #000000;
+}
+
+
+#forum-search{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    width:50vh;
+    margin:1em;
+}
+
+#forum-search input {
+    background-color: #0f0f0fd5;
+    border: 1px solid #000000;
+    color: #727070;
+}
+
+#forum-search-btn {
+    border:0;
+    background-color:  #000000;
+}
+
+#forum-search form{
+    width: 400px;
+}
+
+#discussion {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#discussion a {
+    display:block;
+}
+
+#discussion-descrpt {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+#discussion-descrpt .card p{
+    color:#a19e9e;
+}
+
+#discussion-descrpt .card h3{
+    color:#9e9e9e;
+}
+
+#discussion-descrpt .card,
+#strt-discuss .card{
+    background-color: #0a0a0ad5;
+    border: 3px solid #9b0404;
+    color: #727070;
+    margin-top:4em;
+    margin-bottom:5em;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
+}
+
+#strt-discuss {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#strt-discuss form {
+    width: 400px;
+}
+
+#strt-discuss h2{
+    margin-bottom: 0;
+}
+
+#discuss-form input,
+#discuss-form textarea{
+    background-color: #0f0f0fd5;
+    border: 1px solid #000000;
+    color: #727070;
+}
+
+#discuss-form ::placeholder {
+    color: #727070;
+}
+
+.material-symbols-outlined { 
+    color: rgb(161, 159, 159);
 }

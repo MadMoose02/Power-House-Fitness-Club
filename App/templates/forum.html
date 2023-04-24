@@ -4,53 +4,72 @@
 {{ super() }}
 
 {% block content %}
-<section>
-    <div id="forum-content" class="card">
-        <h1><b>Powerhouse Fitness Club Forum</b></h1>
-        <hr><br>
-        <h4>Engage with the fitness community</h4>
-        <section>
-            <form action="/forum/filter" method="post" style="width: 400px">
-                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+<section id="forum-page" class="page-styling">
+    <h1><b>Powerhouse Fitness Club Forum</b></h1>
+    <section class="img-container">
+        <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="centered">
+            <h1><b>ENGAGE WITH THE FITNESS COMMUNITY</b></h1>
+            <p>Hey there gym goers! As an avenue for our members to stay connected with each other beyond the gym walls, 
+                we are thrilled to launch this forum. We hope you'll find the area to be a resourceful avenue for fitness 
+                advice, inspiration, and support, whether you've been a regular for some time or only recently began. 
+                Please take this opportunity to introduce yourself and share with us your fitness goals.
+                We want to hear from you, the members!</p>
+        </div>
+    </section>
+    <section>
+        <section id="forum-content" >  
+            <section id="search-form">
+            </section>
+            <form action="/forum/filter" method="post">
+                <div id="forum-search">
                     <input type="text" placeholder="Search" name="query">
-                    <button type="submit">Search</button>
+                    <button id="forum-search-btn" type="submit">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
                 </div>
             </form>
-        </section>
-        <br><hr>
-        <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-            {% if discussions %}
-                {% if filter %}
-                    <p>Showing results for '{{query}}'</p>
-                {% endif %}
-                {% for discussion in discussions %}
-                <a style="display:block" href="/forum/{{discussion.id}}">
-                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                        <div>
-                            <h3>{{discussion.title}}</h3>
-                            <p>Started by {{get_user(discussion.started_by).username}}</p>
+            <hr>
+            
+            <section id="discussion">
+                <h2><b>JOIN THE DISCUSSION!</b></h2>
+                {% if discussions %}
+                    {% if filter %}
+                        <p>Showing results for '{{query}}'</p>
+                    {% endif %}
+                    {% for discussion in discussions %}
+                    <a href="/forum/{{discussion.id}}">
+                        <div id="discussion-descrpt" >
+                            <div class="card">
+                                <h3>{{discussion.title}}</h3>
+                                <p>Started by {{get_user(discussion.started_by).username}}</p>
+                            </div>
                         </div>
+                    </a>
+                    {% endfor %}
+                {% elif filter %}
+                    <p>No discussions with title '{{query}}'</p>
+                {% else %}
+                    <p>No discussions</p>
+                {% endif %}
+                <a id="view-more-btn" class="btn-style" ><b>View More</b></a>
+            </section>
+            <br><hr>
+            <section id="strt-discuss" class="page-container">
+                <h2><b>START YOUR OWN DISCUSSION!</b></h2>
+                <form action="/start-discussion" method="post" id="discuss-form" class="card">
+                    <input type="text" name="title" placeholder="Title of Discussion">
+                    <textarea name="content" placeholder="Message"></textarea>
+                    <input name="external_link" placeholder="External Link">
+                    <div>
+                        <button class="btn-style" type="submit"><b>Send Message</b></button>
                     </div>
-                </a>
-                {% endfor %}
-            {% elif filter %}
-                <p>No discussions with title '{{query}}'</p>
-            {% else %}
-                <p>No discussions</p>
-            {% endif %}
+                </form>
+            </section>
         </section>
-        <br><hr>
-        <section style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-            <form action="/start-discussion" method="post" style="width: 400px">
-                <input type="text" name="title" placeholder="Title of Discussion">
-                <textarea name="content" placeholder="Message"></textarea>
-                <input name="external_link" placeholder="External Link">
-                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-                    <button type="submit">Send Message</button>
-                </div>
-            </form>
-        </section>
-    </div>
+    </section>
 </section>
 {% endblock %}
 
