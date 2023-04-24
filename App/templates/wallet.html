@@ -6,14 +6,38 @@
 
 {% block content %}
 
-<div class="container">
-  <h1>My Wallet</h1>
-  {% if wallet %}
-  <p>debit {{ wallet.debit }} and credit {{ wallet.credit }}.</p>
-{% else %}
-  <p>Please log in to view your wallet.</p>
-{% endif %}
-
+<div id="wallet-page" class="page-styling">
+    {% if wallet %}
+        <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
+        <h1><b>WALLET</b></h1>
+        <section class="img-container">
+            <img class="about-img" src="../static/images/wallet.png">
+        </section>
+        <section id="wallet-info" class="card">
+            <p>debit {{ wallet.debit }} and credit {{ wallet.credit }}.</p>
+        </section>
+        <section id="transaction-history" class="card">
+            <h2><b>TRANSACTION HISTORY LOG</b></h2>
+            <table id="transaction-history-table">
+                <tr>
+                    <th>Date & Time</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Details</th>
+                </tr>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.datetime }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.details }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    {% else %}
+        <p>Please log in to view your wallet.</p>
+    {% endif %}
 </div>
 
 {% endblock %}
