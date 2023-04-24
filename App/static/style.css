@@ -421,6 +421,7 @@ button:active { filter: brightness(60%); }
   }
 .pkgs .card{
     background-color: #222121d5;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
 }
 
 .pkgs img{
@@ -834,6 +835,7 @@ input[type="file"]::file-selector-button,
     width: 300px; 
     border: 3px solid #9b0404 ;
     border-radius: 14px;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
 }
 
 #image {
@@ -880,10 +882,16 @@ input[type="file"]::file-selector-button,
     background-color: #000000;
 }
 
+#all-activity hr {
+    border: 1px solid #3b3b3b;
+    opacity: 50%;
+}
+
 #activity-chart {
     width:100%; 
     max-width:600px;
     border: 3px solid #9b0404;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
 }
 
 #activity-table{
@@ -891,9 +899,11 @@ input[type="file"]::file-selector-button,
 }
 
 #all-activity table{
+    margin-bottom: 5em;
     width: 600px;
     color:#9e9e9ee8;
     border: 3px solid #9b0404;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
 }
 
 #all-activity table tr:nth-child(even){
@@ -1027,7 +1037,6 @@ input[type="file"]::file-selector-button,
 .material-symbols-outlined { 
     color: rgb(161, 159, 159);
 }
-
 
 #overlay {
     position:fixed;
