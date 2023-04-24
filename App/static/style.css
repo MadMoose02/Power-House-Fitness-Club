@@ -750,8 +750,25 @@ input[type=file]{
     text-align: center;
 }
 
-#terms-condit a{
+#terms-condit a {
     color: #9b0404;
+    filter: brightness(100%);
+}
+#terms-condit a:hover { cursor: pointer; }
+#terms-condit a:active { filter: brightness(60%); }
+
+#terms-conditions-modal {
+    bottom: 0;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#terms-conditions-modal * .modal-body {
+    overflow-y: scroll;
+}
+
+#terms-conditions-modal * span {
+    font-size: 20px;
 }
 
 #regpg-signin {
@@ -784,7 +801,7 @@ input[type="file"]::file-selector-button,
 #reg-form > section.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
 
 /*Edit-User Page*/
 #heading {
