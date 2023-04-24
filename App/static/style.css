@@ -857,6 +857,16 @@ input[type="file"]::file-selector-button,
     background-color:#000000;
 }
 
+#wallet-content > .img-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#wallet-content > .img-container > img {
+    width: 300px;
+}
+
 #all-activity {
     background:#000000;
     

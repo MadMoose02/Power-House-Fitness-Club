@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div id="wallet-page" class="page-styling">
+<div id="wallet-content" class="page-styling">
     {% if wallet %}
         <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
         <h1><b>WALLET</b></h1>
@@ -14,7 +14,7 @@
             <img class="about-img" src="../static/images/wallet.png">
         </section>
         <section id="wallet-info" class="card">
-            <p>debit {{ wallet.debit }} and credit {{ wallet.credit }}.</p>
+            <h2>Debit: {{ wallet.debit }}<br>Credit: {{ wallet.credit }}</h2>
         </section>
         <section id="transaction-history" class="card">
             <h2><b>TRANSACTION HISTORY LOG</b></h2>
