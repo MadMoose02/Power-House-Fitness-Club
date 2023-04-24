@@ -17,15 +17,15 @@ def get_userclass(user_id, class_id) -> UserClass:
     return UserClass.query.filter_by(user_id=user_id, class_id=class_id).first()
 
 
-def get_userclasses_by_user_id(user_id) -> list[UserClass]:
+def get_userclasses_by_user_id(user_id):
     return UserClass.query.filter_by(user_id=user_id).all()
 
 
-def get_all_userclasses() -> list[UserClass]:
+def get_all_userclasses():
     return UserClass.query.all()
 
 
-def get_all_userclasses_json() -> list[dict]:
+def get_all_userclasses_json():
     return [userclass.get_json() for userclass in get_all_userclasses()]
 
 

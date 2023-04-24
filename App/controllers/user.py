@@ -27,7 +27,7 @@ def create_user(username, password, fname, lname, dob, address, phone,
 def get_user_by_username(username) -> User:
     return User.query.filter_by(username=username).first()
 
-def get_same_names(fname, lname) -> list[User]:
+def get_same_names(fname, lname):
     return User.query.filter(User.fname == fname, User.lname == lname).all()
 
 def username_exists(username) -> bool:
@@ -36,10 +36,10 @@ def username_exists(username) -> bool:
 def get_user(id) -> User:
     return User.query.get(id)
 
-def get_all_users() -> list[User]:
+def get_all_users():
     return User.query.all()
 
-def get_all_users_json() -> list[dict]:
+def get_all_users_json():
     users = User.query.all()
     if not users: return []
     users = [user.get_json() for user in users]

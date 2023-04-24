@@ -12,15 +12,15 @@ def get_discussion(id) -> Discussion:
     return Discussion.query.get(id)
 
 
-def get_all_discussions() -> list[Discussion]:
+def get_all_discussions():
     return Discussion.query.all()
 
 
-def get_discussions_by_user(user_id) -> list[Discussion]:
+def get_discussions_by_user(user_id):
     return Discussion.query.filter_by(started_by=user_id).all()
 
 
-def get_discussions_by_title(title) -> list[Discussion]:
+def get_discussions_by_title(title):
     discussions = get_all_discussions()
     list = []
     for discussion in discussions:

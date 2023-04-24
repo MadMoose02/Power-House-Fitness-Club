@@ -90,7 +90,7 @@ button:active { filter: brightness(60%); }
     margin-top: 74px;
     padding: 10px;
     background-color: black;
-    width: 35vw;
+    width: 40vw;
     height: 100vh;
     max-height: calc(100vh - 74px);
     max-height: calc(100vh - 74px);
