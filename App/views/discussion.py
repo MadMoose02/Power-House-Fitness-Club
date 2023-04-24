@@ -56,7 +56,7 @@ def filtered_forum_page():
 @discussion_views.route('/start-discussion', methods=['POST'])
 def start_new_discussion():
     if not current_user.is_authenticated:
-        flash('You must be logged in to create a discussion')
+        flash('You must be logged in to create a discussion', category='error')
         return redirect(url_for('discussion_views.forum_page'))
     
     if get_discussions_by_title(request.form['title']):
