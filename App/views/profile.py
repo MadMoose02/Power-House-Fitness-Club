@@ -187,4 +187,4 @@ def update_user_info():
         flash("Unable to update profile", category='error')
         
     finally:
-        return redirect(url_for('profile_views.profile_page'))
+        return redirect(url_for('profile_views.edit_profile_page'))
