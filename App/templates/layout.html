@@ -127,7 +127,7 @@
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <nav id="alert-messages-nav" class="red white-text">
+            <nav id="alert-messages-nav" class="{{'red' if get_flashed_messages(category_filter=['error']) else 'green'}} white-text">
                 <div class="nav-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; max-height: 0">
                     <ul class="flashes" style="max-height: 0; margin-left: 20px">
                         {% for message in messages %}<li style="max-height: 100%">{{ message }}</li>{% endfor %}

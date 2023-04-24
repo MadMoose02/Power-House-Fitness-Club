@@ -1108,7 +1108,7 @@ input[type="file"]::file-selector-button,
 }
 
 #wallet-content hr {
-    width: 100vh;
+    width: 100%;
     border: 1px solid #5c0101;
     opacity: 70%;
 }
@@ -1117,7 +1117,6 @@ input[type="file"]::file-selector-button,
 #transaction-history-table {
     border-collapse: separate;
     border-spacing: 0;
-    margin-bottom: 5em;
     border: 3px solid #9b0404;
     color: #9e9e9ee8;
     box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);

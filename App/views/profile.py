@@ -20,7 +20,8 @@ from App.controllers import (
     create_transaction,
     add_credit,
     add_debit,
-    get_userclass
+    get_userclass,
+    get_wallet_balance_by_id
 )
 
 profile_views = Blueprint('profile_views', __name__, template_folder='../templates')
@@ -84,6 +85,10 @@ def add_user_class_fitcoin():
     user_classes = [i.get_json() for i in get_userclasses_by_user_id(current_user.id)]
     if request.form['class-name'] in " ".join([i['class_name'] for i in user_classes]):
         flash('User already in class', category='error')
+        return redirect(url_for('profile_views.edit_classes_page'))
+    
+    if get_wallet_balance_by_id(current_user.wallet_id) < int(request.form['class-price']):
+        flash('Unable to add class. Insufficient Fitcoin balance', category='error')
         return redirect(url_for('profile_views.edit_classes_page'))
     
     if create_userclass(current_user.id, request.form['class-id'], request.form['class-name'], True):
