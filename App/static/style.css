@@ -253,6 +253,7 @@ button:active { filter: brightness(60%); }
     position: relative;
     height: 60px;
     padding: 5px;
+    width: 60px;
 }
 
 #user-nav-profile:hover {
