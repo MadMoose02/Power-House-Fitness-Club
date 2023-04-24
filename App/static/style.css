@@ -700,6 +700,7 @@ input[type="file"]::file-selector-button:hover,
 }
 
 /*Facilities & Classes Pages*/
+#transaction-history-page,
 #activity-tracking-page,
 #log-activity-page,
 #edituser-page,
@@ -837,7 +838,8 @@ input[type="file"]::file-selector-button,
 
 /*Activity Tracking Page*/
 #wallet-content {
-    background: white; display: flex; 
+    background: white; 
+    display: flex; 
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
@@ -868,40 +870,40 @@ input[type="file"]::file-selector-button,
 
 #all-activity table{
     width: 600px;
-    color:#9e9e9e;
+    color:#9e9e9ee8;
     border: 3px solid #9b0404;
 }
 
-#all-activity table tr{
-    background-color:  #3a3939d5;
+#all-activity table tr:nth-child(even){
+    background-color:  #302f2fd5;
+}
+
+#all-activity table tr:nth-child(odd){
+    background-color: #1b1b1bd5;
 }
 
 #all-activity table th{
-    background-color:   #1d1c1cd5;
+    background-color:   #111111;
 }
 
-/* wallet starter  */
-table {
+/* Transaction Page  */
+#transaction-history-page table {
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 20px;
-    border: 1px solid black;
+    border: 3px solid #9b0404;
+    color: #9e9e9ee8;
 }
-th{
+#transaction-history-page table th{
+    background-color:#111111;
+}
+#transaction-history-page table td {
     padding: 8px;
 }
-td {
-    padding: 8px;
+#transaction-history-page table tr:nth-child(even){
+    background-color: #302f2fd5;
 }
 
-th {
-    background-color: #ccc;
-}
-
-.income {
-    background-color: #e6ffe6;
-}
-
-.expenses {
-    background-color: #ffe6e6;
+#transaction-history-page table tr:nth-child(odd){
+    background-color: #1b1b1bd5;
 }
