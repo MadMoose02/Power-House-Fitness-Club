@@ -186,15 +186,15 @@ button:active { filter: brightness(60%); }
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 50%; /* Full width */
-    height: 20%; /* Full height */
-    overflow: hidden; /* NO scroll */
-    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    width: 50%;
+    height: 20%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
     border: 1px solid #ffffff;
     border-radius: 25px;
 }
@@ -203,7 +203,6 @@ button:active { filter: brightness(60%); }
     background-color:rgb(68, 67, 67);
     color:rgb(0, 0, 0);
     font-family: Calibri, Helvetica, sans-serif;
-    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 100%;
 }
@@ -754,6 +753,10 @@ input[type=file]{
     overflow-y: scroll;
 }
 
+#terms-conditions-modal * .modal-content {
+    margin: 0;
+}
+
 #terms-conditions-modal * .modal-body {
     overflow-y: scroll;
 }
@@ -914,4 +917,16 @@ input[type="file"]::file-selector-button,
 
 #transaction-history-page table tr:nth-child(odd){
     background-color: #1b1b1bd5;
+}
+
+#overlay {
+    position:fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    display:none;
+    background-color:#000;
+    opacity:0.5;
+    overflow: hidden;
 }

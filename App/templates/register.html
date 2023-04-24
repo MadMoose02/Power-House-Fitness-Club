@@ -90,6 +90,7 @@
                     <button type="submit" id="registerbtn" class="btn-style"><b>REGISTER</b></button>
                 </div>
             </section>
+            <div id="overlay"></div>
             <div id="terms-conditions-modal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -140,6 +141,8 @@
 
         function toggleTermsConditionsModal(state) {
             console.log("here")
+            document.querySelector('#overlay').style.display = state ? 'block' : 'none'
+            document.querySelector('body').style.overflow = state ? 'hidden' : 'auto'
             let el = document.querySelector('#terms-conditions-modal')
             el.style.display = state ? 'block' : 'none'
         }
