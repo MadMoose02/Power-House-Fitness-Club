@@ -914,6 +914,4 @@ input[type="file"]::file-selector-button,
 
 #transaction-history-page table tr:nth-child(odd){
     background-color: #1b1b1bd5;
-    background-color:;
 }
-
