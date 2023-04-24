@@ -38,4 +38,3 @@ envVarGroups:
 databases:
 - name: Powerhouse-Fitness-Club-Web-Database
   plan: free
-  databaseName: phfc-database
