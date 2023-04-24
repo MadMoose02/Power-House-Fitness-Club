@@ -1194,4 +1194,29 @@ input[type="file"]::file-selector-button,
 .link:hover {
     opacity: 0.9;
 }
-  
+
+#flash-msg {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    max-height: 0;
+}
+
+#flash-msg ul{
+    max-height: 0; 
+    margin-left: 20px;
+}
+
+.cancel-button{
+    background-color: transparent;
+    border:0;
+}
+
+#alert-messages-nav {
+    font-weight: bold;
+    font-family: Oswald;
+}
+
+#alert-messages-nav .material-symbols-outlined{
+    color:#000000;
+}
