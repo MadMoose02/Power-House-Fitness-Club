@@ -630,10 +630,23 @@ input[type="file"]::file-selector-button:hover,
 
 
 /*Home Page - Packages*/
+#homepg-pkgs .card{
+    padding:0;
+    border: 2px solid #9b0404;
+    border-radius: 5px;
+}
+
+#homepg-pkgs img {
+    border-radius: 5px;
+}
+
+
 #homepg-facil {
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 4em;
 }
+
+
 
 
 /*About Us Page*/
