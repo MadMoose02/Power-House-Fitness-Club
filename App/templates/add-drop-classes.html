@@ -32,23 +32,23 @@
                         <form action="/profile/remove-class" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
-                            <input type="hidden" name="class-price" value="500">
+                            <input type="hidden" name="class-price" value="200">
                             <button class="btn-style"><b>DROP</b></button>
                         </form>
                     {% elif user_package.type in class.package.split(', ')%}
                         <form action="/profile/add-class" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
-                            <input type="hidden" name="class-price" value="500">
+                            <input type="hidden" name="class-price" value="200">
                             <button class="btn-style"><b>ADD</b></button>
                         </form>
                     {% else %}
                         <form action="/profile/add-class-fitcoin" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
-                            <input type="hidden" name="class-price" value="500">
+                            <input type="hidden" name="class-price" value="200">
                             <h4><b>REQUIRES PREMIUM <br>OR<br>GROUP PACKAGE</b><h4></h4>
-                            <button class="btn-style"><b>ADD USING 500 FITCOINS</b></button>
+                            <button class="btn-style"><b>ADD USING 200 FITCOINS</b></button>
                         </form>
                     {% endif %}
                 </section>
