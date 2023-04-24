@@ -694,7 +694,9 @@ input[type="file"]::file-selector-button:hover,
 #edituser-page,
 #reg-page,
 #facilities-page,
-#class-page{
+#class-page,
+#log-activity-page
+{
     background-color: #000000;
     border: 3px solid #9b0404;
 }
