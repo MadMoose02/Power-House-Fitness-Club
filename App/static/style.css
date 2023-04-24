@@ -452,6 +452,7 @@ of facilities and classes pages*/
 }
 
 /*Button Template*/
+#save-profile-btn,
 .btn-style {
     width: 200px;
     color: #000000;
@@ -466,6 +467,7 @@ of facilities and classes pages*/
 }
 
 input[type="file"]::file-selector-button:hover,
+#save-profile-btn:hover,
 #register-signin-btn:hover,
 .btn-style:hover {
     color: #9b0404;
@@ -684,36 +686,16 @@ input[type="file"]::file-selector-button:hover,
 }
 
 /*Facilities & Classes Pages*/
+#edituser-page,
 #reg-page,
 #facilities-page,
 #class-page{
     background-color: #000000;
     border: 3px solid #9b0404;
 }
-/* wallet starter  */
-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-bottom: 20px;
-    border: 1px solid black;
-}
-th{
-    padding: 8px;
-}
-td {
-    padding: 8px;
-}
-
-th {
-    background-color: #ccc;
-}
-
-.income {
-    background-color: #e6ffe6;
-}
-
 
 /*Registration Page*/
+#edituser-page,
 #reg-page{
     font-family: Oswald;
 }
@@ -786,10 +768,54 @@ input[type="file"]::file-selector-button,
     transform: translateY(0);
   }
 
+/*Edit-User Page*/
+#heading {
+    margin-top:20px;
+}
+
+#edituser-page .form-container{
+    margin-bottom: 3em;
+}
+
+#save-profile-btn {
+    font-family: Oswald;
+}
+
+#profile-edit-btns {
+    margin-top: 3em;
+    display: flex; 
+    flex-direction: row; 
+}
+
+
 /*Profile Page*/
 #disabled-image{
     
 }
+
+
+/* wallet starter  */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+th{
+    padding: 8px;
+}
+td {
+    padding: 8px;
+}
+
+th {
+    background-color: #ccc;
+}
+
+.income {
+    background-color: #e6ffe6;
+}
+
 .expenses {
     background-color: #ffe6e6;
 }
