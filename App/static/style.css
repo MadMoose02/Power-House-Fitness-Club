@@ -707,8 +707,8 @@ input[type="file"]::file-selector-button:hover,
 }
 
 /*Registration Page*/
-#log-activity input,
-#log-activity textarea,
+#log-activity-form input,
+#log-activity-form textarea,
 #memberinfo input,
 #memberinfo select,
 #emgcy-contact input,
@@ -721,7 +721,6 @@ input[type="file"]::file-selector-button:hover,
     border-radius: 3px;
     color: #9e9e9e;
 }
-
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1)
@@ -825,26 +824,6 @@ input[type="file"]::file-selector-button,
 /*Add/Drop Page*/
 #add-drop-page h4{
     color: #000000;
-}
-
-/*Log-Activity Page*/
-#wallet-content {
-    color:#9e9e9e;
-}
-
-input[type="radio"] {
-    color: #9e9e9e;
- }
-
-
-#log-activity {
-    margin: 40px;
-}
-
-.form-data{
-    position: relative; 
-    opacity: 100%; 
-    margin-top: 1px;
 }
 
 /* wallet starter  */
