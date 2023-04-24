@@ -17,7 +17,7 @@
                 <div>
                     {% if messages %}
                         {% for message in messages %}
-                            <div class="card">
+                            <div class="card hidden">
                                 <h3>{{get_user(message.user_id).username}} | {{message.datetime}}</h3>
                                 <hr>
                                 <p>{{message.content}}</p>
@@ -29,7 +29,7 @@
                     {% else %}
                         <p>No messages yet. Say something!</p>
                     {% endif %}
-                    <a id="loadmore-btn" class="btn-style" ><b>Load More</b></a>
+                    <a id="load-more-btn" class="btn-style" onclick="loadMoreDiscussions({{num_to_display | safe}})"><b>Load More</b></a>
                 </div>
             </div>
         </section>
@@ -45,6 +45,30 @@
             </form>
         </section>
     </div>
+    <script>
+        let num_displayed = 0;
+
+        function showDatacards(num) {
+            let divs = document.querySelectorAll("#msg-chain > div > div.hidden");
+            console.log(divs);
+            if (num >= divs.length){
+                num=divs.length;
+                document.getElementById("load-more-btn").style.display = "none";
+            }
+            for (let i = 0; i < num; i++) divs[i].classList.remove("hidden");
+        }
+
+        function loadMoreDiscussions(num) {
+            let divs = document.querySelectorAll("#msg-chain > div");
+            num_displayed += num;
+            if (num_displayed >= divs.length) {
+                num_displayed = divs.length;
+            }
+            showDatacards(num);
+        }
+
+        loadMoreDiscussions({{num_to_display | safe}});
+    </script>
 </section>
 {% endblock %}
 
