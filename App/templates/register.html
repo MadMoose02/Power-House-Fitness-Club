@@ -82,17 +82,41 @@
                 <input type="text" placeholder=" Contact Phone Number" name="emgcy-contactno" id="emgcy-contactno" required>
                 <br><br>
                 <hr>
-                <p id="terms-condit">By creating an account you agree to our <a href="#"><b>Terms & Privacy Conditions.</b></a></p>
+                <p id="terms-condit">By creating an account you agree to our 
+                    <a onclick="toggleTermsConditionsModal(true);" style="font-weight: bolder">Terms & Conditions.</a>
+                </p>
                 <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
                     <a id="back-btn" class="btn-style" onclick="advanceSection(-1);"><b>BACK</b></a>
                     <button type="submit" id="registerbtn" class="btn-style"><b>REGISTER</b></button>
                 </div>
             </section>
+            <div id="terms-conditions-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Terms & Conditions</h2>
+                    </div>
+                    <p>You accept all of these terms and conditions by registering for membership with the Powerhouse Fitness Club.</p>
+                    <div class="modal-body">
+                        <ul>
+                            <li>1. You must be at least 14 years old to use our membership web application.</li><br>
+                            <li>2. You alone are in charge of protecting the privacy of your login information and of any actions taken using your account.</li><br>
+                            <li>3. You hereby consent to not use our membership application for any unlawful or unauthorized purposes, nor to take any action that would impair, interfere with, or otherwise negatively affect our services or systems.</li><br>
+                            <li>4. This web application is offered "as is" and "as available" without any warranty or guarantee, either stated or implied.</li><br>
+                            <li>5. Any component of our membership web application may be changed, suspended, or terminated at any moment, with or without prior warning.</li><br>
+                            <li>6. Your access to our membership web application may be terminated or suspended at any time, with or without cause, with or without prior notice, and without incurring any obligation to you or any third parties.</li><br>
+                            <li>7. We reserve the right to utilize any content you submit to our membership web application for any reason, without payment or credit to you.</li><br>
+                            <li>8. You agree to indemnify and hold us harmless from any claims, damages, or losses arising out of or in connection with your use of our membership web application.</li><br>
+                        </ul>
+                    </div>
+                    <p>These terms and conditions constitute the entire agreement between you and the Powerhouse Fitness Club with respect to your use of our membership web application, and supersedes any prior agreements or understandings, whether written or oral.</p>
+                    <span class="btn-style" onclick="toggleTermsConditionsModal(false);">CLOSE</span>
+                </div>
+            </div>
         </form>
     </section>
     <section id="regpg-signin">
         <p>Already have an account? </p>
-        <button id="register-signin-btn" type="submit" onclick="openUserProfileModal();" style="font-weight: bolder">Login</button>
+        <button id="register-signin-btn" type="submit" onclick="openUserProfileModal(true);" style="font-weight: bolder">Login</button>
     </section>
 
     <script>
@@ -112,6 +136,12 @@
                 block: 'start',
                 behavior: 'smooth'
             })
+        }
+
+        function toggleTermsConditionsModal(state) {
+            console.log("here")
+            let el = document.querySelector('#terms-conditions-modal')
+            el.style.display = state ? 'block' : 'none'
         }
     </script>
 </section>
