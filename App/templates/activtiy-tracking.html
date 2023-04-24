@@ -10,19 +10,19 @@
     <section class="img-container">
         <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
         <div class="centered">
-            <h2><b>THIS WEEK'S ACTIVITY</b></h2>
+            <h2><b>KEEP CHECK OF YOUR FITNESS ACTIVITY</b></h2>
             <p>Keep track of your activty to stay ahead of the game <br>
                 and achieve your fitness goals!</p>
         </div>
     </section>
     <section id="wallet-content" >
         <section id="all-activity">
-            <h2><b>ACTIVITY STATISTICS</b></h2>
+            <h2><b>WEEKLY ACTIVITY</b></h2>
             <div class="card">
                 <canvas id="activity-chart"></canvas>
             </div>
             <br><br>
-            <h2><b>ALL ACTIVITY</b></h2>
+            <h2><b>ALL MY ACTIVITY</b></h2>
             <div id="activity-table" class="card">
                 <table>
                     <tr>
@@ -34,7 +34,7 @@
                     {% for activity in activities %}
                         <tr>
                             <td>{{ activity.date }}</td>
-                            <td>{{ activity.pre_workout }}</td>
+                            <td>{{ "Yes" if activity.pre_workout else "No" }}</td>
                             <td>{{ activity.energy_level }}</td>
                             <td>{{ activity.details }}</td>
                     {% endfor %}
@@ -90,11 +90,26 @@
                     datasets: [
                         {
                             label: "Number of Workouts",
-                            pointRadius: 4,
-                            pointBackgroundColor: "rgba(0,0,255,1)",
+                            backgroundColor: "rgba(158, 158, 158, 1)",
                             data: data.map(count => count)
                         }
                     ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: "rgba(158, 158, 158, 0.3)"
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: "rgba(158, 158, 158, 0.3)"
+                            }
+                        }]
+                    }
                 }
             }
         );
