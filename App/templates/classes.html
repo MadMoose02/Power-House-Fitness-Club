@@ -20,9 +20,9 @@
         </section>
         <br>
         <div style="text-align:center">
-            <span class="slidenav-dot" onclick="currentSlide(1)"></span> 
-            <span class="slidenav-dot" onclick="currentSlide(2)"></span> 
-            <span class="slidenav-dot" onclick="currentSlide(3)"></span> 
+            {% for i in range(1, clen) %}
+                <span class="slidenav-dot" onclick="currentSlide({{i}})"></span>
+            {% endfor %}
         </div>
         <script>
             let slideIndex = 1;
