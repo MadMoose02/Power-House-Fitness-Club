@@ -1084,6 +1084,7 @@ input[type="file"]::file-selector-button,
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
+    margin-bottom: 4em;
 }
 
 #msg-chain h3{
