@@ -320,6 +320,15 @@ button:active { filter: brightness(60%); }
     margin: 0 5px;
 }
 
+
+/*Base Page Template*/
+.page-styling
+{
+    font-family: Oswald;
+    background-color: #000000;
+    border: 3px solid #9b0404;
+}
+
 /*horizontal cards template - 4 per line*/
 .column {
     float: left;
@@ -330,8 +339,6 @@ button:active { filter: brightness(60%); }
 .row {
     margin: 0 -5px;
 }
-  
- 
   
   @media screen and (max-width: 600px) {
     .column {
@@ -369,7 +376,7 @@ button:active { filter: brightness(60%); }
 
 .horizontal-card img{
     max-width: 100%;
-    max-height: 100%;
+    max-height: 40vh;
     display: block;
 }
 
@@ -475,6 +482,13 @@ input[type="file"]::file-selector-button:hover,
     background-color: #000000;
     border: 1px solid #5c0101;
     text-decoration: none;
+}
+
+/*Page Container Template*/
+.page-container{
+    padding:5em;
+    padding-top: 0;
+    padding-bottom:0;
 }
 
 /*Form Container Template*/
@@ -692,44 +706,15 @@ input[type="file"]::file-selector-button:hover,
     border-radius: 10px;
 }
 
-/* Log Activity page */
-#activity-details {
-    font-size: 18px;
-    background-color: #222121d5;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    color: #9e9e9e;
-}
-
-#activity-details input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1)
-            brightness(55%)
-            sepia(75%)
-            saturate(80%)
-            hue-rotate(120deg)
-}
-
-
-/*Facilities & Classes Pages*/
-#edituser-page,
-#reg-page,
-#facilities-page,
-#class-page,
-#add-drop-page,
-#log-activity-page
-{
-    font-family: Oswald;
-    background-color: #000000;
-    border: 3px solid #9b0404;
-}
-
 /*Registration Page*/
+#log-activity-form input,
+#log-activity-form textarea,
 #memberinfo input,
 #memberinfo select,
 #emgcy-contact input,
 #sex option,
 #package option,
-textarea {
+#memberinfo textarea{
     font-size: 18px;
     background-color: #222121d5;
     border: 1px solid #000000;
@@ -737,7 +722,7 @@ textarea {
     color: #9e9e9e;
 }
 
-#memberinfo input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1)
             brightness(55%)
             sepia(75%)
@@ -842,29 +827,76 @@ input[type="file"]::file-selector-button,
 }
 
 
+/*Activity Tracking Page*/
+#wallet-content {
+    background: white; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    background-color:#000000;
+}
 
-/* wallet starter  */
-table {
+#all-activity {
+    background:#000000;
+    
+}
+
+/*The card background is giving the canvas it's black backgorund color
+    Canvas background should be black and the data on it should be #9e9e9e
+*/
+#all-activity .card{
+    background-color: #000000;
+}
+
+#activity-chart {
+    width:100%; 
+    max-width:600px;
+    border: 3px solid #9b0404;
+}
+
+#activity-table{
+    background-color: #000000;
+}
+
+#all-activity table{
+    width: 600px;
+    color:#9e9e9ee8;
+    border: 3px solid #9b0404;
+}
+
+#all-activity table tr:nth-child(even){
+    background-color:  #302f2fd5;
+}
+
+#all-activity table tr:nth-child(odd){
+    background-color: #1b1b1bd5;
+}
+
+#all-activity table th{
+    background-color:   #111111;
+}
+
+/* Transaction Page  */
+#transaction-history-page table {
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 20px;
-    border: 1px solid black;
+    border: 3px solid #9b0404;
+    color: #9e9e9ee8;
 }
-th{
+#transaction-history-page table th{
+    background-color:#111111;
+}
+#transaction-history-page table td {
     padding: 8px;
 }
-td {
-    padding: 8px;
+#transaction-history-page table tr:nth-child(even){
+    background-color: #302f2fd5;
 }
 
-th {
-    background-color: #ccc;
+#transaction-history-page table tr:nth-child(odd){
+    background-color: #1b1b1bd5;
+    background-color:;
 }
 
-.income {
-    background-color: #e6ffe6;
-}
-
-.expenses {
-    background-color: #ffe6e6;
-}

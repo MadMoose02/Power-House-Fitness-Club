@@ -4,11 +4,18 @@
 {{ super() }}
 
 {% block content %}
-<section>
-    <div id="wallet-content" class="card">
-        <h1><b>TRANSACTION HISTORY</b></h1>
-        <hr>
-        <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+<section id="transaction-history-page" class="page-styling">
+    <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
+    <h1><b>VIEW YOUR HISTORY</b></h1>
+    <section class="img-container">
+        <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="centered">
+            <h1><b>TRANSACTION HISTORY LOG</b></h1>
+            <p>Here you will see all the transactions made via your account.</p>
+        </div>
+    </section>
+    <section id="wallet-content" class="card">
+        <h2><b>TRANSACTION HISTORY LOG</b></h2>
         <div id="transaction-history">
             <table>
                 <tr>
@@ -27,6 +34,6 @@
                 {% endfor %}
             </table>
         </div>
-    </div>
+    </section>
 </section>
 {% endblock %}

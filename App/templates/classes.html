@@ -4,14 +4,15 @@
 {{ super() }}
 
 {% block content %}
-<section id="class-page">
+<section id="class-page" class="page-styling">
     <h1><b>OUR CLASSES</b></h1>
     <section id="classpg-gallery">
         <section class="slideshow-container">
             {% for class in classes %}
                 <div class="homepg-slides fade">
                     <div class="homepg-slide-numbers">{{class.id}} / {{clen}}</div>
-                    <img src="../static/images/classes/{{class.filename}}">
+                    <img src="../static/images/classes/{{class.filename}}"
+                         onclick="(()=>{viewMoreClasses({{class.id}});document.querySelector('#{{"-".join(class.name.lower().split(' '))}}-class').scrollIntoView({behavior:'smooth'});})();">
                     <div class="slide-caption">{{class.name}}</div>
                 </div>
             {% endfor %}
@@ -61,7 +62,7 @@
         <h1><b>AVAILABLE CLASSES</b></h1>
         <div class="card-data" class="row">
             {% for class in classes %}
-            <div id="{{class.name.lower()}}-class" class="center hidden">
+            <div id="{{"-".join(class.name.lower().split(' '))}}-class" class="center hidden">
                 <section class="card" >
                     <h2>{{class.name}}</h2>
                     <hr>
@@ -78,7 +79,6 @@
 
             function showDatacards(num) {
                 let container = document.querySelectorAll("#classpg-datacards > div > div");
-                console.log(container);
                 for (let i = 0; i < num; i++) {
                     container[i].classList.remove("hidden");
                 }

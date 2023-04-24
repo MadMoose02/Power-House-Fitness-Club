@@ -4,19 +4,27 @@
 {{ super() }}
 
 {% block content %}
-<section>
-    <div id="wallet-content">
-        <h1><b>ACTIVITY TRACKING</b></h1>
-        <div style="background: white; display: flex; flex-direction: column; justify-content: center; align-items: center">
-            <a class="button" href="/profile"><b>&larr;My Profile</b></a>
-            <h2>MY ACTIVITY THIS WEEK</h2>
-            <div style="background: white" class="card">
-                <canvas id="activity-chart" style="width:100%; max-width:600px"></canvas>
+<section id="activity-tracking-page" class="page-styling">
+    <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
+    <h1><b>ACTIVITY TRACKING</b></h1>
+    <section class="img-container">
+        <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="centered">
+            <h2><b>KEEP CHECK OF YOUR FITNESS ACTIVITY</b></h2>
+            <p>Keep track of your activty to stay ahead of the game <br>
+                and achieve your fitness goals!</p>
+        </div>
+    </section>
+    <section id="wallet-content" >
+        <section id="all-activity">
+            <h2><b>WEEKLY ACTIVITY</b></h2>
+            <div class="card">
+                <canvas id="activity-chart"></canvas>
             </div>
             <br><br>
-            <h2>ALL MY ACTIVITY</h2>
-            <div class="card">
-                <table style="width: 600px">
+            <h2><b>ALL MY ACTIVITY</b></h2>
+            <div id="activity-table" class="card">
+                <table>
                     <tr>
                         <th>Date</th>
                         <th>Pre-Workout</th>
@@ -26,14 +34,14 @@
                     {% for activity in activities %}
                         <tr>
                             <td>{{ activity.date }}</td>
-                            <td>{{ activity.pre_workout }}</td>
+                            <td>{{ "Yes" if activity.pre_workout else "No" }}</td>
                             <td>{{ activity.energy_level }}</td>
                             <td>{{ activity.details }}</td>
                     {% endfor %}
                 </table>
             </div>
-        </div>
-    </div>
+        </section>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
@@ -82,14 +90,31 @@
                     datasets: [
                         {
                             label: "Number of Workouts",
-                            pointRadius: 4,
-                            pointBackgroundColor: "rgba(0,0,255,1)",
+                            backgroundColor: "rgba(80, 79, 79, 0.835)",
                             data: data.map(count => count)
                         }
                     ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: "rgba(158, 158, 158, 0.3)"
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: "rgba(158, 158, 158, 0.3)"
+                            }
+                        }]
+                    }
                 }
             }
         );
     </script>
+  </body>
+</html>      
 </section>
 {% endblock %}

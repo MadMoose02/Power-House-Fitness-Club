@@ -4,7 +4,7 @@
 {{ super() }}
 
 {% block content %}
-<section id="log-activity-page">
+<section id="log-activity-page" class="page-styling">
     <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
     <h1><b>LOG NEW ACTIVITY</b></h1>
     <section class="img-container">
@@ -21,11 +21,11 @@
     <section class="form-container">
         <form id="log-activity-form" action="/log-activity" method="post" style="margin: 40px">
             <section id="activity-details">
-                <label for="date"><b>Date</b></label>
+                <label for="date"><b>DATE</b></label>
                 <input type="date" name="date" id="date" required>
                 <br><br>
                 <fieldset>
-                    <legend><b>Had Pre-Workout/Meal/Snack?</b></legend>
+                    <legend style="color:#9e9e9e;"><b>HAD PRE-WORKOUT/MEAL/SNACK?</b></legend>
                     <input type="radio" name="pre-workout" id="had-pre-workout" value="True" style="position: relative; opacity: 100%; margin-top: 1px" checked>
                     <label for="had-pre-workout">Yes</label><br>
                     <input type="radio" name="pre-workout" id="no-pre-workout"  value="False" style="position: relative; opacity: 100%; margin-top: 1px">
@@ -33,7 +33,7 @@
                 </fieldset>
                 <br><br>
                 <fieldset>
-                    <legend><b>Select energy level</b></legend>
+                    <legend style="color:#9e9e9e;"><b>SELECT ENERGY LEVEL</b></legend>
                     <input type="radio" name="energy-level" id="low-energy" value="Low" style="position: relative; opacity: 100%; margin-top: 1px" checked>
                     <label for="low-energy">Low</label><br>
                     <input type="radio" name="energy-level" id="medium-energy" value="Medium" style="position: relative; opacity: 100%; margin-top: 1px">
@@ -42,8 +42,8 @@
                     <label for="high-energy">High</label>
                 </fieldset>
                 <br><br>
-                <label><b>Activity/Exercise Details</b></label>
-                <textarea name="details" id="details" style="border: 1px solid; max-width: inherit" required></textarea>
+                <label><b>ACTIVITY/EXERCISE DETAILS</b></label>
+                <textarea name="details" id="details" style="max-width: inherit" required></textarea>
             </section>
             <section style="display: flex; flex-direction: row; justify-content: center">
                 <button id="submit-activity-log" class="btn-style" type="submit" style="margin-top: 40px;">Submit</button>
