@@ -5,39 +5,45 @@
 {% block page %}My Wallet{% endblock %}
 
 {% block content %}
-
-<div id="wallet-content" class="page-styling">
-    {% if wallet %}
-        <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
-        <h1><b>WALLET</b></h1>
-        <section class="img-container">
-            <img class="about-img" src="../static/images/wallet.png">
-        </section>
-        <section id="wallet-info" class="card">
-            <h2>Debit: {{ wallet.debit }}<br>Credit: {{ wallet.credit }}</h2>
-        </section>
-        <section id="transaction-history" class="card">
-            <h2><b>TRANSACTION HISTORY LOG</b></h2>
-            <table id="transaction-history-table">
-                <tr>
-                    <th>Date & Time</th>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Details</th>
-                </tr>
-                {% for transaction in transactions %}
-                <tr>
-                    <td>{{ transaction.datetime }}</td>
-                    <td>{{ transaction.type }}</td>
-                    <td>{{ transaction.amount }}</td>
-                    <td>{{ transaction.details }}</td>
-                </tr>
-                {% endfor %}
-            </table>
-        </section>
-    {% else %}
-        <p>Please log in to view your wallet.</p>
-    {% endif %}
-</div>
-
+<section id="wallet-page" class="page-styling">
+    <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
+    <div id="wallet-content">
+        {% if wallet %}
+            <h1><b>WALLET</b></h1>
+            <section id="wallet-icon">
+                <span class="material-symbols-outlined">
+                    account_balance_wallet
+                </span>
+            </section>
+            <section id="wallet-info">
+                <h2>Debit: {{ wallet.debit }}</h2>           
+                <h2>Credit: {{ wallet.credit }}</h2>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <section id="transaction-history" >
+                <h2><b>TRANSACTION HISTORY LOG</b></h2>
+                <table id="transaction-history-table">
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Details</th>
+                    </tr>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.datetime }}</td>
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.details }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </section>
+        {% else %}
+            <p>Please log in to view your wallet.</p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

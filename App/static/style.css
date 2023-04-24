@@ -468,7 +468,7 @@ of facilities and classes pages*/
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid transparent;
+    border: 1px solid #000000;
     background-color: #9b0404;
     transition: .3s;
     font-family: Oswald;
@@ -888,6 +888,7 @@ input[type="file"]::file-selector-button,
 }
 
 #activity-chart {
+    margin-left:3em;
     width:100%; 
     max-width:600px;
     border: 3px solid #9b0404;
@@ -895,11 +896,12 @@ input[type="file"]::file-selector-button,
 }
 
 #activity-table{
+    margin-left:3em;
+    margin-bottom: 5em;
     background-color: #000000;
 }
 
 #all-activity table{
-    margin-bottom: 5em;
     width: 600px;
     color:#9e9e9ee8;
     border: 3px solid #9b0404;
@@ -916,28 +918,6 @@ input[type="file"]::file-selector-button,
 
 #all-activity table th{
     background-color:   #111111;
-}
-
-/* Transaction Page  */
-#transaction-history-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-bottom: 20px;
-    border: 3px solid #9b0404;
-    color: #9e9e9ee8;
-}
-#transaction-history-table th{
-    background-color:#111111;
-}
-#transaction-history-table td {
-    padding: 8px;
-}
-#transaction-history-table tr:nth-child(even){
-    background-color: #302f2fd5;
-}
-
-#transaction-history-table tr:nth-child(odd){
-    background-color: #1b1b1bd5;
 }
 
 
@@ -1087,6 +1067,11 @@ input[type="file"]::file-selector-button,
     margin-bottom: 4em;
 }
 
+#msg-chain {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
 #msg-chain h3{
     font-size: 30pt;
 }
@@ -1104,4 +1089,50 @@ input[type="file"]::file-selector-button,
 
 #loadmore-btn{
     margin-bottom:5em;
+}
+
+/*Wallet Page*/
+#wallet-icon .material-symbols-outlined {
+    font-size: 100px; 
+}
+
+#wallet-info {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 3em;
+}
+
+#wallet-info h2{
+    margin-top: 0;
+    color: #9e9e9e;
+}
+
+#wallet-content hr {
+    width: 100vh;
+    border: 1px solid #5c0101;
+    opacity: 70%;
+}
+
+/* Transactions */
+#transaction-history-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 5em;
+    border: 3px solid #9b0404;
+    color: #9e9e9ee8;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
+}
+#transaction-history-table th{
+    background-color:#111111;
+}
+#transaction-history-table td {
+    padding: 8px;
+}
+#transaction-history-table tr:nth-child(even){
+    background-color: #302f2fd5;
+}
+
+#transaction-history-table tr:nth-child(odd){
+    background-color: #1b1b1bd5;
 }
