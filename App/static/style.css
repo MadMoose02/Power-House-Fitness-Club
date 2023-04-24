@@ -997,6 +997,8 @@ input[type="file"]::file-selector-button,
     color:#9e9e9e;
 }
 
+#add-msg .card,
+#msg-chain .card,
 #discussion-descrpt .card,
 #strt-discuss .card{
     background-color: #0a0a0ad5;
@@ -1015,14 +1017,18 @@ input[type="file"]::file-selector-button,
     align-items: center;
 }
 
+#add-msg form,
 #strt-discuss form {
     width: 400px;
 }
 
+#add-msg h2,
 #strt-discuss h2{
     margin-bottom: 0;
 }
 
+#add-msg input,
+#add-msg textarea,
 #discuss-form input,
 #discuss-form textarea{
     background-color: #0f0f0fd5;
@@ -1030,6 +1036,7 @@ input[type="file"]::file-selector-button,
     color: #727070;
 }
 
+#add-msg ::placeholder,
 #discuss-form ::placeholder {
     color: #727070;
 }
@@ -1048,4 +1055,39 @@ input[type="file"]::file-selector-button,
     background-color:#000;
     opacity:0.5;
     overflow: hidden;
+}
+
+/*Discussion Page*/
+.messages {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+
+
+#add-msg{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#msg-chain h3{
+    font-size: 30pt;
+}
+
+#forum-content hr,
+#forum-discussion-content hr,
+#msg-chain hr{
+    border: 1px solid #9b0404;
+    opacity: 70%;
+}
+
+#ext-link-btn {
+    color:#9b0404;
+}
+
+#loadmore-btn{
+    margin-bottom:5em;
 }
