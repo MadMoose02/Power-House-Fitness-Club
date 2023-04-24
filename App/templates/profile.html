@@ -7,19 +7,23 @@
 {% block content %}
 <section class="page-styling">
     <h1><b>MY PROFILE</b></h1>
-    <section class="reg-container">
-        <section>
-            <div style="background: white">
-                <h2>There be text here</h2>
+    <section id="profile-page">
+        <div class="profile-contents">
+            <div class="profile">
+                <img id="profile-image-preview" class="prof-img" src="data:image/png;base64,{{user.image.decode()}}">
+                <span class="profile_name"><b>{{user.fname}} {{user.lname}}</b></span>
+                <span class="username">@{{user.username}}</span>
+            </div>
+            <div class="links">
                 <ul>
-                    <li><a href="/profile/edit-user">EDIT MY INFO</a></li>
-                    <li><a href="/wallet">MY WALLET</a></li>
-                    <li><a href="/profile/add-drop-classes">ADD/DROP CLASSES</a></li>
-                    <li><a href="/log-activity">LOG NEW ACTIVITY</a></li>
-                    <li><a href="/activty-tracking">ACTIVITY TRACKING</a></li>
+                    <li><a class="link" href="/profile/edit-user">EDIT MY INFO</a></li>
+                    <li><a class="link" href="/wallet">MY WALLET</a></li>
+                    <li><a class="link" href="/profile/add-drop-classes">ADD/DROP CLASSES</a></li>
+                    <li><a class="link" href="/log-activity">LOG NEW ACTIVITY</a></li>
+                    <li><a class="link" href="/activty-tracking">ACTIVITY TRACKING</a></li>
                 </ul>
             </div>
-        </section>
+        </div>
     </section>
 </section>
 {% endblock %}

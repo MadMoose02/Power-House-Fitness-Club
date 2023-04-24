@@ -1058,7 +1058,6 @@ input[type="file"]::file-selector-button,
     align-items: center;
 }
 
-
 #add-msg{
     display: flex; 
     flex-direction: column; 
@@ -1136,3 +1135,64 @@ input[type="file"]::file-selector-button,
 #transaction-history-table tr:nth-child(odd){
     background-color: #1b1b1bd5;
 }
+
+
+/*Profile Page*/
+#profile-page {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: #080808;
+}
+
+.profile-contents {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.profile {
+    text-align: center;
+    color: #9e9e9ee8;
+}
+  
+.prof-img {
+    border-radius: 15px;
+}
+  
+.profile_name {
+    display: block;
+}
+  
+.username {
+    font-size: 13px;
+}
+  
+.links ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 5em;
+  }
+  
+.links ul li {
+    margin: 25px 0;
+}
+  
+.link {
+    padding: 14px;
+    display: block;
+    background-color: #9b0404;
+    box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: ease all 0.3s;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #000000
+}
+  
+.link:hover {
+    opacity: 0.9;
+}
+  
