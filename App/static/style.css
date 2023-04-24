@@ -898,24 +898,24 @@ input[type="file"]::file-selector-button,
 }
 
 /* Transaction Page  */
-#transaction-history-page table {
+#transaction-history-table {
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 20px;
     border: 3px solid #9b0404;
     color: #9e9e9ee8;
 }
-#transaction-history-page table th{
+#transaction-history-table th{
     background-color:#111111;
 }
-#transaction-history-page table td {
+#transaction-history-table td {
     padding: 8px;
 }
-#transaction-history-page table tr:nth-child(even){
+#transaction-history-table tr:nth-child(even){
     background-color: #302f2fd5;
 }
 
-#transaction-history-page table tr:nth-child(odd){
+#transaction-history-table tr:nth-child(odd){
     background-color: #1b1b1bd5;
 }
 
