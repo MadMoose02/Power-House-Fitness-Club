@@ -186,15 +186,15 @@ button:active { filter: brightness(60%); }
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 50%; /* Full width */
-    height: 20%; /* Full height */
-    overflow: hidden; /* NO scroll */
-    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    width: 50%;
+    height: 20%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
     border: 1px solid #ffffff;
     border-radius: 25px;
 }
@@ -203,7 +203,6 @@ button:active { filter: brightness(60%); }
     background-color:rgb(68, 67, 67);
     color:rgb(0, 0, 0);
     font-family: Calibri, Helvetica, sans-serif;
-    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 100%;
 }
@@ -754,6 +753,10 @@ input[type=file]{
     overflow-y: scroll;
 }
 
+#terms-conditions-modal * .modal-content {
+    margin: 0;
+}
+
 #terms-conditions-modal * .modal-body {
     overflow-y: scroll;
 }
@@ -855,6 +858,16 @@ input[type="file"]::file-selector-button,
     background-color:#000000;
 }
 
+#wallet-content > .img-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#wallet-content > .img-container > img {
+    width: 300px;
+}
+
 #all-activity {
     background:#000000;
     
@@ -896,24 +909,24 @@ input[type="file"]::file-selector-button,
 }
 
 /* Transaction Page  */
-#transaction-history-page table {
+#transaction-history-table {
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 20px;
     border: 3px solid #9b0404;
     color: #9e9e9ee8;
 }
-#transaction-history-page table th{
+#transaction-history-table th{
     background-color:#111111;
 }
-#transaction-history-page table td {
+#transaction-history-table td {
     padding: 8px;
 }
-#transaction-history-page table tr:nth-child(even){
+#transaction-history-table tr:nth-child(even){
     background-color: #302f2fd5;
 }
 
-#transaction-history-page table tr:nth-child(odd){
+#transaction-history-table tr:nth-child(odd){
     background-color: #1b1b1bd5;
 }
 
@@ -1013,4 +1026,17 @@ input[type="file"]::file-selector-button,
 
 .material-symbols-outlined { 
     color: rgb(161, 159, 159);
+}
+
+
+#overlay {
+    position:fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    display:none;
+    background-color:#000;
+    opacity:0.5;
+    overflow: hidden;
 }
