@@ -487,6 +487,11 @@ input[type="file"]::file-selector-button:hover,
     color: #9e9e9e ;
 }
 
+/*Back Button Template*/
+.back-btn {
+    color:#9b0404;
+    padding: 5px;
+}
 
 
 /*Home Page*/
