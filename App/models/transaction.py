@@ -30,5 +30,5 @@ class Transaction(db.Model):
             'type': self.type,
             'amount': self.amount,
             'details': self.details,
-            'date': self.datetime
+            'datetime': self.datetime
         }

@@ -1,19 +1,17 @@
-from flask import Blueprint, redirect, render_template, request, send_from_directory, jsonify
+from flask import Blueprint, render_template
 from flask_login import current_user, login_required
 
 from App.models import db
-from App.controllers import retrieve_current_user, get_package, get_all_transactions
+from App.controllers import get_package, get_all_transactions_of_user_json
 
 transaction_views = Blueprint('transaction_views', __name__, template_folder='../templates')
 
 @transaction_views.route('/transactions', methods=['GET'])
 @login_required
 def transactions_history_page():
-    user = retrieve_current_user() if current_user.is_authenticated else None
-    user_package = get_package(user.package_id).get_json() if user else None
     return render_template(
         'transaction-history.html', 
-        user=user, 
-        user_package=user_package,
-        transactions=get_all_transactions()
+        user=current_user, 
+        user_package=get_package(current_user.package_id).get_json(),
+        transactions=get_all_transactions_of_user_json(current_user.id)
     )

@@ -1,8 +1,8 @@
 [
     {
         "type": "Student",
-        "price": "$200.00",
-        "description": "Ages 14-25. Must provide valid documentation (eg. Student ID, Accpetance Letter)."
+        "price": "$150.00",
+        "description": "Ages 14-25. Must provide valid documentation (eg. Student ID, Accpetance Letter). Provides access to most facilties"
     },
     {
         "type": "Standard",
