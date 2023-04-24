@@ -15,6 +15,6 @@ def wallet_page():
         'wallet.html', 
         user=current_user, 
         user_package=user_package, 
-        wallet=get_wallet(current_user), 
+        wallet=get_wallet(current_user.id), 
         transactions=transactions
     )
