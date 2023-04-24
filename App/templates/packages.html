@@ -8,14 +8,14 @@
     <h1><b>AVAILABLE PACKAGES</b></h1>
     <div id="pkg-card-data" class="row">
         {% for package in packages %}
-        <div class="column">
+        <div class="column" style="height: 450px">
             <div id="{{package.type.lower()}}-package" class="card">
                 <div class="pkg-container">
                     <h2>{{package.type}}</h2>
                     <hr>
                     <h3>{{package.price}}</h3>
                     <hr>
-                    <p>{{package.desc}}</p>
+                    <p>{{package.description}}</p>
                 </div>
             </div>
         </div>
