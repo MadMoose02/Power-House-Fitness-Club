@@ -4,12 +4,19 @@
 {{ super() }}
 
 {% block content %}
-<section>
-    <div id="wallet-content">
-        <h1><b>LOG COMPLETED ACTIVITY</b></h1>
-        <div style="background: white" class="card">
-            <a class="button" href="/profile"><b>&larr;My Profile</b></a>
-            <form id="log-activity" action="/log-activity" method="post" style="margin: 40px">
+<section id="log-activity-page">
+    <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
+    <h1><b>LOG COMPLETED ACTIVITY</b></h1>
+    <section class="img-container">
+        <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="centered">
+            <h1><b>ACTIVITY LOGGING FORM</b></h1>
+            <p>Please fill out this form to log your activity for the day in order to receive fit-coins!</p>
+        </div>
+    </section>
+    <section id="wallet-content">
+        <div class="form-container">
+            <form id="log-activity" action="/log-activity" method="post">
                 <section>
                     <fieldset>
                         <legend>Date</legend>
@@ -18,19 +25,19 @@
                     <br><br>
                     <fieldset>
                         <legend>Had Pre-Workout/Meal/Snack?</legend>
-                        <input type="radio" name="pre-workout" id="had-pre-workout" value="True" style="position: relative; opacity: 100%; margin-top: 1px" checked>
+                        <input class="form-data" type="radio" name="pre-workout" id="had-pre-workout" value="True" checked>
                         <label for="had-pre-workout">Yes</label><br>
-                        <input type="radio" name="pre-workout" id="no-pre-workout"  value="False" style="position: relative; opacity: 100%; margin-top: 1px">
-                        <label for="no-pre-workout">No</label><br>
+                        <input type="radio" name="pre-workout" id="no-pre-workout"  value="False">
+                        <label class="form-data" for="no-pre-workout">No</label><br>
                     </fieldset>
                     <br><br>
                     <fieldset>
                         <legend>Select energy level</legend>
-                        <input type="radio" name="energy-level" id="low-energy" value="Low" style="position: relative; opacity: 100%; margin-top: 1px" checked>
+                        <input class="form-data" type="radio" name="energy-level" id="low-energy" value="Low" checked>
                         <label for="low-energy">Low</label><br>
-                        <input type="radio" name="energy-level" id="medium-energy" value="Medium" style="position: relative; opacity: 100%; margin-top: 1px">
+                        <input class="form-data" type="radio" name="energy-level" id="medium-energy" value="Medium">
                         <label for="medium-energy">Medium</label><br>
-                        <input type="radio" name="energy-level" id="high-energy" value="High" style="position: relative; opacity: 100%; margin-top: 1px">
+                        <input class="form-data" type="radio" name="energy-level" id="high-energy" value="High">
                         <label for="high-energy">High</label>
                     </fieldset>
                     <br><br>
@@ -40,12 +47,12 @@
                     </fieldset>
                 </section>
 
-                <section style="display: flex; flex-direction: row; justify-content: center">
-                    <button id-"submit-activity-log" type="submit" style="font-size: 18px; width: 100px; margin-top: 40px; height: 40px;">Submit</button>
+                <section>
+                    <button id="submit-activity-log" class="btn-style" type="submit" >Submit</button>
                 </section>
             </form>
         </div>
-    </div>
+    </section>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById('date').valueAsDate = new Date();
