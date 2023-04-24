@@ -18,9 +18,6 @@ def load_config():
         config['RAWG_TOKEN'] = os.environ.get('RAWG_TOKEN')
         config['DEBUG'] = config['ENV'].upper() != 'PRODUCTION'
         delta = int(os.environ.get('JWT_ACCESS_TOKEN_EXPIRES', 7))
-        
-    if os.getenv('DATABASE_URL'):
-        config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1)
 
     config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=int(delta))
     config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
