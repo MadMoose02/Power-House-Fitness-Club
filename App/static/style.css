@@ -697,7 +697,9 @@ input[type="file"]::file-selector-button:hover,
 #reg-page,
 #facilities-page,
 #class-page,
-#add-drop-page{
+#add-drop-page,
+#log-activity-page
+{
     font-family: Oswald;
     background-color: #000000;
     border: 3px solid #9b0404;
