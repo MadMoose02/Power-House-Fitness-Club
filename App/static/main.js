@@ -92,18 +92,26 @@ function closeAlertMessages() {
 }
 
 function disableProfileInputsState(state) {
-    let ids = ['firstname', 'lastname', 'username', 'address', 'email', 'dob', 'sex', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
-    let disabled_ids = ['sex', 'image'];
+    let ids = ['firstname', 'lastname', 'image', 'username', 'address', 'email', 'dob', 'sex', 'password', 'password-repeat', 'contactno', 'emgcy-fname', 'emgcy-lname', 'relationship', 'emgcy-contactno'];
+    let disabled_ids = ['sex'];
     for (let id of ids) {
         let el = document.getElementById(id);
         state == true ? el.setAttribute("readonly", "readonly") : el.removeAttribute("readonly");
     }
-    for (let did of disabled_ids) {
-        let del = document.querySelector(`#disabled-${did}`);
-        state == true ? del.classList.remove('hidden') : del.classList.add('hidden');
-        del = document.querySelector(`#${did}`);
-        state == true ? del.classList.add('hidden') : del.classList.remove('hidden');
+    for (let disabled_id of disabled_ids) {
+        let disabled_el = document.querySelector(`#disabled-${disabled_id}`);
+        state == true ? disabled_el.classList.remove('hidden') : disabled_el.classList.add('hidden');
+        disabled_el = document.querySelector(`#${disabled_id}`);
+        state == true ? disabled_el.classList.add('hidden') : disabled_el.classList.remove('hidden');
     }
+
+    // Show image inputs
+    let imageContainer = document.querySelector('#image');
+    state == true ? imageContainer.classList.add('hidden') : imageContainer.classList.remove('hidden');
+
+    // Show password inputs
+    let passwordContainer = document.querySelector('#password-container');
+    state == true ? passwordContainer.classList.add('hidden') : passwordContainer.classList.remove('hidden');
 }
 
 function makeProfileEditable() {
@@ -115,6 +123,9 @@ function makeProfileEditable() {
     cancelEditProfileBtn.style.justifyContent = 'center';
     saveProfileBtn.style.display = 'block';
     disableProfileInputsState(false);
+    document.querySelector('#edit-profile-form').scrollIntoView({
+        behavior: 'smooth'
+    });
 
     saveProfileBtn.onclick = function () {
         disableProfileInputsState(true);
