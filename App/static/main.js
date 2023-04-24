@@ -127,7 +127,6 @@ function makeProfileEditable() {
         behavior: 'smooth'
     });
     document.querySelector('#image').onchange = function () {
-        console.log('Image changed');
         document.querySelector('#profile-image-preview').src = URL.createObjectURL(this.files[0]);
     }
 
