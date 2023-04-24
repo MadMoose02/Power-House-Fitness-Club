@@ -39,7 +39,7 @@ def get_user(id) -> User:
 def get_all_users():
     return User.query.all()
 
-def get_all_users_json() -> list[dict]:
+def get_all_users_json():
     users = User.query.all()
     if not users: return []
     users = [user.get_json() for user in users]

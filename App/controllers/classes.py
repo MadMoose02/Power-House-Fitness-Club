@@ -33,5 +33,5 @@ def get_all_classes():
     return Class.query.all()
 
 
-def get_all_classes_json() -> list[dict]:
+def get_all_classes_json():
     return [class_.get_json() for class_ in get_all_classes()]

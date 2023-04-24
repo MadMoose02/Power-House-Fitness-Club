@@ -31,5 +31,5 @@ def get_all_facilities():
     return Facility.query.all()
 
 
-def get_all_facilities_json() -> list[dict]:
+def get_all_facilities_json():
     return [facility.get_json() for facility in get_all_facilities()]

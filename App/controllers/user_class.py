@@ -25,7 +25,7 @@ def get_all_userclasses():
     return UserClass.query.all()
 
 
-def get_all_userclasses_json() -> list[dict]:
+def get_all_userclasses_json():
     return [userclass.get_json() for userclass in get_all_userclasses()]
 
 
