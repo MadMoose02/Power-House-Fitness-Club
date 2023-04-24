@@ -27,7 +27,7 @@ def get_facility(id) -> Facility:
     return Facility.query.get(id)
 
 
-def get_all_facilities() -> list[Facility]:
+def get_all_facilities():
     return Facility.query.all()
 
 

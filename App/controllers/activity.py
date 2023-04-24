@@ -19,14 +19,14 @@ def get_activity(id) -> Activity:
     return Activity.query.get(id)
 
 
-def get_all_activities() -> list[Activity]:
+def get_all_activities():
     return Activity.query.all()
 
 def get_all_activities_json() -> list[dict]:
     return [i.get_json() for i in Activity.query.all()]
 
 
-def get_all_activities_of_user(user_id) -> list[Activity]:
+def get_all_activities_of_user(user_id):
     return Activity.query.filter_by(user_id=user_id).all()
 
 

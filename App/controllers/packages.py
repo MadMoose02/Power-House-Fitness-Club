@@ -21,9 +21,9 @@ def get_package(id) -> Package:
     return Package.query.get(id)
 
 
-def get_all_packages() -> list[Package]:
+def get_all_packages():
     return Package.query.all()
 
 
-def get_all_packages_json() -> list[Package]:
+def get_all_packages_json():
     return [package.get_json() for package in get_all_packages()]

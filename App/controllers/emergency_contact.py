@@ -27,5 +27,5 @@ def get_emergency_contact(id) -> EmergencyContact:
     return EmergencyContact.query.get(id)
 
 
-def get_all_emergency_contacts() -> list[EmergencyContact]:
+def get_all_emergency_contacts():
     return EmergencyContact.query.all()

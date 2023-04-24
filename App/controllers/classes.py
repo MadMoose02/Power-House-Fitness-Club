@@ -29,7 +29,7 @@ def get_class(id) -> Class:
     return Class.query.get(id)
 
 
-def get_all_classes() -> list[Class]:
+def get_all_classes():
     return Class.query.all()
 
 
