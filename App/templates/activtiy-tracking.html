@@ -4,7 +4,7 @@
 {{ super() }}
 
 {% block content %}
-<section id="activity-tracking-page">
+<section id="activity-tracking-page" class="page-styling">
     <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
     <h1><b>ACTIVITY TRACKING</b></h1>
     <section class="img-container">
@@ -90,7 +90,7 @@
                     datasets: [
                         {
                             label: "Number of Workouts",
-                            backgroundColor: "rgba(90, 90, 90, 1)",
+                            backgroundColor: "rgba(80, 79, 79, 0.835)",
                             data: data.map(count => count)
                         }
                     ]
