@@ -688,7 +688,7 @@ input[type="file"]::file-selector-button:hover,
 
 #pkg-card-data .card{
     border: 3px solid #9b0404;
-    min-height: 52vh;
+    min-height: 54vh;
     border-radius: 10px;
 }
 
