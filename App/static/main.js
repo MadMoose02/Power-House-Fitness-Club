@@ -112,6 +112,7 @@ function makeProfileEditable() {
     let saveProfileBtn = document.querySelector('#save-profile-btn');
     editProfileBtn.style.display = 'none';
     cancelEditProfileBtn.style.display = 'flex';
+    cancelEditProfileBtn.style.justifyContent = 'center';
     saveProfileBtn.style.display = 'block';
     disableProfileInputsState(false);
 
@@ -120,6 +121,7 @@ function makeProfileEditable() {
         saveProfileBtn.style.display = 'none';
         cancelEditProfileBtn.style.display = 'none';
         editProfileBtn.style.display = 'flex';
+        editProfileBtn.style.justifyContent = 'center';
     }
 
     cancelEditProfileBtn.onclick = function () {
@@ -127,6 +129,7 @@ function makeProfileEditable() {
         saveProfileBtn.style.display = 'none';
         cancelEditProfileBtn.style.display = 'none';
         editProfileBtn.style.display = 'flex';
+        editProfileBtn.style.justifyContent = 'center';
         document.getElementById('edit-profile-form').reset();
         console.log('Form reset');
     }
