@@ -18,12 +18,10 @@
         </div>
     </section>
     <section>
-        <section id="forum-content" >  
-            <section id="search-form">
-            </section>
+        <section id="forum-content">
             <form action="/forum/filter" method="post">
                 <div id="forum-search">
-                    <input type="text" placeholder="Search" name="query">
+                    <input type="text" placeholder=" Search" name="query">
                     <button id="forum-search-btn" type="submit">
                         <span class="material-symbols-outlined">
                             search
@@ -40,7 +38,7 @@
                         <p>Showing results for '{{query}}'</p>
                     {% endif %}
                     {% for discussion in discussions %}
-                    <a href="/forum/{{discussion.id}}">
+                    <a href="/forum/{{discussion.id}}" class="hidden">
                         <div id="discussion-descrpt" >
                             <div class="card">
                                 <h3>{{discussion.title}}</h3>
@@ -54,14 +52,14 @@
                 {% else %}
                     <p>No discussions</p>
                 {% endif %}
-                <a id="load-more-btn" class="btn-style" ><b>Load More</b></a>
+                <span id="view-more-btn" class="btn-style" onclick="loadMoreDiscussions({{num_to_display | safe}});"><b>View More</b></span>
             </section>
             <br><hr>
             <section id="strt-discuss" class="page-container">
                 <h2><b>START YOUR OWN DISCUSSION!</b></h2>
                 <form action="/start-discussion" method="post" id="discuss-form" class="card">
                     <input type="text" name="title" placeholder="Title of Discussion">
-                    <textarea name="content" placeholder="Message"></textarea>
+                    <textarea name="content" placeholder="Message" required></textarea>
                     <input name="external_link" placeholder="External Link">
                     <div>
                         <button class="btn-style" type="submit"><b>Send Message</b></button>
@@ -70,6 +68,32 @@
             </section>
         </section>
     </section>
+    <script>
+        let num_displayed = 0;
+
+        function showDatacards(num) {
+            let divs = document.querySelectorAll("#discussion > a.hidden");
+            console.log(divs);
+            if (num >= divs.length){
+                num=divs.length;
+                document.getElementById("view-more-btn").style.display = "none";
+            }
+            for (let i = 0; i < num; i++) divs[i].classList.remove("hidden");
+        }
+
+        function loadMoreDiscussions(num) {
+            let divs = document.querySelectorAll("#discussion > a");
+            num_displayed += num;
+            console.log(num_displayed);
+            if (num_displayed >= divs.length) {
+                console.log("no more");
+                num_displayed = divs.length;
+            }
+            showDatacards(num);
+        }
+
+        loadMoreDiscussions({{num_to_display | safe}});
+    </script>
 </section>
 {% endblock %}
 
