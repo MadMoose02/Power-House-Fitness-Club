@@ -68,9 +68,9 @@
         <h2><b>Packages Available</b></h2>
         <div class="row">
             {% for pkg in packages %}
-            <div class="column">
+            <div id="homepg-pkgs" class="column">
                 <div class="card">
-                    <p><b>{{pkg.type}}</b></p>
+                    <img src="../static/images/packages/{{pkg.type}}.png">
                 </div>
             </div>
             {% endfor %}
