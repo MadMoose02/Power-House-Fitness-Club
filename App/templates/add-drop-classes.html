@@ -4,10 +4,20 @@
 {{ super() }}
 
 {% block content %}
-<section id="class-page">
+<section id="add-drop-page">
+    <a class="back-btn" href="/profile"><b>&larr; My Profile</b></a>
     <h1><b>ADD/DROP CLASSES</b></h1>
-    <hr>
-    <a class="button" href="/profile"><b>&larr;My Profile</b></a>
+    <section class="img-container">
+        <img class="about-img" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="centered">
+            <h1><b>AVAILABLE CLASSES</b></h1>
+            <p>Select the "join" button for class you wish to participate in. <br>
+                Credit will be added to your account upon selection. <br>
+                To drop a class please select the "drop" button. <br>
+                Your credit will reflect this change. 
+            </p>
+        </div>
+    </section>
     <section id="classpg-datacards" class="pkgs">
         <div class="card-data" class="row">
             {% for class in classes %}
@@ -23,27 +33,30 @@
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
                             <input type="hidden" name="class-price" value="500">
-                            <button class="drop-class-btn">DROP</button>
+                            <button class="btn-style"><b>DROP</b></button>
                         </form>
                     {% elif user_package.type in class.package.split(', ')%}
                         <form action="/profile/add-class" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
                             <input type="hidden" name="class-price" value="500">
-                            <button class="add-class-btn">ADD</button>
+                            <button class="btn-style"><b>ADD</b></button>
                         </form>
                     {% else %}
-                        <h4><b>REQUIRES '{{"' OR '".join(class.package.split(', '))}}' PACKAGE</b><h4>
                         <form action="/profile/add-class-fitcoin" method="post">
                             <input type="hidden" name="class-id" value="{{class.id}}">
                             <input type="hidden" name="class-name" value="{{class.name}}">
                             <input type="hidden" name="class-price" value="500">
-                            <button class="add-class-btn">ADD USING 500 FITCOINS</button>
+                            <button class="btn-style"><b>ADD USING 500 FITCOINS</b></button>
+                            <h4><b>REQUIRES PREMIUM <br>
+                                OR <br>
+                                GROUP PACKAGE</b><h4></h4>
                         </form>
                     {% endif %}
                 </section>
             </div>
             {% endfor %}
+            <a id="add-drop-viewmore-btn" class="btn-style" ><b>View More</b></a>
         </div>
     </section>
 </section>

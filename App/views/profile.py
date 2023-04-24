@@ -47,13 +47,13 @@ def edit_profile_page():
     )
     
 
-@profile_views.route('/profile/edit-classes', methods=['GET'])
+@profile_views.route('/profile/add-drop-classes', methods=['GET'])
 @login_required
 def edit_classes_page():
     user_classes = [i.get_json()['class_name'] for i in get_userclasses_by_user_id(current_user.id)]
     print(user_classes)
     return render_template(
-        'edit-classes.html', 
+        'add-drop-classes.html', 
         user=current_user,
         user_package=get_package(current_user.package_id).get_json(),
         classes=get_all_classes_json(),

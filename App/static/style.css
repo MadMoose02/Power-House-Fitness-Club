@@ -464,6 +464,7 @@ of facilities and classes pages*/
     border: 1px solid transparent;
     background-color: #9b0404;
     transition: .3s;
+    font-family: Oswald;
 }
 
 input[type="file"]::file-selector-button:hover,
@@ -489,6 +490,7 @@ input[type="file"]::file-selector-button:hover,
 
 /*Back Button Template*/
 .back-btn {
+    font-family: Oswald;
     color:#9b0404;
     padding: 5px;
 }
@@ -695,18 +697,15 @@ input[type="file"]::file-selector-button:hover,
 #reg-page,
 #facilities-page,
 #class-page,
+#add-drop-page,
 #log-activity-page
 {
+    font-family: Oswald;
     background-color: #000000;
     border: 3px solid #9b0404;
 }
 
 /*Registration Page*/
-#edituser-page,
-#reg-page{
-    font-family: Oswald;
-}
-
 #memberinfo input,
 #memberinfo select,
 #emgcy-contact input,
@@ -795,10 +794,11 @@ input[type="file"]::file-selector-button,
 }
 
 
-/*Profile Page*/
-#disabled-image{
-    
+/*Add/Drop Page*/
+#add-drop-page h4{
+    color: #000000;
 }
+
 
 
 /* wallet starter  */
