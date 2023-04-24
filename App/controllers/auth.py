@@ -22,6 +22,7 @@ def login(username: str, password: str) -> User:
     if not user: user = User.query.filter_by(email=username).first()
     if not user: return None
     if not user.check_password(password): return None
+    print("Password check passed")
     return user
 
 

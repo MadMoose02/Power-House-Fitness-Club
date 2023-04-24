@@ -65,16 +65,20 @@
                 <label for="email"><b>EMAIL</b></label>
                 <input type="text" placeholder=" Email address" name="email" id="email" value="{{user.email}}" required readonly="readonly">
                 <br><br>
-                <label for="password"><b>NEW PASSWORD</b></label>
-                <input type="password" placeholder=" Enter a new password" name="password" id="password" readonly="readonly">
-                <br><br>
-                <label for="password-repeat"><b>REPEAT PASSWORD</b></label>
-                <input type="password" placeholder=" Confirm your password" name="password-repeat" id="password-repeat" readonly="readonly">
-                <br><br>
-                <label for="image"><b>PROFILE PHOTO</b></label><br>
-                <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <input class="hidden" type="file" name="image" id="image" style="width:100%; color: black">
-                    <input type="file" id="disabled-image" style="width:100%;" disabled>
+                <div id="password-container" class="hidden">
+                    <label for="password"><b>NEW PASSWORD</b></label>
+                    <input type="password" placeholder=" Enter a new password" name="password" id="password" readonly="readonly">
+                    <br><br>
+                    <label for="password-repeat"><b>REPEAT PASSWORD</b></label>
+                    <input type="password" placeholder=" Confirm your password" name="password-repeat" id="password-repeat" readonly="readonly">
+                    <br><br>
+                </div>
+                <div id="profile-image-container" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <label for="image"><b>PROFILE PHOTO</b></label><br>
+                    <div style="display: flex; justify-content: center; align-items: center">
+                        <img id="profile-image-preview" style="margin-top; 20px; width: 300px; border: 1px solid black; border-radius: 14px" src="data:image/png;base64,{{user.image.decode()}}">
+                    </div>
+                    <input class="hidden" type="file" name="image" id="image" style="margin-top: 20px; width:100%; color: black">
                 </div>
                 <br><br>
                 <hr>
