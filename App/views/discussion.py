@@ -29,7 +29,8 @@ def forum_page():
         discussions=discussions,
         get_user=get_user,
         filter=False,
-        query=''
+        query='',
+        num_to_display=3
     )
     
     
@@ -46,7 +47,8 @@ def filtered_forum_page():
         discussions=discussions,
         get_user=get_user,
         filter=True,
-        query=request.form['query']
+        query=request.form['query'],
+        num_to_display=3
     )
     
 
@@ -67,7 +69,7 @@ def start_new_discussion():
             discussion.id, 
             current_user.id, 
             request.form['content'],
-            request.form['external_link'],
+            request.form['external_link'] if request.form['external_link'] else None,
             datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         flash('Discussion created successfully', category='success')
     else:
@@ -86,7 +88,8 @@ def view_discussion(discussion_id: int):
         user_package=user_package,
         get_user=get_user,
         discussion=get_discussion(discussion_id),
-        messages=get_messages_by_discussion(discussion_id)
+        messages=get_messages_by_discussion(discussion_id),
+        num_to_display=3
     )
     
     
@@ -100,7 +103,12 @@ def create_new_message(discussion_id: int):
         flash('Discussion does not exist!', category='error')
         return redirect(url_for('discussion_views.view_discussion', discussion_id=discussion_id))
     
-    if create_message(discussion_id, current_user.id, request.form['content'], datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')):
+    if create_message(
+        discussion_id, current_user.id, 
+        request.form['content'], 
+        request.form['external_link'], 
+        datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        ):
         flash('Message created successfully', category='success')
     else:
         flash('Unable to create message. Please try again', category='error')
