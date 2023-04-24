@@ -320,6 +320,15 @@ button:active { filter: brightness(60%); }
     margin: 0 5px;
 }
 
+
+/*Base Page Template*/
+.page-styling
+{
+    font-family: Oswald;
+    background-color: #000000;
+    border: 3px solid #9b0404;
+}
+
 /*horizontal cards template - 4 per line*/
 .column {
     float: left;
@@ -330,8 +339,6 @@ button:active { filter: brightness(60%); }
 .row {
     margin: 0 -5px;
 }
-  
- 
   
   @media screen and (max-width: 600px) {
     .column {
@@ -699,22 +706,6 @@ input[type="file"]::file-selector-button:hover,
     border-radius: 10px;
 }
 
-/*Facilities & Classes Pages*/
-#transaction-history-page,
-#activity-tracking-page,
-#log-activity-page,
-#edituser-page,
-#reg-page,
-#facilities-page,
-#class-page,
-#add-drop-page,
-#log-activity-page
-{
-    font-family: Oswald;
-    background-color: #000000;
-    border: 3px solid #9b0404;
-}
-
 /*Registration Page*/
 #log-activity-form input,
 #log-activity-form textarea,
@@ -906,4 +897,6 @@ input[type="file"]::file-selector-button,
 
 #transaction-history-page table tr:nth-child(odd){
     background-color: #1b1b1bd5;
+    background-color:;
 }
+
