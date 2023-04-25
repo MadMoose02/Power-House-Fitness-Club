@@ -75,12 +75,16 @@ function toggleNavMobileMenu() {
     let sidePanelMenu = document.querySelector('#side-panel-menu')
 
     if (!sidePanelMenu.classList.contains('hidden')) {
+        document.querySelector('#overlay').style.display = 'none';
+        console.log("Overlay added");
         sidePanelMenu.animate(slideSidePanelOutOfView, slideTiming);
         setTimeout(function() {
             sidePanelMenu.classList.add('hidden');
         }, animationDelay);
         
     } else {
+        document.querySelector('#overlay').style.display = 'block';
+        console.log("Overlay removed");
         sidePanelMenu.classList.remove('hidden');
         sidePanelMenu.animate(slideSidePanelIntoView, slideTiming);
     }

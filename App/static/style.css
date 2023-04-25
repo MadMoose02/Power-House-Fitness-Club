@@ -419,7 +419,7 @@ button:active { filter: brightness(60%); }
 }
 
 .centered p {
-    width: 50vw;
+    width: 100%;
     max-width: 500px;
 }
 
@@ -638,11 +638,41 @@ iframe {
         width: 30px;
         height: 30px;
     }
+
     iframe {
         width: 100%;
         height: 100%;
         max-height: 400px;
     }
+
+    section > h1 { font-size: 35px; }
+    section > h2 { font-size: 30px; }
+
+    section > form { width: 100% }
+    .form-container { 
+        width: 100%;
+        padding: 15px; 
+    }
+
+
+    .centered { width: 80vw; }
+
+    .centered * p { width: 100%; }
+
+    .centered > h2 { font-size: 22px; }
+
+    .btn-style {height: 42px; }
+
+    .card-data > .center { width: 100%; }
+
+    .card > h3 { font-size: 25px; }
+
+    .modal-content { padding: 15px; }
+
+    #all-activity { width: 100%; }
+    #activity-chart { margin: 0; }
+    #activity-chart { font-size: 10px; }
+
 }
 
 
@@ -763,8 +793,9 @@ iframe {
     height:100vh;
     display:none;
     background-color:#000;
-    opacity:0.5;
+    opacity:0.7;
     overflow: hidden;
+    z-index: 1;
 }
 
 
@@ -853,7 +884,6 @@ input[type="file"]::file-selector-button,
 }
 
 #terms-conditions-modal * span {
-    font-size: 20px;
     margin-top: 2em;
     margin-bottom:0;
 }
@@ -862,7 +892,7 @@ input[type="file"]::file-selector-button,
     background-color: #080808;
     color: #757474;
     font-family: Oswald;
-    padding:5em;
+    padding: 25px;
     padding-top:3em;
     padding-bottom:3em;
     
@@ -977,17 +1007,20 @@ input[type="file"]::file-selector-button,
 }
 
 #activity-chart {
-    margin-left:3em;
     width:100%; 
-    max-width:600px;
+    max-width:500px;
     border: 3px solid #9b0404;
     box-shadow: 0 0 10px rgba(204, 46, 46, 0.76);
 }
 
 #activity-table{
-    margin-left:3em;
+    margin: 0;
     margin-bottom: 5em;
     background-color: #000000;
+}
+
+#activity-table > table{
+    max-width: 500px;
 }
 
 #all-activity table{
@@ -1067,8 +1100,8 @@ input[type="file"]::file-selector-button,
     align-items: center;
 }
 
-#discussion-descrpt .card {
-    max-width: 52vw;
+#discussion-descrpt > .card {
+    width: 52vw;
 }
 
 #discussion-descrpt .card p{
@@ -1104,7 +1137,7 @@ input[type="file"]::file-selector-button,
 
 #add-msg form,
 #strt-discuss form {
-    width: 50vw;
+    width: 80vw;
     max-width: 400px;
 }
 
