@@ -420,7 +420,6 @@ button:active { filter: brightness(60%); }
 
 .centered p {
     width: 100%;
-    max-width: 500px;
 }
 
 /*Packages Template*/
